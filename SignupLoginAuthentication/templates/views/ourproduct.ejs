@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">  
+    <title>Minimalist Our Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ourproduct.css">
+</head>
+<body>
+
+    <!------------------------------------------- Navbar start --------------------------------------->
+    <div id="myOverlay" class="overlay">
+        <div id = "InputCloseBox">
+            <div class = "overlay-content">
+                <button id = "SubmitSearchInput"><i class="fa fa-search"></i></button>
+                <input id = "SearchInput" type="Search" placeholder="Search Our Store....">
+            </div>
+            <span class = "closebtn" onclick="closeSearch()" title = "Close Overlay">x</span>
+        </div>
+    </div>
+    <div id = "NavbarContainer">
+        <div id = "navbar">
+            <div id = "LogoBox">
+                <div onclick="GoToHomePage()" id = "HomeIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                    </svg>
+                </div>
+                <div onclick="GoToHomePage()" id = "WebsiteNameBox">minimalist_</div>
+            </div>
+            <div id = "MiddleBox">
+                <div onclick="GoToHomePage()" class = "Middle">Home</div>
+                <div onclick="concernpage()" class = "Middle">Concern</div>
+                <div onclick="OurProductPage()" class = "Middle">Our Product</div>
+                <div onclick="knowleadgepage()" class = "Middle">Knowleadge</div>
+                <div onclick="TrackerOrder()" class = "Middle">Tracker Order</div>
+            </div>
+            <div id = "LoginSignUpBox">
+                <div onclick="LoginSignUpPage()" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    </svg>
+                </div>
+                <div id = "SearchIcon" onclick="openSearch()" class = "LoginSignUp"><i class="fa fa-search"></i></div>
+                <div onclick="MinimalistAddToCartPage()" id = "AddToCart" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------ Navbar End -------------------------------------------------->
+    <div id = "id01" class = "modal">
+        <div class = "modal-content animate">
+            <div class = "HeadingCutBox">
+                <div class = "HeadingBox">Some Product Details</div>
+                <div onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</div>
+            </div>
+            <div class = "ProductDetailsShow">
+                <div class = "Product">
+                    <div class = "GridBox">
+                        <div class = "SaleViewBox">
+                            <div class = "SaleIcon">Sale</div>
+                        </div>
+                        <div class = "PercentageOffBox"></div>
+                        <div class = "ImageBox">
+                            <img class = "GridImage" src="" alt="">
+                        </div>
+                        <div class = "TitleBox"></div>
+                        <div class = "CompositionUnit"></div>
+                        <div class = "StarsBox">
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star"></span>
+                            <div class = "reviews"></div>
+                        </div>
+                        <div class = "PriceStrickPriceBox">
+                            <div class = "PriceBox">1</div>
+                            <div class = "StrickPriceBox">1</div>
+                        </div>
+                        <div class = "AddToCartQunatityBox">
+                            <div class = "DecreaseBox">-</div>
+                            <div class = "ShowQuantityBox"></div>
+                            <div class = "IncreaseBox">+</div>
+                            <div class = "AddToCartButtonImage">
+                                <div class = "AddToCartIcon">
+                                    <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
+                                </div>
+                                <div class = "AddToCartButton">
+                                    <button class = "AddToCart">ADD TO CART</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "Details">
+                    <div id = "TitleDetails" class = "DetailsTitle"></div>
+                    <div id = "ChemicalCompositionDetails" class = "DetailsTitle"></div>
+                    <div id = "ChemicalUnitDetails" class = "DetailsTitle"></div>
+                    <div id = "IngredientsDetails" class = "DetailsTitle"></div>
+                    <div id = "WhatItIsHeadingDetails" class = "DetailsTitle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------ProductContainerBox ----------------------------------------->
+    <div id = "ProductContainerBox">
+        <div id = "ProductContainer">
+            <div id = "ProductHeading">Products</div>
+
+            <!---------------------------------------------AboveSorting Start -------------------------------------------->
+            <div id = "AboveSortingBox">
+                <div id = "AboveSorting">
+                    <select name="" id="SelectSortProduct" onchange="FirstSorting()">
+                        <option class = "AboveOption" value="SortProduct">Sort Product</option>
+                        <option class = "AboveOption" value="Featured">Featured</option>
+                        <option class = "AboveOption" value="BestSelling">Best Selling</option>
+                        <option class = "AboveOption" value="AlphabeticallyAZ">Alphabetically, A-Z</option>
+                        <option class = "AboveOption" value="AlphabeticallyZA">Alphabetically, Z-A</option>
+                        <option class = "AboveOption" value="Procelowtohigh">Proce, low to high</option>
+                        <option class = "AboveOption" value="Pricehightolow">Price, high to low</option>
+                        <option class = "AboveOption" value="Dateoldtonew">Date, old to new</option>
+                        <option class = "AboveOption" value="Datenewtoold">Date, new to old</option>
+                    </select>
+                </div>
+            </div>
+            <!------------------------------------------------AboveSorting Start ------------------------------------------->
+
+            <!------------------------------------------------ProductFilteringContainer ------------------------------------->
+            <div id = "ProductFilteringContainer">
+                
+                <div id = "FilteringContainer">
+                    <div id = "CollectionBox">
+                        <div id = "UpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Collection">COLLECTION</div>
+                    </div>
+                    <div id = "CollectionFilterBox">
+                        <fieldset id = "CollectionFieldset" onclick="CollectionFiltering()">
+                            <legend>Collection</legend>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Boostofbrightnessglow" value = "Boostofbrightnessglow">
+                                    <label class = "Collectionlabel" for="Boostofbrightnessglow">Boost of brightness & glow</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Byebyeacne" value = "Byebyeacne">
+                                    <label class = "Collectionlabel" for="Byebyeacne">Bye bye acne</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "DailydoseofSkinVitamins" value = "DailydoseofSkinVitamins">
+                                    <label class = "Collectionlabel" for="DailydoseofSkinVitamins">Daily dose of Skin Vitamins</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Dreamyoilfreeskin" value = "Dreamyoilfreeskin">
+                                    <label class = "Collectionlabel" for="Dreamyoilfreeskin">Dreamy oil-free skin</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "FaceacidsTrending" value = "FaceacidsTrending">
+                                    <label class = "Collectionlabel" for="FaceacidsTrending">Face acids - Trending</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Hydratedsupplebouncyskin" value = "Hydratedsupplebouncyskin">
+                                    <label class = "Collectionlabel" for="Hydratedsupplebouncyskin">Hydrated, supple, bouncy skin</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Porenomore" value = "Porenomore">
+                                    <label class = "Collectionlabel" for="Porenomore">Pore no more</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "SayhellotoBabysoftcomplexion" value = "SayhellotoBabysoftcomplexion">
+                                    <label class = "Collectionlabel" for="SayhellotoBabysoftcomplexion">Say hello to Baby soft-complexion</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Skincorrectiondepigmentation" value = "Skincorrectiondepigmentation">
+                                    <label class = "Collectionlabel" for="Skincorrectiondepigmentation">Skin correction & de-pigmentation</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Turnbackclockonaging" value = "Turnbackclockonaging">
+                                    <label class = "Collectionlabel" for="Turnbackclockonaging">Turn back clock on aging</label>
+                                </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "VendorBox">
+                        <div id = "VendorUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Vendor">Vendor</div>
+                    </div>
+                    <div id = "VendorFilterBox">
+                        <fieldset id = "VendorFieldset" onclick="CollectionFiltering()">
+                            <legend>Vendor</legend>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Dryskin" value = "Dryskin">
+                                    <label class = "Vendorlabel" for="Dryskin">Barrier repair - Dry skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Oilyskin" value = "Oilyskin">
+                                    <label class = "Vendorlabel" for="Oilyskin">Barrier repair - Oily skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "BrightensReducesPhotoaging" value = "BrightensReducesPhotoaging">
+                                    <label class = "Vendorlabel" for="BrightensReducesPhotoaging">Brightens & Reduces Photoaging</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "BrightensSkinReverseUVDamage" value = "BrightensSkinReverseUVDamage">
+                                    <label class = "Vendorlabel" for="BrightensSkinReverseUVDamage">Brightens Skin & Reverse UV Damage</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "BroadSpectrumSPF50PA" value = "BroadSpectrumSPF50PA">
+                                    <label class = "Vendorlabel" for="BroadSpectrumSPF50PA">Broad Spectrum SPF 50, PA++++</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ControlsExcessOil" value = "ControlsExcessOil">
+                                    <label class = "Vendorlabel" for="ControlsExcessOil">Controls Excess Oil</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "DeepNourishmentHydration" value = "DeepNourishmentHydration">
+                                    <label class = "Vendorlabel" for="DeepNourishmentHydration">Deep Nourishment & Hydration</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "EvenSkinToneTexture" value = "EvenSkinToneTexture">
+                                    <label class = "Vendorlabel" for="EvenSkinToneTexture">Even Skin Tone & Texture</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ForBrighterIlluminatingSkin" value = "ForBrighterIlluminatingSkin">
+                                    <label class = "Vendorlabel" for="ForBrighterIlluminatingSkin">For Brighter & Illuminating Skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ForFineLinesWrinkles" value = "ForFineLinesWrinkles">
+                                    <label class = "Vendorlabel" for="ForFineLinesWrinkles">For Fine Lines & Wrinkles</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ForPoreTighteningSkinRebalancing" value = "ForPoreTighteningSkinRebalancing">
+                                    <label class = "Vendorlabel" for="ForPoreTighteningSkinRebalancing">For Pore Tightening & Skin Rebalancing</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "MoisturizeRepairSkin" value = "MoisturizeRepairSkin">
+                                    <label class = "Vendorlabel" for="MoisturizeRepairSkin">Moisturize & Repair Skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "PreventAgeing" value = "PreventAgeing">
+                                    <label class = "Vendorlabel" for="PreventAgeing">Prevent Ageing</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reduceblackheadsbreakouts" value = "Reduceblackheadsbreakouts">
+                                    <label class = "Vendorlabel" for="Reduceblackheadsbreakouts">Reduce blackheads & breakouts</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reducefinelineswrinkles" value = "Reducefinelineswrinkles">
+                                    <label class = "Vendorlabel" for="Reducefinelineswrinkles">Reduce fine lines & wrinkles</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reducesacnehealsskin" value = "Reducesacnehealsskin">
+                                    <label class = "Vendorlabel" for="Reducesacnehealsskin">Reduces acne & heals skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reducesdarkspotsevensskintone" value = "Reducesdarkspotsevensskintone">
+                                    <label class = "Vendorlabel" for="Reducesdarkspotsevensskintone">Reduces dark spots & evens skin tone</label>
+                                </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "TagsBox">
+                        <div id = "TagsUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Tags">Tags</div>
+                    </div>
+                    <div id = "TagsFilterBox">
+                        <fieldset id = "TagsFieldset" onclick="CollectionFiltering()">
+                            <legend>Tags</legend>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Acnemarks" value = "Acnemarks">
+                                <label class = "Tagslabel" for="Acnemarks">Acne - marks</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Alopecia" value = "Alopecia">
+                                <label class = "Tagslabel" for="Alopecia">Alopecia</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Antiacne" value = "Antiacne">
+                                <label class = "Tagslabel" for="Antiacne">Anti-acne</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Antiaging" value = "Antiaging">
+                                <label class = "Tagslabel" for="Antiaging">Anti-aging</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "AntiHairfall" value = "AntiHairfall">
+                                <label class = "Tagslabel" for="AntiHairfall">Anti-Hairfall</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Antiinflammatory" value = "Antiinflammatory">
+                                <label class = "Tagslabel" for="Antiinflammatory">Anti-inflammatory</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Barrier Repair" value = "BarrierRepair">
+                                <label class = "Tagslabel" for="Barrier Repair">Barrier Repair</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Brightening" value = "Brightening">
+                                <label class = "Tagslabel" for="Brightening">Brightening</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Cleanser" value = "Cleanser">
+                                <label class = "Tagslabel" for="Cleanser">Cleanser</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Dark spots" value = "Darkspots">
+                                <label class = "Tagslabel" for="Dark spots">Dark spots</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Even tone" value = "Eventone">
+                                <label class = "Tagslabel" for="Even tone">Even tone</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Exfoliation" value = "Exfoliation">
+                                <label class = "Tagslabel" for="Exfoliation">Exfoliation</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Fine lines" value = "Finelines">
+                                <label class = "Tagslabel" for="Fine lines">Fine lines</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Hair Growth" value = "HairGrowth">
+                                <label class = "Tagslabel" for="Hair Growth">Hair Growth</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Hydration" value = "Hydration">
+                                <label class = "Tagslabel" for="Hydration">Hydration</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Hyperpigmentation" value = "Hyperpigmentation">
+                                <label class = "Tagslabel" for="Hyperpigmentation">Hyperpigmentation</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Melasma" value = "Melasma">
+                                <label class = "Tagslabel" for="Melasma">Melasma</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Moisturization" value = "Moisturization">
+                                <label class = "Tagslabel" for="Moisturization">Moisturization</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Oil balance" value = "Oilbalance">
+                                <label class = "Tagslabel" for="Oil balance">Oil balance</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Pore cleaning" value = "Porecleaning">
+                                <label class = "Tagslabel" for="Pore cleaning">Pore cleaning</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Pore tightening" value = "Poretightening">
+                                <label class = "Tagslabel" for="Pore tightening">Pore tightening</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Remove blackheads" value = "Removeblackheads">
+                                <label class = "Tagslabel" for="Remove blackheads">Remove blackheads</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "DiscountBox">
+                        <div id = "DiscountUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Discount">Discount</div>
+                    </div>
+                    <div id = "DiscountFilterBox">
+                        <fieldset id = "DiscountFieldset" onclick="CollectionFiltering()">
+                            <legend>Discount</legend>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "5% - 10%" value = "5%10%">
+                                <label class = "Discountlabel" for="5% - 10%">1% - 5%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "10% - 15%" value = "10%15%">
+                                <label class = "Discountlabel" for="10% - 15%">5% - 10%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "15% - 20%" value = "15%20%">
+                                <label class = "Discountlabel" for="15% - 20%">11% - 15%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "20% - 25%" value = "20%25%">
+                                <label class = "Discountlabel" for="20% - 25%">16% - 20%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "25% - 30%" value = "25%30%">
+                                <label class = "Discountlabel" for="25% - 30%">21% - 25%</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "PriceBox">
+                        <div id = "PriceUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Price">PRICE</div>
+                    </div>
+                    <div id = "PriceFilterBox">
+                        <!-- PriceFieldset == wrapper -->
+                        <fieldset id = "PriceFieldset" onclick="PriceFiltering()">
+                            <legend>Price, ₹</legend>
+                            <!-- MinAndMaxBox == values -->
+                            <div id = "MinAndMaxBox">
+                                <input id = "Minimum" type="text" value = "250">
+                                -
+                                <input id = "Maximum" type="text" value = "600">
+                            </div>
+                            <div class = "rangecontainer">
+                                <div class = "slider-track"></div>
+                                <input type="range" min="250" max="800" value="250" id="slider-1" oninput="slideOne()">
+                                <input type="range" min="250" max="800" value="800" id="slider-2" oninput="slideTwo()">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                
+                <div id = "ProductShowContainer">
+
+                    <!--  -->
+                    <div id = "SearchContainer">
+                        <div id = "SearchIcon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </div>
+                        <div id = "SearchInputBox">
+                            <!-- <input onkeypress="SearchInput()" type="search" id = "SearchInput" placeholder="Search Product...."> -->
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <!--  -->
+                    <div id = "TotalItemSortingContainer">
+                        <div id = "TotalItem">Item 23</div>
+                        <div id = "ItemShow">
+                            <select name="" id="ShowItems" onchange="ShowSorting()">
+                                <option value="SHOW">SHOW</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="18">18</option>
+                                <option value="22">22</option>
+                            </select>
+                        </div>
+                        <div id = "SortingBox2">
+                            <select name="" id="SelectSortProduct2" onchange="SecondFeltering()">
+                                <option value="SortProduct">Sort Product</option>
+                                <option value="Featured">Best Selling</option>
+                                <option value="BestSelling">Availability</option>
+                                <option value="AlphabeticallyAZ">Alphabetically, A-Z</option>
+                                <option value="AlphabeticallyZA">Alphabetically, Z-A</option>
+                                <option value="Pricehightolow">Price, high to low</option>
+                                <option value="Procelowtohigh">Price, low to high</option>
+                                <option value="Datenewtoold">Date, new to old</option>
+                                <option value="Dateoldtonew">Date, old to new</option>
+                                <!-- <option value="%Saleoff">% Sale off</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <div id = "GridContainer">
+                        <!-- <div class = "GridBox">
+                            <div class = "SaleViewBox">
+                                <div class = "SaleIcon">ABCD</div>
+                                <div class = "ViewIcon">
+                                    <img class = "ViewImage" src="https://cdn-icons-png.flaticon.com/512/709/709724.png" alt="">
+                                </div>
+                            </div>
+                            <div class = "PercentageOffBox">30% off</div>
+                            <div class = "ImageBox">
+                                <img class = "GridImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-fa2939c1--Minimalist-Vitamin-C-Frontmin-1.png?v=1617300953" alt="">
+                            </div>
+                            <div class = "TitleBox">ABCD</div>
+                            <div class = "CompositionUnit">ABCD</div>
+                            <div class = "StarsBox">
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star"></span>
+                                <div class = "reviews">ABCD</div>
+                            </div>
+                            <div class = "PriceStrickPriceBox">
+                                <div class = "PriceBox">ABCD</div>
+                                <div class = "StrickPriceBox">ABCD</div>
+                            </div>
+                            <div class = "AddToCartQunatityBox">
+                                <div class = "DecreaseBox">-</div>
+                                <div class = "ShowQuantityBox">0</div>
+                                <div class = "IncreaseBox">+</div>
+                                <div class = "AddToCartButtonImage">
+                                    <div class = "AddToCartIcon">
+                                        <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
+                                    </div>
+                                    <div Class = "AddToCartButton">
+                                        <button class = "AddToCart">ADD TO CART</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "GridBox">
+                            <div class = "SaleViewBox">
+                                <div class = "SaleIcon">ABCD</div>
+                                <div class = "ViewIcon">
+                                    <img class = "ViewImage" src="https://cdn-icons-png.flaticon.com/512/709/709724.png" alt="">
+                                </div>
+                            </div>
+                            <div class = "PercentageOffBox">30% off</div>
+                            <div class = "ImageBox">
+                                <img class = "GridImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-fa2939c1--Minimalist-Vitamin-C-Frontmin-1.png?v=1617300953" alt="">
+                            </div>
+                            <div class = "TitleBox">ABCD</div>
+                            <div class = "CompositionUnit">ABCD</div>
+                            <div class = "StarsBox">
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star"></span>
+                                <div class = "reviews">ABCD</div>
+                            </div>
+                            <div class = "PriceStrickPriceBox">
+                                <div class = "PriceBox">ABCD</div>
+                                <div class = "StrickPriceBox">ABCD</div>
+                            </div>
+                            <div class = "AddToCartQunatityBox">
+                                <div class = "DecreaseBox">-
+                                </div>
+                                <div class = "ShowQuantityBox"></div>
+                                <div class = "IncreaseBox">+
+                                </div>
+                                <div class = "AddToCartButtonImage">
+                                    <div class = "AddToCartIcon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                                        </svg>
+                                    </div>
+                                    <div Class = "AddToCartButton">
+                                        <button class = "AddToCart">ADD TO CART</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "GridBox">
+                            <div class = "SaleViewBox">
+                                <div class = "SaleIcon">ABCD</div>
+                                <div class = "ViewIcon">
+                                    <img class = "ViewImage" src="https://cdn-icons-png.flaticon.com/512/709/709724.png" alt="">
+                                </div>
+                            </div>
+                            <div class = "PercentageOffBox">30% off</div>
+                            <div class = "ImageBox">
+                                <img class = "GridImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-fa2939c1--Minimalist-Vitamin-C-Frontmin-1.png?v=1617300953" alt="">
+                            </div>
+                            <div class = "TitleBox">ABCD</div>
+                            <div class = "CompositionUnit">ABCD</div>
+                            <div class = "StarsBox">
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star"></span>
+                                <div class = "reviews">ABCD</div>
+                            </div>
+                            <div class = "PriceStrickPriceBox">
+                                <div class = "PriceBox">ABCD</div>
+                                <div class = "StrickPriceBox">ABCD</div>
+                            </div>
+                            <div class = "AddToCartQunatityBox">
+                                <div class = "DecreaseBox">-
+                                </div>
+                                <div class = "ShowQuantityBox"></div>
+                                <div class = "IncreaseBox">+
+                                </div>
+                                <div class = "AddToCartButtonImage">
+                                    <div class = "AddToCartIcon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                                        </svg>
+                                    </div>
+                                    <div Class = "AddToCartButton">
+                                        <button class = "AddToCart">ADD TO CART</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "GridBox">
+                            <div class = "SaleViewBox">
+                                <div class = "SaleIcon">ABCD</div>
+                                <div class = "ViewIcon">
+                                    <img class = "ViewImage" src="https://cdn-icons-png.flaticon.com/512/709/709724.png" alt="">
+                                </div>
+                            </div>
+                            <div class = "PercentageOffBox">30% off</div>
+                            <div class = "ImageBox">
+                                <img class = "GridImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-fa2939c1--Minimalist-Vitamin-C-Frontmin-1.png?v=1617300953" alt="">
+                            </div>
+                            <div class = "TitleBox">ABCD</div>
+                            <div class = "CompositionUnit">ABCD</div>
+                            <div class = "StarsBox">
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star checked"></span>
+                                <span class = "fa fa-star"></span>
+                                <div class = "reviews">ABCD</div>
+                            </div>
+                            <div class = "PriceStrickPriceBox">
+                                <div class = "PriceBox">ABCD</div>
+                                <div class = "StrickPriceBox">ABCD</div>
+                            </div>
+                            <div class = "AddToCartQunatityBox">
+                                <div class = "DecreaseBox">-
+                                </div>
+                                <div class = "ShowQuantityBox"></div>
+                                <div class = "IncreaseBox">+
+                                </div>
+                                <div class = "AddToCartButtonImage">
+                                    <div class = "AddToCartIcon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                                        </svg>
+                                    </div>
+                                    <div Class = "AddToCartButton">
+                                        <button class = "AddToCart">ADD TO CART</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                </div>
+            </div>
+            <!-----------------------------------------------ProductFilteringContainer -------------------------------------->
+        </div>
+        <div id = "pagination">
+            <div class = "pagination">
+                <p>&laquo;</p>
+                <p onclick="active1()" class = "active1">1</p>
+                <p onclick="active2()" class = "active2">2</p>
+                <p>&raquo;</p>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------ProductContainerBox ------------------------------------------------>
+    
+    <section id = "slider">
+        <div class="container">
+            <div class="subcontainer">
+                <div class="slider-wrapper">
+                    <div id = "Heading">ABCD</div>
+                    <div class="my-slider">
+    
+                        <!-- <div>
+                            <div class="slide">
+                                <div class="slide-img img-1">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii</h3>
+                                    <p>Maui</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-2">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii2</h3>
+                                    <p>Maui2</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-3">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii3</h3>
+                                    <p>Maui3</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-4">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii4</h3>
+                                    <p>Maui4</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-5">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii5</h3>
+                                    <p>Maui5</p>
+                                </div>
+                            </div>
+                        </div> -->
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div style="height: 20vw; border: 1px solid;"></div> -->
+
+    <div id = "Footercontainer">
+        <div class="footer-1">
+            <div class="footr-text">
+                <div class="text-area">
+                    <div class="logo">
+                        <a href="#link">
+                            <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/files/minimalist-logo-white-new_x20@2x.png?v=1606032887" alt="" class="a-img">
+                        </a>
+                    </div>
+                    <div class="logo-2">
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://toppng.com/uploads/preview/facebook-logo-black-11549681824hmcxyqtxds.png" alt="" class="image">
+                            </a>
+                        </div>
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://i.pinimg.com/originals/c6/2c/05/c62c055ede6aadbb1f94a555071c98b9.jpg" alt="" class="image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">ABOUT</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Our values</a><br>
+                        <a href="#link" class="link">Privacy policy</a><br>
+                        <a href="#link" class="link">Terms & conditions</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">HELP</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Knowledge</a><br>
+                        <a href="#link" class="link">FAQs</a><br>
+                        <a href="#link" class="link">Return & refund policy</a><br>
+                        <a href="#link" class="link"> Contact us</a><br>
+                        <a href="#link" class="link">Track order</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">SIGN UP AND SAVE</p>
+                    </div>
+                    <div class="mid-tex">
+                        <p class="link">
+                            Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                        </p>
+                        <div class="box1">
+                            <div class="div">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmTSdwx7aEKX5HoBTvAlYubZ9bIOpysS0gA&usqp=CAU" alt="" class="image-1">
+                            </div>
+                            <div id="div1">
+                                <input type="text" placeholder="Enter your email" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <div id="footer-logo-1">
+                    <div class="img">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/30455c9384889.57ee562a4fba0.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://flyclipart.com/thumb2/american-express-amex-billing-credit-card-payment-shop-icon-500339.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://cdn.techjockey.com/web/assets/images/techjockey/products/11424_Freecharge-logo.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://assets.mspimages.in/wp-content/uploads/2021/07/GooglePay_Lockup.max-1200x1200-1.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://yt3.ggpht.com/ytc/AKedOLSvIBDFtbGRhKxpIQvtcLCrCa75ldfziwEVgJG5=s900-c-k-c0x00ffffff-no-rj" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.pngitem.com/pimgs/m/265-2655326_mobikwik-wallet-icon-hd-png-download.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://securecdn.pymnts.com/wp-content/uploads/2020/01/Score-Card-Company-Image-22.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://aniportalimages.s3.amazonaws.com/media/details/Paytm_apr28.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://skyllme.com/wp-content/uploads/2019/10/unnamed.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.sundayguardianlive.com/wp-content/uploads/2019/10/rupay.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpc6dS_7YcmRbnP5ztdomyriQje2m4rWdXSWds18YLMbboByoGOOglpiRTb2NqeKMBZv0&usqp=CAU" alt="Na" class="image">
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <P class="text"> © 2022 Minimalist</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="scripts/concern.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>

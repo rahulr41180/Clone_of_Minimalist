@@ -1,11 +1,6 @@
 
 //------------------------------------------- Navbar start ----------------------------------------
 
-// import {navbar,searchbar} from "../components/navbar.js"
-// document.querySelector("#myOverlay").innerHTML = searchbar();
-// document.querySelector("#NavbarContainer").innerHTML = navbar();
-// document.querySelector("#CloseBtn").addEventListener("click",closeSearch);
-// document.querySelector("#SearchIcon").addEventListener("click",openSearch);
 var modal = document.querySelector("#id01");
 window.onclick = function(event)
 {
@@ -57,30 +52,6 @@ function TrackerOrder()
 // --------------------------------------------Navbar End--------------------------------------------------
 
 // --------------------------------------------Second Search Input Start ----------------------------------------
-
-let MiniMalistData = JSON.parse(localStorage.getItem("MiniMalistData"));
-let MiniMalist6ItemArray = JSON.parse(localStorage.getItem("MiniMalist6ItemArray"));
-console.log('MiniMalist6ItemArray:', MiniMalist6ItemArray)
-let MiniMalist12ItemArray = JSON.parse(localStorage.getItem("MiniMalist12ItemArray"));
-console.log('MiniMalist12ItemArray:', MiniMalist12ItemArray)
-let MiniMalist18ItemArray = JSON.parse(localStorage.getItem("MiniMalist18ItemArray"));
-console.log('MiniMalist18ItemArray:', MiniMalist18ItemArray)
-let MiniMalist22ItemArray = JSON.parse(localStorage.getItem("MiniMalist22ItemArray"));
-console.log('MiniMalist22ItemArray:', MiniMalist22ItemArray)
-let MiniMalist11ItemArray = JSON.parse(localStorage.getItem("MiniMalist11ItemArray"));
-console.log('MiniMalist11ItemArray:', MiniMalist11ItemArray)
-
-
-
-
-
-
-
-let MiniMalistNext12ItemArray = JSON.parse(localStorage.getItem("MiniMalistNext12ItemArray"));
-console.log('MiniMalistNext12ItemArray:', MiniMalistNext12ItemArray)
-console.log('MiniMalistData:', MiniMalistData);
-
-AddToCartArray = JSON.parse(localStorage.getItem("MiniMalistAddToCart"))||[];
 
 function active1()
 {
@@ -176,32 +147,6 @@ document.querySelector("#SearchInput").addEventListener("keyup",function(event)
 
 
 // ------------------------------------------ Add To Cart Start -----------------------------------------------------
-
-// let Increment = document.querySelector(".IncreaseBox");
-// Increment.addEventListener("click",IncreaseItem);
-// let Decrement = document.querySelector(".DecreaseBox");
-// Decrement.addEventListener("click",DecreaseItem);
-// let count = 0;
-// function IncreaseItem()
-// {
-    // count++;
-    // console.log(count);
-    // document.querySelector(".ShowQuantityBox").innerHTML = count;
-// }
-
-// function DecreaseItem()
-// {
-//     if(count == 0)
-//     {
-//         return;
-//     }
-//     else
-//     {
-//         count--;
-//     }
-//     console.log(count);
-//     document.querySelector(".ShowQuantityBox").innerHTML = count;
-// }
 
 // ----------------------------------------------------------- Add To Cart End -----------------------------------------------
 

@@ -50,11 +50,145 @@ document.querySelector("#ProTipsContainer").addEventListener("click",function()
 {
     window.location.href = "/ourproduct"
 })
+
+
+function ShowSomeProductDetails(element,index,count)
+{
+    console.log("ShowSomeProductDetails");
+    console.log('element:', element)
+    element = JSON.parse(element);
+    console.log('element:', element)
+    console.log('index:', index)
+    console.log('count:', count)
+    let ChangeColor = ShowSomeDetails(element,index,count);
+    Recentalyview(element);
+}
+
+
+function ShowSomeDetails(element,index,count)
+{
+    let ShowBoxContainer = document.querySelector("#id01");
+    ShowBoxContainer.style.display = "block";
+    console.log("element :",element);
+    console.log('element.Saleoff:', element.Saleoff)
+    document.querySelector(".PercentageOffBox").innerHTML = `${element.Saleoff} % Off`;
+    document.querySelector(".GridImage1").src = element.Image.Image1;
+    document.querySelector(".GridImage1").addEventListener("click",function()
+    {
+        ProductDetailsPage(element._id);
+    })
+    document.querySelector(".TitleBox").innerHTML = element.Title;
+    document.querySelector(".CompositionUnit").innerHTML = element.ChemicalUnit;
+    document.querySelector(".reviews").innerHTML = element.Reviews;
+    document.querySelector(".PriceBox").innerHTML = `₹ : ${element.Price}`;
+    document.querySelector(".StrickPriceBox").innerHTML = `₹ : ${element.StrickPrice}`;
+    document.querySelector(".ShowQuantityBox").innerHTML = count;
+    document.querySelector(".DecreaseBox").addEventListener("click",function()
+    {
+        if(element.ItemQuantity == "0")
+        {
+            return;
+        }
+        let value2 = Item1(element);
+        document.querySelector(".ShowQuantityBox").innerHTML = value2.ItemQuantity;
+        console.log("element :",element);
+    })
+    document.querySelector(".IncreaseBox").addEventListener("click",function()
+    {
+        let value4 = Item(element);
+        document.querySelector(".ShowQuantityBox").innerHTML = value4.ItemQuantity;
+        console.log("element :",element);
+    })
+    document.querySelector(".AddToCart").addEventListener("click",function()
+    {
+        console.log("AddToCart :",element)
+        // document.querySelector(".GridBox").style.backgroundColor = "rgb(207, 206, 218)"
+        Recentalyview(element);
+        AddToCartSave(element,index);
+        console.log("color :","color");
+        // color[0] = "rgb(207, 206, 218)";
+    })
+    document.querySelector("#TitleDetails").innerHTML = `<b>Title :</b> ${element.Title}`;
+    document.querySelector("#ChemicalCompositionDetails").innerHTML = `${element.ChemicalComposition}`;
+    document.querySelector("#ChemicalUnitDetails").innerHTML = element.ChemicalUnit;
+    document.querySelector("#IngredientsDetails").innerHTML = `<b>Ingrdients :</b> ${element.Ingredients}`;
+    document.querySelector("#WhatItIsHeadingDetails").innerHTML = `<b>What It Is :</b> ${element.WhatItIs.Heading}`;
+    console.log("element :",element);
+}
+function Item(element)
+{
+    element.ItemQuantity += 1;
+    return element;
+}
+function Item1(element)
+{
+    element.ItemQuantity -= 1;
+    return element;
+}
+var RecentalyViewArray = JSON.parse(localStorage.getItem("RecentalyViewProduct"))||[];
+function Recentalyview(element)
+{
+    RecentalyViewArray.push(element);
+    localStorage.setItem("RecentalyViewProduct",JSON.stringify(RecentalyViewArray));
+    // window.location.href = "index.html";
+}
+function AddToCartSave(element,index)
+{
+    AddToCartArray.push(element);
+    localStorage.setItem("MiniMalistAddToCart",JSON.stringify(AddToCartArray));
+    setTimeout(function()
+    {
+        alert("Your Product Save In Your Cart Thank You");
+    },4000);
+    console.log('AddToCartArray:', AddToCartArray)
+}
+function ProductPageData(element)
+{
+    localStorage.setItem("MinimalistProductData",JSON.stringify(element));
+    window.location.href = "product.html";
+}
+function ProductDetailsPage(product_id) 
+{
+    console.log('product_id:', product_id)
+    window.location.href = `/productdetails/${product_id}`;
+}
+
+function decreasequantity()
+{
+    if(element.ItemQuantity == "0")
+    {
+        return;
+    }
+    let value1 = Item1(element);
+    console.log("value :",value1);
+    document.querySelector(".ShowQuantityBox").innerHTML = value1.ItemQuantity;
+    // ShowQuantityBox.innerHTML = value1.ItemQuantity;
+}
+
+function increasequantity()
+{
+    let value = Item(element);
+    console.log("value :",value);
+    document.querySelector(".ShowQuantityBox").innerHTML = value.ItemQuantity;
+    
+    // ShowQuantityBox.innerHTML = value.ItemQuantity;
+}
+
+function Item(element)
+{
+    element.ItemQuantity += 1;
+    return element;
+}
+function Item1(element)
+{
+    element.ItemQuantity -= 1;
+    return element;
+}
 let MiniMalistData = JSON.parse(localStorage.getItem("MiniMalistData"));
 AddToCartArray = JSON.parse(localStorage.getItem("MiniMalistAddToCart"))||[];
 let RecentalyViewData = JSON.parse(localStorage.getItem("RecentalyViewProduct"));
 
-AppendData(MiniMalistData,0);
+// AppendData(MiniMalistData,0);
 function AppendData(Data,count)
 {
 
@@ -195,8 +329,8 @@ function AppendData(Data,count)
         })
 
 
-        document.querySelector(".main").append(GridBox)
-        GridBox.append(EachProductItemBox);
+        // document.querySelector(".main").append(GridBox)
+        GridBox.append(EachProvductItemBox);
         EachProductItemBox.append(SaleViewBox,ImageBox,TitleBox,PriceStrickPriceBox,AddToCartQunatityBox);
         // GridBox.append(SaleViewBox,PercentageOffBox,ImageBox,TitleBox,CompositionUnit,StarsBox,PriceStrickPriceBox,AddToCartQunatityBox)
         SaleViewBox.append(SaleIcon,ViewIcon)

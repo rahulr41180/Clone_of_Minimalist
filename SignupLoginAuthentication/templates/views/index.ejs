@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimalist Home</title>
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0410/9608/5665/files/Minimalist_Favicon-min_32x32.png?v=1646335623" type="image/png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +25,7 @@
     </div>
     <div id = "NavbarContainer">
         <div id = "navbar">
-            <div onclick="GoToHomePage()"  id = "LogoBox">
+            <div onclick="GoToHomePage()" id = "LogoBox">
                 <div id = "HomeIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                         <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
@@ -149,7 +150,7 @@
         <div id = "ProTipsProductContainer">
             <div class="ProTipsProductBox">
                 <div class="ProTipsImageBox">
-                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/products/MinimalistArbutin1200px-min_360x.png?v=1617903812" alt="">        
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/alpha-arbutin-2-1200--1min-1646543861869.png?v=1646543867" alt="">        
                 </div>
                 <div class="ProTipsContentBox1">Alpha Arbutin 2% + Hyaluronic Acid 1%</div>
                 <div class="ProTipsContentBox2">Reduces dark spots & evens skin tone</div>
@@ -160,7 +161,7 @@
             </div>
             <div class="ProTipsProductBox">
                 <div class="ProTipsImageBox">
-                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/products/MinimalistNiacinamide10Front-min_360x.png?v=1616562903" alt="">        
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/niacinamide-10-1200--1min-1646396156713.png?v=1646396162" alt="">        
                 </div>
                 <div class="ProTipsContentBox1">Niacinamide 10% + Zinc</div>
                 <div class="ProTipsContentBox2">Controls excess oil</div>
@@ -171,7 +172,7 @@
             </div>
             <div class="ProTipsProductBox">
                 <div class="ProTipsImageBox">
-                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/products/MinimalistVitaminCFront-min_360x.png?v=1616562980" alt="">        
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/vitamin-c-10-1200--1min-1646543861885.png?v=1646543875" alt="">        
                 </div>
                 <div class="ProTipsContentBox1">Vitamin C (Ethyl Ascorbic Acid) 10% + Acetyl Glucosamine 1%</div>
                 <div class="ProTipsContentBox2">For brighter & illuminating skin</div>
@@ -182,7 +183,7 @@
             </div>
             <div class="ProTipsProductBox">
                 <div class="ProTipsImageBox">
-                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/products/MinimalistSalicylic1200px-min_360x.png?v=1618031801" alt="">        
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/products/SalicylicAcid2_1200-1-min.png?v=1646458899" alt="">        
                 </div>
                 <div class="ProTipsContentBox1">Salicylic Acid 2%</div>
                 <div class="ProTipsContentBox2">Reduce blackheads & breakouts</div>
@@ -201,52 +202,40 @@
         </div>
         <div id = "OurProductShowContainer">
             <div class="carousel main" data-flickity='{ "autoPlay": false }'>
-                
-                <!-- <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
+                <% Products.map(function(element,index) { %>
                 <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
+                    <div class = "EachProductItemBox">
+                        <div class = "SaleViewBox">
+                            <div class="SaleIcon">Sale</div>
+                            <div onclick="ShowSomeProductDetails(`<%= JSON.stringify(element) %>`,`<%= index%>`,0)" class="ViewIcon">
+                                <img class = "ViewImage" src="https://cdn-icons-png.flaticon.com/512/709/709724.png" alt="">
+                            </div>
+                        </div>
+                        <div onclick = "ProductDetailsPage(`<%= element._id %>`)" class="ImageBox">
+                            <img class = "GridImage" src="<%= element.Image.Image1 %>" alt="">
+                        </div>
+                        <div class="TitleBox"><%= element.Title %></div>
+                        <div class="PriceStrickPriceBox">
+                            <div class="StrickPriceBox">₹ : <%= element.StrickPrice %></div>
+                            <div class="PriceBox">₹ : <%= element.Price%></div>
+                        </div>
+                        <div class="AddToCartQunatityBox">
+                            <div onclick="decreasequantity(`<%= JSON.stringify(element) %>`)" class="DecreaseBox">-</div>
+                            <div class="ShowQuantityBox">0</div>
+                            <div onclick="increasequantity(`<%= JSON.stringify(element) %>`)" class="IncreaseBox">+</div>
+                            <div class="AddToCartButtonImage">
+                                <div class="AddToCartIcon">
+                                    <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
+                                </div>
+                                <div class="AddToCartButton">
+                                    <button class="AddToCart">ADD TO CART</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-                <div class="carousel-cell item1">
-                    <div class = "OurProductLeftBox"></div>
-                    <div class = "OurProductRightBox"></div>
-                </div>
-              </div> -->
+                <% }); %>
+            </div>
         </div>
     </div>
 

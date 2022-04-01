@@ -43,14 +43,12 @@ app.set("view engine", "ejs");
 app.use(cors());
 
 const UserController = require("./controllers/register.controller");
-
 const LoginController = require("./controllers/login.controller");
-
 const OurProductController = require("./controllers/ourproduct.controller");
-
 const KnowledgeController = require("./controllers/knowledge.controller");
-
 const LogoutController = require("./controllers/logout.controller");
+const IndexController = require("./controllers/index.controller");
+const ProductDetailsController = require("./controllers/productdetails.controller");
 
 
 app.use("/register", UserController);
@@ -58,14 +56,8 @@ app.use("/login", LoginController);
 app.use("/ourproduct", OurProductController);
 app.use("/knowledge", KnowledgeController);
 app.use("/logout", LogoutController)
-
-
-app.get("/index" , (req,res) =>
-{
-    // res.send("Hello World");
-    res.render("index");
-
-})
+app.use("/index", IndexController)
+app.use("/productdetails", ProductDetailsController)
 
 app.get("/concern" , (req,res) =>
 {

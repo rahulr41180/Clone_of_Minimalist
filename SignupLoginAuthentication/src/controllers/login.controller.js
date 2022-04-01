@@ -3,6 +3,8 @@ const express = require("express");
 
 const User1 = require("../models/register.model");
 
+const OurProduct1 = require("../models/ourproduct.model");
+
 const router = express.Router();
 
 router.get("", (req,res) =>
@@ -57,7 +59,9 @@ router.post("", async(req,res) =>
         // like in knowledge page
         console.log("req.cookies.cookiefilename(jwtregister) : ", req.cookies.jwtregister);
 
-        res.status(201).render("index");
+        const Products = await OurProduct1.find().lean().exec();
+
+        res.render("index", { Products });
         // if(User.password == password)
         // {
         //     res.status(201).render("index");

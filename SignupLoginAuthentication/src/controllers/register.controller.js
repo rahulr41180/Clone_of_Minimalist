@@ -16,7 +16,8 @@ console.log(11112222);
 router.get("", (req,res) =>
 {
     // res.send("Hello World");
-    res.render("register");
+    const username = "";
+    res.render("register", {"errors" : username});
 })
 
 router.post("",
@@ -60,7 +61,14 @@ async(req,res) =>
                 return { key: error.param, message: error.msg };
             });
             
-            return res.status(400).send({ errors: newErrors });
+            let registerError = ""
+            newErrors.map(function(element)
+            {
+                registerError += element.message +", ";
+            })
+            // return res.status(400).send({ errors: newErrors, registerError });
+            // return res.status(400).send({ errors: registerError });
+            res.render('register',{ 'errors' : registerError });
             // return res.status(400).json({ errors: errors.array() });
         }
         console.log('errors1:', errors)

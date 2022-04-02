@@ -12,6 +12,6 @@ const OurProductSchema = mongoose.Schema({
 
 
 
-const OurProduct1 = mongoose.model("minimalistalldatas", OurProductSchema);
+const OurProduct1 = mongoose.model("minimalistalldata", OurProductSchema);
 
 module.exports = OurProduct1;

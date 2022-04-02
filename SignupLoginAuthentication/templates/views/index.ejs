@@ -88,9 +88,9 @@
                             <div class = "StrickPriceBox">1</div>
                         </div>
                         <div class = "AddToCartQunatityBox">
-                            <div class = "DecreaseBox">-</div>
-                            <div class = "ShowQuantityBox"></div>
-                            <div class = "IncreaseBox">+</div>
+                            <div class = "DecreaseBox" id = "DecreaseBox">-</div>
+                            <div class = "ShowQuantityBox" id = "ShowQuantityBoxInDetails"></div>
+                            <div class = "IncreaseBox" id = "IncreaseBox">+</div>
                             <div class = "AddToCartButtonImage">
                                 <div class = "AddToCartIcon">
                                     <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
@@ -220,14 +220,14 @@
                             <div class="PriceBox">₹ : <%= element.Price%></div>
                         </div>
                         <div class="AddToCartQunatityBox">
-                            <div onclick="decreasequantity(`<%= JSON.stringify(element) %>`)" class="DecreaseBox">-</div>
-                            <div class="ShowQuantityBox">0</div>
-                            <div onclick="increasequantity(`<%= JSON.stringify(element) %>`)" class="IncreaseBox">+</div>
+                            <div onclick="QuantityIncreaseDecrease(`<%= JSON.stringify(element) %>`, false)" class="DecreaseBox">-</div>
+                            <div class="ShowQuantityBox" id = "ShowQuantityBoxInHome">0</div>
+                            <div onclick="QuantityIncreaseDecrease(`<%= JSON.stringify(element) %>`, true)" class="IncreaseBox">+</div>
                             <div class="AddToCartButtonImage">
-                                <div class="AddToCartIcon">
+                                <div onclick= "" class="AddToCartIcon">
                                     <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
                                 </div>
-                                <div class="AddToCartButton">
+                                <div onclick="AddToCart(`<%= JSON.stringify(element) %>`)" class="AddToCartButton">
                                     <button class="AddToCart">ADD TO CART</button>
                                 </div>
                             </div>
@@ -493,4 +493,5 @@
 </html>
 
 <script src="scripts/index.js"></script>
+<script src="scripts/cart.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

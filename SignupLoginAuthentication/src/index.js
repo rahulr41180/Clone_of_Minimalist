@@ -49,15 +49,17 @@ const KnowledgeController = require("./controllers/knowledge.controller");
 const LogoutController = require("./controllers/logout.controller");
 const IndexController = require("./controllers/index.controller");
 const ProductDetailsController = require("./controllers/productdetails.controller");
+const CartController = require("./controllers/cart.controller");
 
 
 app.use("/register", UserController);
 app.use("/login", LoginController);
 app.use("/ourproduct", OurProductController);
 app.use("/knowledge", KnowledgeController);
-app.use("/logout", LogoutController)
-app.use("/index", IndexController)
-app.use("/productdetails", ProductDetailsController)
+app.use("/logout", LogoutController);
+app.use("/index", IndexController);
+app.use("/productdetails", ProductDetailsController);
+app.use("/cart", CartController);
 
 app.get("/concern" , (req,res) =>
 {

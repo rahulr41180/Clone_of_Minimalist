@@ -82,31 +82,34 @@ function ShowSomeDetails(element,index,count)
     document.querySelector(".reviews").innerHTML = element.Reviews;
     document.querySelector(".PriceBox").innerHTML = `₹ : ${element.Price}`;
     document.querySelector(".StrickPriceBox").innerHTML = `₹ : ${element.StrickPrice}`;
-    document.querySelector(".ShowQuantityBox").innerHTML = count;
-    document.querySelector(".DecreaseBox").addEventListener("click",function()
+    document.querySelector("#ShowQuantityBoxInDetails").innerHTML = count;
+    document.querySelector("#DecreaseBox").addEventListener("click",function()
     {
-        if(element.ItemQuantity == "0")
+        if(element.ItemQuantity == 0)
         {
             return;
         }
         let value2 = Item1(element);
-        document.querySelector(".ShowQuantityBox").innerHTML = value2.ItemQuantity;
+        document.querySelector("#ShowQuantityBoxInDetails").innerHTML = value2.ItemQuantity;
         console.log("element :",element);
     })
-    document.querySelector(".IncreaseBox").addEventListener("click",function()
+    document.querySelector("#IncreaseBox").addEventListener("click",function()
     {
         let value4 = Item(element);
-        document.querySelector(".ShowQuantityBox").innerHTML = value4.ItemQuantity;
+        document.querySelector("#ShowQuantityBoxInDetails").innerHTML = value4.ItemQuantity;
         console.log("element :",element);
     })
     document.querySelector(".AddToCart").addEventListener("click",function()
     {
-        console.log("AddToCart :",element)
-        // document.querySelector(".GridBox").style.backgroundColor = "rgb(207, 206, 218)"
-        Recentalyview(element);
-        AddToCartSave(element,index);
-        console.log("color :","color");
-        // color[0] = "rgb(207, 206, 218)";
+        console.log('element:', element)
+        AddToCartFromProductDetails(element);
+
+        // console.log("AddToCart :",element)
+        // // document.querySelector(".GridBox").style.backgroundColor = "rgb(207, 206, 218)"
+        // Recentalyview(element);
+        // AddToCartSave(element,index);
+        // console.log("color :","color");
+        // // color[0] = "rgb(207, 206, 218)";
     })
     document.querySelector("#TitleDetails").innerHTML = `<b>Title :</b> ${element.Title}`;
     document.querySelector("#ChemicalCompositionDetails").innerHTML = `${element.ChemicalComposition}`;
@@ -115,6 +118,83 @@ function ShowSomeDetails(element,index,count)
     document.querySelector("#WhatItIsHeadingDetails").innerHTML = `<b>What It Is :</b> ${element.WhatItIs.Heading}`;
     console.log("element :",element);
 }
+
+async function AddToCartFromProductDetails(product) 
+{
+
+    // var product = JSON.parse(product);
+    var productId = product._id;
+    fetch("/cart/allproduct")
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => 
+    {
+        var result = findproduct(res, productId);
+        if (!result) // --> false
+        {
+          post_product(productId);
+        }
+        else // --> true
+        {
+          patch_product(result);
+        }
+    });
+}
+
+function findproduct(Carts, id) 
+{
+    for (var i = 0; i < Carts.length; i++) 
+    {
+      if (Carts[i].productId == id) 
+      {
+        return [Carts[i]._id, Carts[i].quantity];
+      }
+    }
+    return false;
+}
+
+async function post_product(productId) 
+{
+    const result = await fetch("/cart", 
+    {
+      method: "POST",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productId,
+      }),
+    }).then((res) => res.json());
+    // alert("post method");
+    window.location.reload();
+}
+
+function patch_product(Cart) 
+{
+    var quantity = Cart[1] + 1;
+    fetch("/cart/" + Cart[0], 
+    {
+      method: "PATCH",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity,
+      }),
+    })
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => console.log(res));
+
+    window.location.reload();
+}
+
 function Item(element)
 {
     element.ItemQuantity += 1;
@@ -153,37 +233,73 @@ function ProductDetailsPage(product_id)
     window.location.href = `/productdetails/${product_id}`;
 }
 
-function decreasequantity()
+function QuantityIncreaseDecrease(element,boolean)
 {
-    if(element.ItemQuantity == "0")
+    element = JSON.parse(element);
+    if(boolean === true)
     {
-        return;
+        console.log(boolean);
+        let value = ItemFromHomeForIncrease(element);
+        console.log("value :",value);
+        console.log('value.ItemQuantity:', value.ItemQuantity)
+        // document.querySelector("#ShowQuantityBoxInHome").innerHTML = value.ItemQuantity;
+        document.querySelector("#ShowQuantityBoxInHome").innerHTML = "Hello";
+        // console.log('document.querySelector(".ShowQuantityBox").innerHTML:', document.querySelector(".ShowQuantityBox").innerHTML)
     }
-    let value1 = Item1(element);
-    console.log("value :",value1);
-    document.querySelector(".ShowQuantityBox").innerHTML = value1.ItemQuantity;
-    // ShowQuantityBox.innerHTML = value1.ItemQuantity;
+    if(boolean === false)
+    {
+        console.log(boolean);
+        console.log("false");
+        if(element.ItemQuantity == 0)
+        {
+            return;
+        }
+        let value1 = ItemFromHomeForDecrease(element);
+        console.log("value :",value1);
+        console.log('value1.ItemQuantity:', value1.ItemQuantity)
+        // document.querySelector(".ShowQuantityBox").innerHTML = value1.ItemQuantity;
+        document.querySelector("#ShowQuantityBoxInHome").innerHTML = "World";
+        // ShowQuantityBox.innerHTML = value1.ItemQuantity;
+    }
+
+    function ItemFromHomeForIncrease(element)
+    {
+        element.ItemQuantity += 1;
+        console.log('element.ItemQuantity:', element.ItemQuantity)
+        return element;
+    }
+    function ItemFromHomeForDecrease(element)
+    {
+        element.ItemQuantity -= 1;
+        console.log('element.ItemQuantity:', element.ItemQuantity)
+        return element;
+    }
 }
 
-function increasequantity()
-{
-    let value = Item(element);
-    console.log("value :",value);
-    document.querySelector(".ShowQuantityBox").innerHTML = value.ItemQuantity;
+// function decreasequantity(element)
+// {
+//     element = JSON.parse(element);
+    // if(element.ItemQuantity == "0")
+    // {
+    //     return;
+    // }
+    // let value1 = ItemFromHomeForDecrease(element);
+    // console.log("value :",value1);
+    // console.log('value1.ItemQuantity:', value1.ItemQuantity)
+    // document.querySelector(".ShowQuantityBox").innerHTML = value1.ItemQuantity;
+    // // ShowQuantityBox.innerHTML = value1.ItemQuantity;
+// }
+
+// function increasequantity(element)
+// {
+    // element = JSON.parse(element);
+    // let value = ItemFromHomeForIncrease(element);
+    // console.log("value :",value);
+    // console.log('value.ItemQuantity:', value.ItemQuantity)
+    // document.querySelector(".ShowQuantityBox").innerHTML = value.ItemQuantity;
     
-    // ShowQuantityBox.innerHTML = value.ItemQuantity;
-}
-
-function Item(element)
-{
-    element.ItemQuantity += 1;
-    return element;
-}
-function Item1(element)
-{
-    element.ItemQuantity -= 1;
-    return element;
-}
+//     // ShowQuantityBox.innerHTML = value.ItemQuantity;
+// }
 let MiniMalistData = JSON.parse(localStorage.getItem("MiniMalistData"));
 AddToCartArray = JSON.parse(localStorage.getItem("MiniMalistAddToCart"))||[];
 let RecentalyViewData = JSON.parse(localStorage.getItem("RecentalyViewProduct"));

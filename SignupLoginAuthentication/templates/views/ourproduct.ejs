@@ -1672,7 +1672,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                         <div id = "Vendor">Vendor</div>
                     </div>
                     <div id = "VendorFilterBox">
-                        <fieldset id = "VendorFieldset" onclick="CollectionFiltering()">
+                        <fieldset id = "VendorFieldset" onclick="VendorFiltering()">
                             <legend>Vendor</legend>
                                 <div>
                                     <input class = "VendorInput" type="checkbox" id = "Dryskin" value = "Dryskin">
@@ -1750,7 +1750,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                         <div id = "Tags">Tags</div>
                     </div>
                     <div id = "TagsFilterBox">
-                        <fieldset id = "TagsFieldset" onclick="CollectionFiltering()">
+                        <fieldset id = "TagsFieldset" onclick="TagsFiltering()">
                             <legend>Tags</legend>
                             <div>
                                 <input class = "TagsInput" type="checkbox" id = "Acnemarks" value = "Acnemarks">
@@ -1848,7 +1848,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                         <div id = "Discount">Discount</div>
                     </div>
                     <div id = "DiscountFilterBox">
-                        <fieldset id = "DiscountFieldset" onclick="CollectionFiltering()">
+                        <fieldset id = "DiscountFieldset" onclick="DiscountFiltering()">
                             <legend>Discount</legend>
                             <div>
                                 <input class = "DiscountInput" type="checkbox" id = "5% - 10%" value = "5%10%">
@@ -1913,7 +1913,7 @@ input[type="range"]:active::-webkit-slider-thumb{
 
                     <!--  -->
                     <div id = "TotalItemSortingContainer">
-                        <div id = "TotalItem">Item 23</div>
+                        <div id = "TotalItem">Items : <%= OurProducts.length %></div>
                         <div id = "ItemShow">
                             <select name="" id="ShowItems" onchange="ShowSorting()">
                                 <option value="SHOW">SHOW</option>
@@ -2202,7 +2202,7 @@ function closeSearch()
 }
 function OurProductPage()
 {
-    window.location.href = "/ourproduct";
+    window.location.href = "/ourproduct/mains";
 }
 function GoToHomePage()
 {
@@ -2402,27 +2402,27 @@ function FirstSorting()
     console.log('value4:', value)
     if(value == "SortProduct")
     {
-        window.location.href = `/ourproduct/?Sorting=SortProduct`;
+        window.location.href = `/ourproduct/sort/?Sorting=SortProduct`;
     }
     else if (value == "AlphabeticallyAZ")
     {
-        window.location.href = `/ourproduct/?Sorting=AlphabeticallyAZ`;
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyAZ`;
     }
     else if (value == "AlphabeticallyZA")
     {
-        window.location.href = `/ourproduct/?Sorting=AlphabeticallyZA`;
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyZA`;
     }
     else if (value == "Pricelowtohigh")
     {
-        window.location.href = `/ourproduct/?Sorting=Procelowtohigh`;
+        window.location.href = `/ourproduct/sort/?Sorting=Pricelowtohigh`;
     }
     else if (value == "Pricehightolow")
     {
-        window.location.href = `/ourproduct/?Sorting=Pricehightolow`;
+        window.location.href = `/ourproduct/sort/?Sorting=Pricehightolow`;
     }
     else if (value == "Datenewtoold")
     {
-        window.location.href = `/ourproduct/?Sorting=Datenewtoold`;
+        window.location.href = `/ourproduct/sort/?Sorting=Datenewtoold`;
     }
 }
 
@@ -2432,31 +2432,31 @@ function SecondSorting()
     console.log('value2:', value2)
     if(value2 == "SortProduct")
     {
-        window.location.href = `/ourproduct/?Sorting=SortProduct`;
+        window.location.href = `/ourproduct/sort/?Sorting=SortProduct`;
     }
     else if (value2 == "AlphabeticallyAZ")
     {
-        window.location.href = `/ourproduct/?Sorting=AlphabeticallyAZ`;
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyAZ`;
     }
     else if (value2 == "AlphabeticallyZA")
     {
-        window.location.href = `/ourproduct/?Sorting=AlphabeticallyZA`;
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyZA`;
     }
-    else if (value2 == "Procelowtohigh")
+    else if (value2 == "Pricelowtohigh")
     {
-        window.location.href = `/ourproduct/?Sorting=Procelowtohigh`;
+        window.location.href = `/ourproduct/sort/?Sorting=Pricelowtohigh`;
     }
     else if (value2 == "Pricehightolow")
     {
-        window.location.href = `/ourproduct/?Sorting=Pricehightolow`;
+        window.location.href = `/ourproduct/sort/?Sorting=Pricehightolow`;
     }
     else if (value2 == "Datenewtoold")
     {
-        window.location.href = `/ourproduct/?Sorting=Datenewtoold`;
+        window.location.href = `/ourproduct/sort/?Sorting=Datenewtoold`;
     }
     else if (value2 == "Saleoff")
     {
-        window.location.href = `/ourproduct/?Sorting=Saleoff`;
+        window.location.href = `/ourproduct/sort/?Sorting=Saleoff`;
     }
 }
 function ShowSorting()
@@ -2466,7 +2466,367 @@ function ShowSorting()
     console.log('ShowItem:', ShowItem)
     if(ShowItem == 6)
     {
-        window.location.href = `/ourproduct/?`;
+        window.location.href = `/ourproduct/items/?item=6`;
     }
+    else if(ShowItem == 12)
+    {
+        
+        window.location.href = `/ourproduct/items/?item=12`;
+    }
+    else if(ShowItem == 18)
+    {
+        
+        window.location.href = `/ourproduct/items/?item=18`;
+    }
+    else if(ShowItem == 22)
+    {
+        
+        window.location.href = `/ourproduct/items/?item=22`;
+    }
+}
+let arrow = false;
+ShowCollectionFiltering()
+document.querySelector("#UpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#UpDownArrowBox").innerHTML = "";
+    if(arrow == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#UpDownArrowBox").append(UpArrow);
+        arrow = false;
+        ShowCollectionFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#UpDownArrowBox").append(DownArrow);
+        arrow = true;
+        ShowCollectionFiltering()
+    }
+})
+function ShowCollectionFiltering()
+{
+    if(arrow == false)
+    {
+        document.querySelector("#CollectionFilterBox").style.padding = ".5vw"
+        document.querySelector("#CollectionFilterBox").style.opacity = 1;
+        // document.querySelector("#CollectionFilterBox").style.width = "97%";
+        document.querySelector("#CollectionFilterBox").style.height = "19.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#CollectionFilterBox").style.padding = "0vw";
+        // document.querySelector("#CollectionFilterBox").style.width = "97%";
+        
+        document.querySelector("#CollectionFilterBox").style.opacity = 0;
+        document.querySelector("#CollectionFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow);
+}
+let arrow1 = false;
+ShowVendorFiltering()
+document.querySelector("#VendorUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#VendorUpDownArrowBox").innerHTML = "";
+    if(arrow1 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#VendorUpDownArrowBox").append(UpArrow);
+        arrow1 = false;
+        ShowVendorFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#VendorUpDownArrowBox").append(DownArrow);
+        arrow1 = true;
+        ShowVendorFiltering()
+    }
+})
+function ShowVendorFiltering()
+{
+    if(arrow1 == false)
+    {
+        document.querySelector("#VendorFilterBox").style.padding = ".5vw"
+        document.querySelector("#VendorFilterBox").style.opacity = 1;
+        // document.querySelector("#VendorFilterBox").style.width = "97%";
+        document.querySelector("#VendorFilterBox").style.height = "19.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#VendorFilterBox").style.padding = "0vw";
+        // document.querySelector("#VendorFilterBox").style.width = "97%";
+        
+        document.querySelector("#VendorFilterBox").style.opacity = 0;
+        document.querySelector("#VendorFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow1);
+}
+
+let arrow2 = false;
+ShowTagsFiltering()
+document.querySelector("#TagsUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#TagsUpDownArrowBox").innerHTML = "";
+    if(arrow2 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#TagsUpDownArrowBox").append(UpArrow);
+        arrow2 = false;
+        ShowTagsFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#TagsUpDownArrowBox").append(DownArrow);
+        arrow2 = true;
+        ShowTagsFiltering()
+    }
+})
+function ShowTagsFiltering()
+{
+    if(arrow2 == false)
+    {
+        document.querySelector("#TagsFilterBox").style.padding = ".5vw"
+        document.querySelector("#TagsFilterBox").style.opacity = 1;
+        // document.querySelector("#TagsFilterBox").style.width = "97%";
+        document.querySelector("#TagsFilterBox").style.height = "19.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#TagsFilterBox").style.padding = "0vw";
+        // document.querySelector("#TagsFilterBox").style.width = "97%";
+        
+        document.querySelector("#TagsFilterBox").style.opacity = 0;
+        document.querySelector("#TagsFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow2);
+}
+let arrow3 = false;
+ShowDiscountFiltering()
+document.querySelector("#DiscountUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#DiscountUpDownArrowBox").innerHTML = "";
+    if(arrow3 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#DiscountUpDownArrowBox").append(UpArrow);
+        arrow3 = false;
+        ShowDiscountFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#DiscountUpDownArrowBox").append(DownArrow);
+        arrow3 = true;
+        ShowDiscountFiltering()
+    }
+})
+function ShowDiscountFiltering()
+{
+    if(arrow3 == false)
+    {
+        document.querySelector("#DiscountFilterBox").style.padding = ".5vw"
+        document.querySelector("#DiscountFilterBox").style.opacity = 1;
+        // document.querySelector("#DiscountFilterBox").style.width = "97%";
+        document.querySelector("#DiscountFilterBox").style.height = "10.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#DiscountFilterBox").style.padding = "0vw";
+        // document.querySelector("#DiscountFilterBox").style.width = "97%";
+        
+        document.querySelector("#DiscountFilterBox").style.opacity = 0;
+        document.querySelector("#DiscountFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow3);
+}
+
+let arrow4 = false;
+ShowPriceFiltering()
+document.querySelector("#PriceUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#PriceUpDownArrowBox").innerHTML = "";
+    if(arrow4 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#PriceUpDownArrowBox").append(UpArrow);
+        arrow4 = false;
+        ShowPriceFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#PriceUpDownArrowBox").append(DownArrow);
+        arrow4 = true;
+        ShowPriceFiltering()
+    }
+})
+function ShowPriceFiltering()
+{
+    if(arrow4 == false)
+    {
+        document.querySelector("#PriceFilterBox").style.padding = ".5vw"
+        document.querySelector("#PriceFilterBox").style.opacity = 1;
+        // document.querySelector("#PriceFilterBox").style.width = "97%";
+        document.querySelector("#PriceFilterBox").style.height = "10.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#PriceFilterBox").style.padding = "0vw";
+        // document.querySelector("#PriceFilterBox").style.width = "97%";
+        
+        document.querySelector("#PriceFilterBox").style.opacity = 0;
+        document.querySelector("#PriceFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow4);
+}
+
+function CollectionFiltering()
+{
+    let CollectionFilteringArray = "";
+    var parent = document.querySelector("#CollectionFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        CollectionFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', CollectionFilteringArray);
+
+    window.location.href = `/ourproduct/collectionfilter/?colletion=${CollectionFilteringArray}`;
+}
+
+function VendorFiltering()
+{
+    let VendorFilteringArray = "";
+    var parent = document.querySelector("#VendorFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        VendorFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', VendorFilteringArray);
+
+    window.location.href = `/ourproduct/Vendorfilter/?Vendor=${VendorFilteringArray}`;
+}
+
+function TagsFiltering()
+{
+    let TagsFilteringArray = "";
+    var parent = document.querySelector("#TagsFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        TagsFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', TagsFilteringArray);
+
+    window.location.href = `/ourproduct/Tagsfilter/?Tags=${TagsFilteringArray}`;
+}
+
+function DiscountFiltering()
+{
+    let DiscountFilteringArray = "";
+    var parent = document.querySelector("#DiscountFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        DiscountFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', DiscountFilteringArray);
+
+    window.location.href = `/ourproduct/Discountfilter/?Discount=${DiscountFilteringArray}`;
 }
 </script>

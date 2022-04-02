@@ -1088,7 +1088,7 @@ body
                                 </div>
                             </div>
                         </div>
-                            <button>Add to cart</button>
+                            <button onclick="AddToCart(`<%= JSON.stringify(Products) %>`)" >Add to cart</button>
                     </div>
                     <div id="UseFor">
                         <p>Weekend Exfoliating Facial</p>
@@ -1572,6 +1572,80 @@ body
 
 <script>
 
+async function AddToCart(product) 
+{
+    var product = JSON.parse(product);
+    var productId = product._id;
+    fetch("/cart/allproduct")
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => 
+    {
+        var result = findproduct(res, productId);
+        if (!result) // --> false
+        {
+          post_product(productId);
+        }
+        else // --> true
+        {
+          patch_product(result);
+        }
+    });
+}
+
+function findproduct(Carts, id) 
+{
+    for (var i = 0; i < Carts.length; i++) 
+    {
+      if (Carts[i].productId == id) 
+      {
+        return [Carts[i]._id, Carts[i].quantity];
+      }
+    }
+    return false;
+}
+
+async function post_product(productId) 
+{
+    const result = await fetch("/cart", 
+    {
+      method: "POST",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productId,
+      }),
+    }).then((res) => res.json());
+    // alert("post method");
+    window.location.reload();
+}
+
+function patch_product(Cart) 
+{
+    var quantity = Cart[1] + 1;
+    fetch("/cart/" + Cart[0], 
+    {
+      method: "PATCH",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity,
+      }),
+    })
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => console.log(res));
+
+    window.location.reload();
+}
 
 
     

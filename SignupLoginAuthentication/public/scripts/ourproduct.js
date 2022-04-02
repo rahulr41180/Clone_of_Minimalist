@@ -2990,6 +2990,7 @@ function ShowCollectionFiltering()
 
 // -------------------------------------------Vendor Filtering Start -----------------------
 
+
 let arrow1 = false;
 ShowVendorFiltering()
 document.querySelector("#VendorUpDownArrowBox").addEventListener("click",function()

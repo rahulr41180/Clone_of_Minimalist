@@ -64,7 +64,7 @@ All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 
 ### <u>A short clip which will give Project Overview</u>
 
-google doc link
+https://drive.google.com/file/d/13RbV_cJWwRp8MebuPz4uKIAyWdFJ9FWR/view?usp=sharing
 
 <div style='page-break-after: always'></div>
 

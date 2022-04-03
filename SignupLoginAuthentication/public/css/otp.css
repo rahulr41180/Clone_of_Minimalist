@@ -1,0 +1,114 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Licorice&family=Outfit:wght@300;400&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit";
+  font-weight: 300;
+  box-sizing: border-box;
+  background-color: rgba(131, 194, 37, 0.281);
+}
+
+
+img {
+  cursor: pointer;
+}
+
+.bblogo {
+  width: 50%;
+  /* margin: 0 auto; */
+  margin: auto;
+  border: 1px solid red;
+  /* padding: 0px; */
+  
+  padding: .5vw;
+  margin-bottom: 2vw;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+  /* box-shadow: rgba(96, 146, 30, 0.199) 0px 0px 10px; */
+}
+.bblogo img {
+  width: 100%;
+  margin: 0px;
+  height: 4vw;
+}
+
+/* -------------------------- otp-container-------------------- */
+#otp-container {
+  width: 20%;
+  border: 1px solid #f3f3f3;
+  background-color: white;
+  border-radius: 20px;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: rgba(43, 63, 13, 0.397) 0px 5px 6px -3px,
+    rgba(48, 71, 13, 0.418) 0px 4px 6px -2px;
+}
+#otp-container > span {
+  font-size: 12px;
+}
+h1 {
+  margin-top: 0px;
+  padding: 0px;
+  color: rgb(132, 194, 37);
+}
+
+input {
+  height: 2vw;
+  width: 90%;
+  margin: 0.5vw auto 0.9vw auto;
+  height: 2vw;
+  padding: 0.1vw 0;
+  line-height: normal;
+  font-size: 1.1vw;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(132, 194, 37);
+}
+
+#btn {
+  width: 95%;
+  height: 3vw;
+  margin: 1.3vw auto;
+  background-color: rgb(132, 194, 37);
+  color: white;
+  border: 0.2vw solid rgb(151, 224, 40);
+  border-radius: 5px;
+  font-weight: 600;
+  transition: ease-in-out 0.3s;
+}
+#btn:hover {
+  background-color: rgb(102, 160, 15);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+#form
+{
+    border: 0px solid;
+    width: 96%;
+}
+u {
+  color: rgba(0, 130, 130, 0.884);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+@media only screen and (max-width: 1283px) {
+  #otp-container {
+    width: 30%;
+    min-width: 300px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #otp-container {
+    min-width: 300px;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  #otp-container {
+    width: 70%;
+  }
+}

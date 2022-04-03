@@ -123,7 +123,7 @@
     <%} else {%>
         <div id="cartempty">
             <h1>Your Shopping Cart Is Empty</h1>
-            <a style="font-size: 1.5vw;" href="/ourproduct">Please Add Some Product</a>
+            <a style="font-size: 1.5vw;" href="/ourproduct/mains">Please Add Some Product</a>
         </div>
     <%}%>
     <div id = "Footercontainer">
@@ -321,5 +321,9 @@ function TrackerOrder()
 function Update()
 {
     window.location.href = "/cart";
+}
+function CheckOut()
+{
+    window.location.href = "/checkoutpage"
 }
 </script>

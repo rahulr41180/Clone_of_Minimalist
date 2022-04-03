@@ -34,7 +34,7 @@ const authentication = async(req,res,next) =>
         console.log('error.message:', error.message)
         // res.status(500).send({message : error.message});
         let Errors;
-        res.render("login", { Errors });
+        return res.render("login", { Errors });
     }
 }
 

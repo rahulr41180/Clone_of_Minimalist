@@ -619,16 +619,11 @@ body
     
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
+    /* background-color: black; */
+    /* color: white; */
     font-size: 2vw;
     cursor: pointer;
     font-weight: bold;
-}
-.DecreaseBox:hover
-{
-    background-color: white;
-    color: black;
 }
 .ShowQuantityBox
 {
@@ -648,16 +643,11 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
+    /* background-color: black; */
+    /* color: white; */
     font-size: 2vw;
     cursor: pointer;
     font-weight: bold;
-}
-.IncreaseBox:hover
-{
-    background-color: white;
-    color: black;
 }
 .AddToCartButtonImage
 {
@@ -666,11 +656,6 @@ body
     height: 2.2vw;
     margin-left: .5vw;
     display: flex;
-}
-.increment:hover
-{
-    background-color: black;
-    color: white;
 }
 .AddToCartIcon
 {

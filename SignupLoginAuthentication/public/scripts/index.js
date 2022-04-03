@@ -60,12 +60,12 @@ function ShowSomeProductDetails(element,index,count)
     console.log('element:', element)
     console.log('index:', index)
     console.log('count:', count)
-    let ChangeColor = ShowSomeDetails(element,index,count);
+    let ChangeColor = ShowSomeDetails(element,index);
     Recentalyview(element);
 }
 
 
-function ShowSomeDetails(element,index,count)
+function ShowSomeDetails(element,index)
 {
     let ShowBoxContainer = document.querySelector("#id01");
     ShowBoxContainer.style.display = "block";
@@ -82,7 +82,6 @@ function ShowSomeDetails(element,index,count)
     document.querySelector(".reviews").innerHTML = element.Reviews;
     document.querySelector(".PriceBox").innerHTML = `₹ : ${element.Price}`;
     document.querySelector(".StrickPriceBox").innerHTML = `₹ : ${element.StrickPrice}`;
-    document.querySelector("#ShowQuantityBoxInDetails").innerHTML = count;
     document.querySelector("#DecreaseBox").addEventListener("click",function()
     {
         if(element.ItemQuantity == 0)

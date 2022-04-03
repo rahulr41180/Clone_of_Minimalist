@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/ourproduct.css"> -->
     <style>
         
 body
@@ -1569,9 +1568,9 @@ input[type="range"]:active::-webkit-slider-thumb{
                             <div class = "PriceBox" id = "PriceBox">1</div>
                         </div>
                         <div class = "AddToCartQunatityBox">
-                            <div class = "DecreaseBox" id = "DecreaseBox">-</div>
+                            <div class = "DecreaseBox" id = "DecreaseBox"></div>
                             <div class = "ShowQuantityBox" id = "ShowQuantityBoxInDetails"></div>
-                            <div class = "IncreaseBox" id = "IncreaseBox">+</div>
+                            <div class = "IncreaseBox" id = "IncreaseBox"></div>
                             <div class = "AddToCartButtonImage">
                                 <div class = "AddToCartIcon">
                                     <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
@@ -1965,9 +1964,9 @@ input[type="range"]:active::-webkit-slider-thumb{
                                     <div class = "PriceBox"><%= element.Price %></div>
                                 </div>
                                 <div class = "AddToCartQunatityBox">
-                                    <div class = "DecreaseBox">-</div>
-                                    <div class = "ShowQuantityBox">0</div>
-                                    <div class = "IncreaseBox">+</div>
+                                    <div class = "DecreaseBox"></div>
+                                    <div class = "ShowQuantityBox"></div>
+                                    <div class = "IncreaseBox"></div>
                                     <div class = "AddToCartButtonImage">
                                         <div class = "AddToCartIcon">
                                             <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
@@ -2239,10 +2238,10 @@ function ShowSomeProductDetails(element,index,count)
     console.log('element:', element)
     console.log('index:', index)
     console.log('count:', count)
-    let ChangeColor = ShowSomeDetails(element,index,count);
+    let ChangeColor = ShowSomeDetails(element,index);
     // Recentalyview(element);
 }
-function ShowSomeDetails(element,index,count)
+function ShowSomeDetails(element,index)
 {
     let ShowBoxContainer = document.querySelector("#id01");
     ShowBoxContainer.style.display = "block";
@@ -2259,7 +2258,6 @@ function ShowSomeDetails(element,index,count)
     document.querySelector("#reviews").innerHTML = element.Reviews;
     document.querySelector("#PriceBox").innerHTML = `₹ : ${element.Price}`;
     document.querySelector("#StrickPriceBox").innerHTML = `₹ : ${element.StrickPrice}`;
-    document.querySelector("#ShowQuantityBoxInDetails").innerHTML = count;
     document.querySelector("#DecreaseBox").addEventListener("click",function()
     {
         if(element.ItemQuantity == 0)

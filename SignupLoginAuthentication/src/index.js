@@ -53,6 +53,8 @@ const IndexController = require("./controllers/index.controller");
 const ProductDetailsController = require("./controllers/productdetails.controller");
 const CartController = require("./controllers/cart.controller");
 const UserProfileController = require("./controllers/userProfile.controller");
+const CheckoutpageController = require("./controllers/checkoutpage.controller");
+const PaymentController = require("./controllers/payment.controller");
 
 
 app.use("/register", UserController);
@@ -64,12 +66,27 @@ app.use("/index", IndexController);
 app.use("/productdetails", ProductDetailsController);
 app.use("/cart", CartController);
 app.use("/userprofile", UserProfileController);
+app.use("/checkoutpage", CheckoutpageController);
+app.use("/payment", PaymentController);
 
 app.get("/concern", (req,res) =>
 {
     // res.send("Hello World");
     res.render("concern");
 })
+
+app.get("/otp", (req,res) =>
+{
+    // res.send("Hello World");
+    res.render("otp");
+})
+
+app.get("/success", (req,res) =>
+{
+    // res.send("Hello World");
+    res.render("success");
+})
+
 
 app.get("/tracker",authentication, (req,res) =>
 {

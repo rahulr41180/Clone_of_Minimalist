@@ -16,7 +16,7 @@ Deployed using Netlify
 Clone the project
 
 ```
-git clone ----- git link -----
+https://github.com/rahulr41180/Clone_of_Minimalist
 ```
 
 Install npm packages

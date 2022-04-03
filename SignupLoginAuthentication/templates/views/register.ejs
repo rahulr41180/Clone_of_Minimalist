@@ -61,7 +61,12 @@
                 <img id = "closeimage" src="https://as1.ftcdn.net/v2/jpg/01/45/20/02/1000_F_145200273_450ViYipr5uU3WIwqzwjsRDHYTMcUH9P.jpg" alt="">
             </a>
         </div>
-        <p><%= errors %></p>
+        <% if(Errors) {%>
+            <div class="alert alert-success alert-dismissible ErrorBox">
+                <strong>Error !</strong> <%= Errors %>
+                <a href="/register" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            </div>
+        <% } %>
         <form action="/register" method="POST">
 
             <p class = "inputheading" >Full Name</p>

@@ -32,7 +32,7 @@ function LoginSignUpPage()
 }
 function concernpage()
 {
-    window.location.href = "/logout";
+    window.location.href = "/concern";
 }
 function knowleadgepage()
 {
@@ -40,7 +40,7 @@ function knowleadgepage()
 }
 function TrackerOrder()
 {
-    window.location.href = "/track";
+    window.location.href = "/tracker";
 }
 document.querySelector(".ProTipsImage").addEventListener("click",function()
 {

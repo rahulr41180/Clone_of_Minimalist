@@ -223,5 +223,5 @@ function knowleadgepage()
 }
 function TrackerOrder()
 {
-    window.location.href = "/track";
+    window.location.href = "/tracker";
 }

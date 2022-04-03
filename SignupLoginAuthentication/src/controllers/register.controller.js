@@ -16,8 +16,8 @@ console.log(11112222);
 router.get("", (req,res) =>
 {
     // res.send("Hello World");
-    const username = "";
-    res.render("register", {"errors" : username});
+    var Errors;
+    res.render("register", { Errors });
 })
 
 router.post("",
@@ -51,28 +51,36 @@ async(req,res) =>
     try
     {
 
+        var Errors;
         const errors = validationResult(req);
         if (!errors.isEmpty()) 
         {
-            let newErrors;
-            newErrors = errors.array().map((error) => 
+            // console.log('errors:', errors)
+            // let newErrors = [];
+            // newErrors = errors.array().map((error) => 
+            // {
+            //     console.log("error :", error);
+            //     console.log('newErrors:', newErrors)
+            //     // return error.msg;
+            //     // newErrors.push(error.param);
+            //     // newErrors.push(error.msg);
+            //     return { key: error.param, message: error.msg };
+            // });
+            AllErrors = errors.errors;
+            console.log('AllErrors:', AllErrors)
+            Errors = ""
+            AllErrors.map(function(element)
             {
-                console.log("error :", error);
-                return { key: error.param, message: error.msg };
-            });
-            
-            let registerError = ""
-            newErrors.map(function(element)
-            {
-                registerError += element.message +", ";
+                Errors += element.param + " : " + element.msg +", ";
             })
+            console.log('Errors:', Errors)
             // return res.status(400).send({ errors: newErrors, registerError });
             // return res.status(400).send({ errors: registerError });
-            res.render('register',{ 'errors' : registerError });
+            return res.render('register', { Errors });
             // return res.status(400).json({ errors: errors.array() });
         }
-        console.log('errors1:', errors)
 
+        console.log('errors1:', errors)
         const password = req.body.password;
         const confirmpassword = req.body.confirmpassword;
         if(password == confirmpassword)
@@ -87,9 +95,12 @@ async(req,res) =>
 
             let UserFind = await User1.findOne({ email: req.body.email }).lean().exec();
 
-            if (UserFind) 
+            if(UserFind) 
             {
-                return res.status(500).send({ message: "Email Already Exist" });
+
+                Errors = "Email Already Exist"
+                return res.render("register", { Errors })
+                // return res.status(500).send({ message: "Email Already Exist" });
             }
 
             // Method --> work with instance and here User is instance
@@ -134,14 +145,19 @@ async(req,res) =>
         }
         else
         {
-            res.send("Your Password and Email Incorrect");
+            var Errors = "Your Password and Email Incorrect"
+            return res.render("register", { Errors });
+
+            // res.send("Your Password and Email Incorrect");
         }
         // console.log(req.body.name);
         // res.send(req.body.name);
     }
     catch(error)
     {
-        res.status(500).send({message1 : error.message1});
+        Errors = error
+        return res.render("register", { Errors });
+        // res.status(500).send({message1 : error.message1});
     }
 })
 

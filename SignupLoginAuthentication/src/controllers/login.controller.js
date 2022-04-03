@@ -5,12 +5,20 @@ const User1 = require("../models/register.model");
 
 const OurProduct1 = require("../models/ourproduct.model");
 
+const authentication = require("../middlewares/authentication");
+
 const router = express.Router();
 
-router.get("", (req,res) =>
+router.get("", authentication, (req,res) =>
 {
+    
+    // console.log('req:', req)
+    console.log("User1 : ", req.VerifiedUser);
+    let User = req.VerifiedUser;
+
+    res.render("userProfile", { User })
     // let data = "Hello";
-    res.render("login");
+    // res.render("login");
 })
 
 router.post("", async(req,res) =>
@@ -23,11 +31,18 @@ router.post("", async(req,res) =>
         const User = await User1.findOne({email : email});
 
 
+        let Errors;
         if(!User)
         {
-            return res.status(500).send("Wrong Email or Password");
+            Errors = "Wrong Email or Password";
+            console.log('Errors:', Errors)
+            return res.render("login", { Errors })
+            // return res.status(500).send("Wrong Email or Password");
         }
-
+        // if(!error)
+        // {
+        //     console.log("Hello Hello");
+        // }
         // Add middle ware for checking password match with our database
         const match = await User.checkPassword(password);
         
@@ -35,7 +50,12 @@ router.post("", async(req,res) =>
         if(!match)
         {
             
-            return res.status(500).send({message : "Wrong Email and Password"});
+
+            Errors = "Wrong Email or Password";
+            console.log('Errors:', Errors)
+            return res.render("login", { Errors })
+            // return res.status(500).send({message : "Wrong Email and Password"});
+            
         }
 
         // Add Middleware for generate token
@@ -45,7 +65,7 @@ router.post("", async(req,res) =>
 
         //res.cookie("jwt", token);
         res.cookie("jwtlogin", token, {
-            expires : new Date(Date.now() + 600000), // --> like after 3 sec please expire it means please login again
+           // expires : new Date(Date.now() + 600000), // --> like after 3 sec please expire it means please login again
             httpOnly : true, // --> no client site scripting language like JavaScript can not do anything with this cookie like --> delete
             // secure : true, // -->  Cookie work for only secure connection like https but at this time we have no secure url like with https so we comment
         })
@@ -61,7 +81,11 @@ router.post("", async(req,res) =>
 
         const Products = await OurProduct1.find().lean().exec();
 
-        res.render("index", { Products });
+        
+        // window.location.href = `/userprofile`
+
+        console.log('User:', User)
+        res.render("userProfile", { User });
         // if(User.password == password)
         // {
         //     res.status(201).render("index");

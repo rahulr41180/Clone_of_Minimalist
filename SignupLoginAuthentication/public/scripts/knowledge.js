@@ -11,7 +11,7 @@ function closeSearch()
 }
 function OurProductPage()
 {
-    window.location.href = "ourproduct.html";
+    window.location.href = "/ourproduct/mains";
 }
 function GoToHomePage()
 {
@@ -20,22 +20,22 @@ function GoToHomePage()
 function MinimalistAddToCartPage()
 {
     console.log(1);
-    window.location.href = "cart.html";
+    window.location.href = "/cart";
 }
 function LoginSignUpPage()
 {
     console.log(1);
-    window.location.href = "login.html";
+    window.location.href = "/login";
 }
 function concernpage()
 {
-    window.location.href = "concern.html";
+    window.location.href = "/concern";
 }
 function knowleadgepage()
 {
-    window.location.href = "knowledge.html";
+    window.location.href = "/knowledge";
 }
 function TrackerOrder()
 {
-    window.location.href = "track.html";
+    window.location.href = "/tracker";
 }

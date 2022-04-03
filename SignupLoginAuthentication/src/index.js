@@ -9,6 +9,8 @@ const cors = require("cors");
 
 const hbs = require("hbs");
 
+const authentication = require("./middlewares/authentication");
+
 // const ejs = require("ejs");
 
 const CookieParser = require("cookie-parser");
@@ -50,6 +52,7 @@ const LogoutController = require("./controllers/logout.controller");
 const IndexController = require("./controllers/index.controller");
 const ProductDetailsController = require("./controllers/productdetails.controller");
 const CartController = require("./controllers/cart.controller");
+const UserProfileController = require("./controllers/userProfile.controller");
 
 
 app.use("/register", UserController);
@@ -60,17 +63,18 @@ app.use("/logout", LogoutController);
 app.use("/index", IndexController);
 app.use("/productdetails", ProductDetailsController);
 app.use("/cart", CartController);
+app.use("/userprofile", UserProfileController);
 
-app.get("/concern" , (req,res) =>
+app.get("/concern", (req,res) =>
 {
     // res.send("Hello World");
     res.render("concern");
 })
 
-app.get("/trackerorder" , (req,res) =>
+app.get("/tracker",authentication, (req,res) =>
 {
     // res.send("Hello World");
-    res.render("trackerorder");
+    res.render("tracker");
 })
 
 module.exports = app;

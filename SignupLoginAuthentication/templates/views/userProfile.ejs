@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="stylesheet" href="css/userProfile.css">
 </head>
 <body>
     <div id="myOverlay" class="overlay">
@@ -21,8 +22,8 @@
     </div>
     <div id = "NavbarContainer">
         <div id = "navbar">
-            <div onclick="HomePage()" id = "LogoBox">
-                <div id = "HomeIcon">
+            <div id = "LogoBox">
+                <div onclick="GoToHomePage()" id = "HomeIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                         <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
                     </svg>
@@ -52,41 +53,26 @@
             </div>
         </div>
     </div>
-    <div>
-        <div id="login-form-div">
 
-            <div id = "close">
-                <p id = "signupheading">Login</p>
-                <a href="/index" title="Go to homepage">
-                    <img id = "closeimage" src="https://as1.ftcdn.net/v2/jpg/01/45/20/02/1000_F_145200273_450ViYipr5uU3WIwqzwjsRDHYTMcUH9P.jpg" alt="">
-                </a>
-            </div>
-            <% if(Errors) {%>
-                <div class="alert alert-success alert-dismissible ErrorBox">
-                    <strong>Error !</strong> <%= Errors %>
-                    <a href="/login" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                </div>
-            <% } %>
-            <form action="/login" method = "POST">
-                <!--Write form input elements here-->
-
-                <p class = "inputheading" >Email Id</p>
-                <input id = "email" type="email" placeholder="Enter Your Email Id" required name = "email">
-                <p class = "inputheading" >Enter Password</p>
-                <input id = "password" type="password" placeholder="Enter New Password" required name = "password">
-                <input id = "submit1" type="submit" value = "Login">
-                
-            </form>
-            
-            <div id = "login">
-                <p class = "login">Need an account?</p>
-                <a class = "login1" href="/register" title="Keep SignUp">SignUp</a>
-            </div>
-
+    <div id = "LoginResult">
+        <div id = "MyAccountLogOutContainer">
+            <div id = "MyAccountHeading">My Account</div>
+            <div onclick="logout()" id = "LogOutHeading">Log Out</div>
         </div>
-
+        <div id = "ShoppingProfile">
+            <div id = "ShoppingDetails">
+                <div id = "OrderHistory">Order History</div>
+                <div id = ""></div>
+            </div>
+            <div id = "ProfileDetails">
+                <div id = "OrderHistory">Account details</div>
+                <div id = "UserName">Name : <%= User.name %></div>
+                <div id = "UserName">Number : <%= User.number %></div>
+                <div id = "UserName">Email : <%= User.email %></div>
+            </div>
+        </div>
     </div>
-
+    
     <div id = "Footercontainer">
         <div class="footer-1">
             <div class="footr-text">
@@ -194,47 +180,5 @@
     </div>
 </body>
 </html>
-<script>
-function openSearch()
-{
-    document.querySelector("#NavbarContainer").style.zIndex = "0";
-    document.querySelector("#myOverlay").style.display = "block";
-}
-function closeSearch()
-{
-    document.querySelector("#NavbarContainer").style.zIndex = "1";
-    document.querySelector("#myOverlay").style.display = "none";
-}
-function OurProductPage()
-{
-    window.location.href = "/ourproduct/main";
-}
-function GoToHomePage()
-{
-    window.location.href = "/index";
-}
-function MinimalistAddToCartPage()
-{
-    console.log(1);
-    window.location.href = "/cart";
-}
-function LoginSignUpPage()
-{
-    console.log(1);
-    window.location.href = "/login";
-}
-function concernpage()
-{
-    window.location.href = "/concern";
-}
-function knowleadgepage()
-{
-    window.location.href = "/knowledge";
-}
 
-function TrackerOrder()
-{
-    window.location.href = "/tracker";
-}
-</script>
-<!-- <script src="JavaScripts/login.js"></script> -->
+<script src="scripts/userProfile.js"></script>

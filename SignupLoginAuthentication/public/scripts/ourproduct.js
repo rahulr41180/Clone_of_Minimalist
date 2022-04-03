@@ -155,7 +155,7 @@ document.querySelector("#SearchInput").addEventListener("keyup",function(event)
 // ----------------------------------------------------------- Add To Cart End -----------------------------------------------
 
 
-let count = 0;
+    let count = 0;
     window.onload = function(){
     slideOne();
     slideTwo();

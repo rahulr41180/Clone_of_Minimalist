@@ -37,7 +37,8 @@ router.get("", authentication, async(req,res) =>
         await req.VerifiedUser.save(); // this is a promise then we use await because we send request then we wait for response
         
         console.log("logout successfully");
-        res.render("login");
+        let Errors;
+        res.render("login", { Errors });
     }
     catch(error)
     {

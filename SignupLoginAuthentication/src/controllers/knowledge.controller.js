@@ -5,7 +5,7 @@ const router = express.Router();
 
 const authentication = require("../middlewares/authentication");
 
-router.get("", authentication, (req, res) =>
+router.get("", (req, res) =>
 {
     try
     {

@@ -1,5 +1,4 @@
 
-
 body
 {
     margin: 0;
@@ -205,146 +204,93 @@ body
     cursor: pointer;
 }
 
-.ErrorBox
+#LoginResult
 {
+    /* border: 1px solid; */
     margin: auto;
-    margin-top: .5vw;
-    /* border: 1px solid; */
-    width: fit-content;
-    text-align: justify;
-    padding: .5vw;
-    background-color: red;
-}
-.ErrorBox > a
-{
-    font-size: 2vw;
-    margin-left: .4vw;
-    background-color: blue;
-    color: yellow;
-    padding: 0vw .2vw;
-    text-decoration: none;
-}
-.ErrorBox > a:hover
-{
-    font-size: 2vw;
-    margin-left: .4vw;
-    background-color: Yellow;
-    color: blue;
-    text-decoration: underline;
-    padding: .2vw;
-}
-.ErrorBox > a,strong
-{
-    /* border: 1px solid; */
-    font-size: 2vw;
-}
-#LoginFormContainer
-{
-    border: 1px solid;
-    width: 99.9vw;
-    height: 10vw;
+    margin-top: 7.9vw;
+    width: 95.8vw;
+    padding: 2vw;
 }
 
-#login-form-div
+#MyAccountLogOutContainer
 {
-    border: 0px solid;
-    width: 30vw;
+    /* border: 1px solid; */
+    width: 80%;
     margin: auto;
-    margin-top: 9vw;
-    padding: .5vw;
-    border-radius: .5vw;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    padding: 1vw;
 }
-#signupheading
+#MyAccountHeading
 {
-    border: 0px solid;
-    margin: 0vw 10vw 0vw 0vw;
-    font-size: 2vw;
+    /* border: 1px solid; */
+    margin: auto;
+    width: 60%;
+    font-size: 1.8vw;
     font-weight: bold;
-}
-#close
-{
-    border: 0px solid;
-    width: 97%;
-    margin: auto;
-    height: fit-content;
-    display: flex;
-    padding-right: .5vw;
-    justify-content: right;
-    align-items: center;
-}
-#closeimage
-{
-    width: 100%;
-    height: 2vw;
-    border: 0px solid;
-}
-form
-{
-    border: 0px solid;
-    border-radius: .5vw;
-    width: 95%;
-    margin: auto;
-    margin-top: .5vw;
-    padding: .5vw;
-    background-color: rgb(227, 238, 238);
-}
-.inputheading
-{
-    border-bottom: 1px solid;
-    width: fit-content;
-    margin-top: .2vw;
-    margin-bottom: .2vw;
-    font-size: 1.5vw;
-}
-input
-{
-    width: 96%;
-    height: 2vw;
-    padding: .2vw;
-    font-size: 1.2vw;
-    margin-bottom: .5vw;
 
-}
-#submit1
-{
-    width: 98.2%;
-    height: 2.5vw;
-    padding: .2vw;
-    font-size: 1.5vw;
-    border-width: .1vw;
-    background-color: blue;
-    color: yellow;
-    border-color: yellow;
-    border-radius: 2vw;
-}
-#submit1:hover
-{
-    background-color: yellow;
-    color: blue;
-    border-color: blue;
-}
-#login
-{
-    width: 96.2%;
-    border: px solid;
-    margin: auto;
     display: flex;
-    grid-gap: .2vw;
-    padding: .2vw;
+    justify-content: center;
+    padding: .5vw;
 }
-.login
+#LogOutHeading
 {
-    font-size: 1vw;
-    border: 0px solid;
-    margin-top: auto;
+    /* border: 1px solid; */
+    margin: auto;
+    width: 40%;
+    
+    font-size: 1.2vw;
+    text-decoration: underline;
+    padding: .5vw;
+    margin-top: .5vw;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
-.login1
+#LogOutHeading:hover
 {
-    font-size: 1vw;
-    border: 0px solid;
-    height: fit-content;
+    color: blue;
+}
+#ShoppingProfile
+{
+    /* border: 1px solid; */
+    width: 99%;
+    margin: auto;
+    margin-top: 1vw;
+    display: flex;
+    grid-gap: 1vw;
+    justify-content: center;
+    padding: 1vw;
+}
+#ShoppingDetails
+{
+    /* border: 1px solid; */
+    width: 40%;
+    padding: 1vw;
+}
+#OrderHistory
+{
+    /* border: 1px solid; */
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: .5vw;
+}
+#ProfileDetails
+{
+    /* border: 1px solid; */
+    width: 25%;
+    padding: 1vw;
+}
+#UserName
+{
+    /* border: 1px solid; */
+    width: 80%;
+    font-size: 1.4vw;
+    margin-top: .4vw;
+    padding: .4vw;
 }
 
 #Footercontainer

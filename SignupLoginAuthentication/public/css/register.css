@@ -214,6 +214,41 @@ body
     cursor: pointer;
 }
 
+.ErrorBox
+{
+    margin: auto;
+    margin-top: .5vw;
+    /* border: 1px solid; */
+    width: fit-content;
+
+    padding: .5vw;
+    text-align: justify;
+    background-color: red;
+}
+.ErrorBox > a
+{
+    font-size: 2vw;
+    margin-left: .4vw;
+    background-color: blue;
+    color: yellow;
+    padding: 0vw .2vw;
+    text-decoration: none;
+}
+.ErrorBox > a:hover
+{
+    font-size: 2vw;
+    margin-left: .4vw;
+    background-color: Yellow;
+    color: blue;
+    text-decoration: underline;
+    padding: .2vw;
+}
+.ErrorBox > a,strong
+{
+    /* border: 1px solid; */
+    font-size: 2vw;
+}
+
 #signup-form-div
 {
     border: 0px solid;

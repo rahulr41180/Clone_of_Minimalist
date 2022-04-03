@@ -154,11 +154,23 @@ router.get("/Discountfilter", async(req,res) =>
         if(q == "5%10%")
         {
             console.log("/top");
-            OurProducts = await OurProduct1.find({$and : [{Saleoff : {$gte : 1}},{Saleoff : {$lte : 5}}]}).lean().exec();  
+            OurProducts = await OurProduct1.find().limit(5).lean().exec();
         }
         if(q == "10%15%")
         {
-            OurProducts = await OurProduct1.find({$and : [{Saleoff : {$gte : 5}},{Saleoff : {$lte : 10}}]}).lean().exec();  
+            OurProducts = await OurProduct1.find().skip(5).limit(5).lean().exec();
+        }
+        if(q == "15%20%")
+        {
+            OurProducts = await OurProduct1.find().skip(10).limit(5).lean().exec();  
+        }
+        if(q == "20%25%")
+        {
+            OurProducts = await OurProduct1.find().skip(15).limit(5).lean().exec();  
+        }
+        if(q == "25%30%")
+        {
+            OurProducts = await OurProduct1.find().skip(17).limit(5).lean().exec();  
         }
         // console.log('OurProducts:', OurProducts)
         res.render("ourproduct", { OurProducts });

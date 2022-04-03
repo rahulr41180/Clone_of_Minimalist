@@ -1,7 +1,7 @@
 
 function OurProductPage()
 {
-    window.location.href = "/ourproduct";
+    window.location.href = "/ourproduct/main";
 }
 function GoToHomePage()
 {
@@ -27,7 +27,7 @@ function knowleadgepage()
 }
 function TrackerOrder()
 {
-    window.location.href = "/track";
+    window.location.href = "/tracker";
 }
 // document.querySelector("form").addEventListener("submit",SignUp);
 // var SignUpData = JSON.parse(localStorage.getItem("MinimalistSignupData"))||[];

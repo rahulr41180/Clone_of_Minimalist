@@ -1,0 +1,1330 @@
+
+body
+{
+    margin: 0;
+}
+.openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .openBtn:hover {
+    background: #bbb;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    background-color: rgb(236, 227, 227);
+    background-color: rgba(231, 220, 220, 0.9);
+  }
+  #InputCloseBox
+  {
+      border: 0px solid white;
+      width: 99.3%;
+      padding: 1.5vw 1vw 1.5vw 1.5vw;
+      display: flex;
+      grid-gap: 1vw;
+      justify-content: center;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  #SearchInput
+  {
+      border: 0px solid white;
+      height: 4vw;
+      width: 95%;
+      outline: none;
+      padding: .5vw 1vw .5vw 1vw;
+      font-size: 1.5vw;
+      border: 0;
+  }
+  #SearchInput:hover
+  {
+      background-color: #f1f1f1;
+  }
+  #SubmitSearchInput
+  {
+      border: 0px solid;
+      width: 5%;
+      height: 4vw;
+      padding: .5vw;
+      font-size: 1.8vw;
+      cursor: pointer;
+      background-color: rgb(190, 190, 212);
+  }
+  #SubmitSearchInput:hover
+  {
+      background-color: #bbb;
+  }
+  .overlay-content {
+      border: 1px solid white;
+    position: relative;
+    /* top: 46%; */
+    width: 90%;
+    text-align: center;
+    padding: .5vw;
+    display: flex;
+  }
+  
+  .overlay .closebtn {
+      border: 1px solid white;
+      width: fit-content;
+      cursor: pointer;
+      color: rgb(87, 72, 72);
+      font-size:3vw;
+      padding: 0vw .6vw 0vw .6vw;
+    /* position: absolute;
+    /* top: 20px;
+    right: 45px; */
+    /* font-size: 60px;
+    color: white; */
+  }
+  
+  .overlay .closebtn:hover {
+    color: #ccc;
+  }
+#NavbarContainer
+{
+    /* border: 1px solid; */
+    width: 95.86vw;
+    padding: 2vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    background-color: black;
+}
+#navbar
+{
+    /* border: 1px solid; */
+    width: 99.9%;
+    display: flex;
+}
+#LogoBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 3.5vw;
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+}
+#HomeIcon
+{
+    /* border: 1px solid; */
+    width: 23.5%;
+    height: 99.8%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+}
+#WebsiteNameBox
+{
+    /* border: 1px solid; */
+    width: 76%;
+    height: 99.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6vw;
+    color: white;
+    background-color: black;
+}
+#MiddleBox
+{
+    /* border: 1px solid; */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding: .2vw;
+    background-color: black;
+}
+.Middle
+{
+    /* border: 1px solid; */
+    width: 16%;
+    height: 94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+#LoginSignUpBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    display: flex;
+    padding: .2vw;
+    justify-content: center;
+    grid-gap: .1vw;
+    background-color: black;
+}
+.LoginSignUp
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+#SearchIcon
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+
+#LetsTalkScienceBox
+{
+    /* border: 1px solid; */
+    padding: 4vw;
+    height: 12vw;
+    margin-top: 7.50vw;
+    grid-gap: 2vw;
+    background-color: black;
+}
+#LetsTalkScience
+{
+    /* border: 1px solid; */
+    padding: .2vw;
+    font-size: 3.5vw;
+    margin: auto;
+    width: 35%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#AboveSlider
+{
+    /* border: 1px solid; */
+    margin: auto;
+    width: 80%;
+    margin-top: 2vw;
+    height: 35vw;
+    border-radius: .5vw;
+}
+
+.carousel {
+    background: #EEE;
+    /* border: 1px solid blue; */
+    width: 99.8%;
+    height: 99.8%;
+    
+    margin: auto;
+    border-radius: .8vw;
+  }
+  
+  .carousel-cell {
+    width: 64%;
+    height: 34.93vw;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+  .item
+  {
+    display: flex;
+  }
+  
+  /* cell number */
+  .carousel-cell:before {
+      /* border: 1px solid red; */
+    display: block;
+    text-align: center;
+    /* content: counter(carousel-cell); */
+    line-height: 17.45vw;
+    font-size: 80px;
+    color: rgb(160, 36, 36);
+  }
+  .AboveSlideImage
+  {
+      /* border: 1px solid; */
+      width: 100%;
+      height: 99.7%;
+      border-radius: .4vw;
+  }
+
+  #Extra
+  {
+      /* border: 1px solid; */
+      height: 28vw;
+  }
+
+  #SomeContentShow
+  {
+      /* border: 1px solid; */
+      width: 96.6vw;
+      margin: auto;
+      padding: 1vw;
+      margin-top: 5vw;
+  }
+  #SomeContentHeading
+  {
+      /* border: 1px solid; */
+      display: flex;
+      padding: .5vw;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+    font-size: 1.9vw;
+    font-weight: bold;
+  }
+  #SomeContent
+  {
+      
+    /* border: 1px solid; */
+    font-size: 1.4vw;
+    margin: auto;
+    width: 86%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    margin-top: .5vw;
+
+  }
+
+  #OurProductBox
+  {
+      /* border: 1px solid green; */
+      width: 94.65vw;
+      height: 29.2vw;
+      margin: auto;
+      padding: 2vw;
+      margin-top: 8vw;
+      margin-bottom: 2vw;
+      /* background-color: rgb(87, 87, 105); */
+  }
+  #HeadingViewAllBox
+  {
+      /* border: 1px solid blue; */
+      width: 99.5%;
+      padding: .4vw;
+      display: flex;
+      justify-content: center;
+      grid-gap: 0vw;
+      margin: auto;
+  }
+  #HeadingViewAllBox1
+  {
+      /* border: 1px solid rgb(159, 159, 184); */
+      width: 99.5%;
+      padding: .4vw;
+      display: flex;
+      justify-content: center;
+      grid-gap: 0vw;
+      margin: auto;
+      /* background-color: rgb(132, 132, 238); */
+  }
+  #HeadingViewAllBox2
+  {
+      /* border: 1px solid blue; */
+      width: 99.5%;
+      padding: .4vw;
+      display: flex;
+      justify-content: center;
+      grid-gap: 0vw;
+      margin: auto;
+  }
+  #Heading
+  {
+      /* border: 1px solid; */
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      font-size: 1.8vw;
+      font-weight: bold;
+      margin: auto;
+  }
+  #ViewAll
+  {
+      /* border: 1px solid; */
+      width: 15%;
+      font-size: 1.5vw;
+      display: flex;
+      justify-content: center;
+      text-decoration: underline;
+      cursor: pointer;
+  }
+  #OurProductShowContainer
+  {
+      /* border: 1px solid yellow; */
+      padding: 1vw;
+      width: 98.35%;
+      margin: auto;
+      margin-top: .5vw;
+      height: 82%;
+  }
+  .carousel1 {
+    background: #EEE;
+    /* border: 1px solid blue; */
+    width: 99.6%;
+    height: 97.8%;
+    margin: auto;
+  }
+  /* .carousel-cell1 {
+      border: 1px solid black;
+    width: 64%;
+    height: 15vw;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  } */
+  /* .carousel-cell1.is-selected {
+    background: #ED2;
+  } */
+  /* cell number */
+  /* .carousel-cell1:before {
+      border: 1px solid red;
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 14.8vw;
+    font-size: 80px;
+    color: white;
+  } */
+  .item1
+  {
+      /* border: 1px solid yellow; */
+      width: 26%;
+      height: 22.75vw;
+      border-radius: .4vw;
+      padding: .5vw;
+    background-color: rgb(230,234,235);
+
+  }
+
+  
+  .EachProductItemBox
+  {
+    /* border: 1px solid; */
+    padding: .4vw;
+    width: 93.5%;
+    margin: auto;
+  }
+
+.EachProductItemBox:hover .ViewIcon
+{
+    opacity: 1;
+}
+  .SaleViewBox
+    {
+        /* border: 1px solid; */
+        width: 97.5%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .SaleIcon
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+.ViewIcon
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 2.2vw;
+    margin-right: .5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: .8s ease;
+    cursor: pointer;
+}
+.ViewImage
+{
+    /* border: 1px solid; */
+    width: 70%;
+    height: 85%;
+    border-radius: 50%;
+}
+
+.ImageBox
+{
+    /* border: 1px solid; */
+    width: 97.2%;
+    height: 12.6vw;
+    margin: auto;
+    display: flex;
+    cursor: pointer;
+}
+
+.ImageBox1
+{
+    /* border: 1px solid; */
+    width: 97.8%;
+    margin: auto;
+    display: flex;
+    
+    cursor: pointer;
+}
+.GridImage
+{
+    /* border: 1px solid; */
+    width: 99.6%;
+    height: 99%;
+}
+
+.GridImage1
+{
+    /* border: 1px solid; */
+    width: 99.6%;
+    height: 17.5vw;
+}
+
+.TitleBox
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    /* margin-top: .4vw; */
+}
+
+.PercentageOffBox
+{
+    
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.CompositionUnit
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    font-weight: bold;
+}
+.StarsBox
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+}
+.checked
+{
+    color: yellow;
+}
+.reviews
+{
+    /* border: 1px solid; */
+    width: 40%;
+    margin-left: .5vw;
+    font-size: 1.2vw;
+    display: flex;
+}
+.PriceStrickPriceBox
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+}
+.PriceBox
+{
+    /* border: 1px solid; */
+    width: fit-content;
+    font-size: 1.2vw;
+    display: flex;
+    margin-left: .5vw;
+    align-items: center;
+}
+.StrickPriceBox
+{
+    /* border: 1px solid; */
+    width: fit-content;
+    display: flex;
+    font-size: 1.2vw;
+    align-items: center;
+    text-decoration: line-through;
+}
+
+.AddToCartQunatityBox
+{
+    /* border: 1px solid; */
+    margin: auto;
+    width: 95.4%;
+    padding: .2vw;
+    display: flex;
+    align-items: center;
+    grid-gap: .5vw;
+}
+.DecreaseBox
+{
+    /* border: 1px solid; */
+    width: 10%;
+    height: 2.2vw;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    /* color: white; */
+    font-size: 2vw;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ShowQuantityBox
+{
+    /* border: 1px solid; */
+    width: 12%;
+    height: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw
+}
+.IncreaseBox
+{
+    /* border: 1px solid; */
+    width: 10%;
+    height: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    /* color: white; */
+    font-size: 2vw;
+    cursor: pointer;
+    font-weight: bold;
+}
+.AddToCartButtonImage
+{
+    /* border: 1px solid; */
+    width: 55%;
+    height: 2.2vw;
+    margin-left: .5vw;
+    display: flex;
+}
+.AddToCartIcon
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 99.7%;
+    display: flex;
+
+    cursor: pointer;
+}
+.AddToImage
+{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 96%;
+}
+.AddToCartButton
+{
+    /* border: 1px solid; */
+    width: 80%;
+    height: 99.7%;
+    display: flex;
+    cursor: pointer;
+}
+.AddToCart
+{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 9px;
+}
+
+
+
+
+.modal {
+    /* border: 1px solid blue; */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 20px;
+    
+    cursor: pointer;
+  }
+
+  .modal-content {
+    padding: 1vw;
+    background-color: #fefefe;
+    margin: .1vw auto 1vw auto; /* 5% from the top, 15% from the bottom and centered */
+    /* border: 1px solid #888; */
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+
+  .HeadingCutBox
+  {
+    /* border: 1px solid; */
+    width: 99%;
+    margin: auto;
+    padding: .2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .HeadingBox
+  {
+    /* border: 1px solid; */
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .close
+  {
+    /* border: 1px solid; */
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .ProductDetailsShow
+  {
+      /* border: 1px solid; */
+      padding: .2vw;
+      width: 99%;
+      margin: auto;
+      margin-top: .5vw;
+      display: flex;
+      grid-gap: 1vw;
+      justify-content: center;
+  }
+  .Product
+  {
+    /* border: 1px solid; */
+    padding: 1vw;
+    width: 32%;
+  }
+  .Details
+  {
+      /* border: 1px solid; */
+      padding: 1vw;
+      width: 48%;
+  }
+
+  .DetailsTitle
+  {
+      /* border: 1px solid; */
+      padding: .2vw;
+      width: 98.4%;
+      margin: auto;
+      margin-top: .5vw;
+      font-size: 1.35vw;
+      
+      text-align: justify;
+  }
+
+  #ExploreContainer
+  {
+      position: absolute;
+      left: 0;
+      right: 0;
+      /* border: 1px solid red; */
+      width: 93.4vw;
+      padding: 2.6vw;
+      margin: auto;
+      margin-top: 8vw;
+      background-color: black;
+  }
+  #ImageExploreBox
+  {
+      /* border: 1px solid; */
+      padding: 4vw;
+      width: 91%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 1vw;
+  }
+  #ImageExplore
+  {
+        /* border: 1px solid; */
+        width: 40%;
+        display: flex;
+        cursor: pointer;
+  }
+  #ExploreImage
+  {
+      /* border: 1px solid; */
+      width: 99.8%;
+      height: 26vw;
+  }
+  #ExploreContent
+  {
+      /* border: 1px solid; */
+      width: 40%;
+      padding: 2vw;
+  }
+  #ExploreContainer1
+  {
+      /* border: 1px solid; */
+      padding: 1vw;
+      font-size: 2vw;
+      width: 80%;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      color: white;
+  }
+  #ExploreContainer2
+  {
+      /* border: 1px solid; */
+      padding: 1vw;
+      margin-top: .5vw;
+      font-size: 1.4vw;
+      font-weight: 700;
+      text-align: justify;
+      color: white;
+  }
+  #ExploreContainer3
+  {
+      /* border: 1px solid; */
+      margin-top: .5vw;
+      width: fit-content;
+      padding: .5vw 1vw .5vw 1vw;
+      font-size: 1.4vw;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+  }
+
+  #RealStoriesContainer
+  {
+      position: absolute;
+      left: 0;
+      right: 0;
+      /* border: 1px solid red; */
+      width: 93.4vw;
+      padding: 2.6vw;
+      margin: auto;
+      margin-top: 55vw;
+  }
+  #RealStoriesHeadingContainer
+  {
+      /* border: 1px solid; */
+      width: 98%;
+      padding: .8vw;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2vw;
+      font-weight: bold;
+  }
+  #RealStoriesContainer2
+  {
+      /* border: 1px solid; */
+      width: 98%;
+      padding: .8vw;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      grid-gap: .5vw;
+      margin-top: .5vw;
+  }
+  .RealStoriesContent
+  {
+      /* border: 1px solid; */
+      width: 28%;
+      padding: .5vw;
+  }
+  .RealStoriesContent1
+  {
+      /* border: 1px solid; */
+      width: 50%;
+      padding: .1vw;
+      font-size: 1.8vw;
+      font-weight: bold;
+  }
+  .RealStoriesContent2
+  {
+      /* border: 1px solid; */
+      width: 98%;
+      padding: .2vw;
+      margin-top: .5vw;
+      font-size: 1.4vw;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      text-align: justify;
+  }
+  .RealStoriesContent3
+  {
+      /* border: 1px solid; */
+      width: 98%;
+      padding: .2vw;
+      margin-top: .5vw;
+      display: flex;
+      align-items: center;
+      font-size: 1.4vw;
+      font-weight: bold;
+  }
+
+  #ProTipsContainer
+  {
+      /* border: 1px solid; */
+      position: absolute;
+      left: 0;
+      right: 0;
+      /* border: 1px solid red; */
+      width: 93.4vw;
+      padding: 2.6vw;
+      margin: auto;
+      margin-top: 90vw;
+      /* background-color: rgb(216, 216, 226); */
+  }
+
+  #ProTipsProductContainer
+  {
+      /* border: 1px solid; */
+      width: 98.2%;
+      margin: auto;
+      margin-top: 1vw;
+      padding: 1vw;
+      display: flex;
+      justify-content: center;
+      grid-gap: .5vw;
+  }
+  .ProTipsProductBox
+  {
+      /* border: 1px solid; */
+      width: 22.6%;
+      padding: .5vw;
+      cursor: pointer;
+      background-color: rgb(230,234,235);
+      border-radius: .5vw;
+  }
+  .ProTipsProductBox:hover
+  {
+    transition: 850ms;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .ProTipsImageBox
+  {
+      /* border: 1px solid; */
+      width: 98.6%;
+      margin: auto;
+      display: flex;
+  }
+  .ProTipsImage
+  {
+      /* border: 1px solid; */
+      width: 99.2%;
+      height: 18vw;
+      border-radius: .5vw;
+  }
+  .ProTipsContentBox
+  {
+      /* border: 1px solid; */
+      width: 96.6%;
+      margin: auto;
+      /* margin-top: .5vw; */
+      padding: .2vw;
+      font-size: 1.4vw;
+      background-color: rgb(230,234,235);
+  }
+
+  #ProTipsContainer1
+  {
+      /* border: 1px solid; */
+      /* position: absolute; */
+      left: 0;
+      right: 0;
+      /* border: 1px solid red; */
+      width: 93.4vw;
+      padding: 2.6vw;
+      margin: auto;
+      margin-top: 9vw;
+      /* background-color: rgb(216, 216, 226); */
+  }
+  .ProTipsContentBox1
+  {
+      /* border: 1px solid; */
+      width: 96.6%;
+      margin: auto;
+      /* margin-top: .5vw; */
+      padding: .2vw;
+      font-size: 1.5vw;
+      font-weight: bold;
+      /* background-color: blue; */
+      background-color: rgb(230,234,235);
+  }
+  .ProTipsContentBox2
+  {
+      /* border: 1px solid; */
+      width: 96.6%;
+      margin: auto;
+      /* margin-top: .5vw; */
+      padding: .2vw;
+      font-size: .9vw;
+      background-color: rgb(230,234,235);
+  }
+  .ProTipsContentBox3
+  {
+      /* border: 1px solid; */
+      width: 96.6%;
+      margin: auto;
+      /* margin-top: .5vw; */
+      padding: .2vw;
+      display: flex;
+      grid-gap: .5vw;
+      background-color: rgb(230,234,235);
+  }
+  .ProTipsContentBox31
+  {
+      /* border: 1px solid; */
+      font-size: 1.1vw;
+      text-decoration: line-through;
+      background-color: rgb(223, 223, 252);
+  }
+  .ProTipsContentBox32
+  {
+      /* border: 1px solid; */
+      font-size: 1.1vw;
+  }
+
+
+  #slider
+{
+  /* border: 2px solid rgb(32, 30, 30); */
+  margin: auto;
+  width: 96.4vw;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw 1vw;
+  margin-top: 140vw;
+}
+.slide
+{
+  /* border: 2px solid green; */
+  padding: .5vw;
+  padding: .4vw;
+  width: 92%;
+  margin: auto;
+}
+.container
+{
+    /* border: 2px solid rgb(207, 206, 218); */
+    padding: .2vw;
+    width: 95%;
+    margin: auto;
+}
+
+.my-slider
+{
+  /* border: 1px solid rgb(12, 12, 12); */
+  padding: .2vw;
+  margin: auto;
+  /* position: sticky; */
+
+}
+.subcontainer
+{
+    
+    /* border: 2px solid yellow; */
+    padding: .4vw;
+    width: 98%;
+    margin: auto;
+}
+
+.tns-controls
+{
+  /* border: 1px solid rgb(197, 97, 15); */
+  width: 99.5%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: .5vw;
+  margin-bottom: .4vw;
+}
+.tns-controls > button
+{
+  width: 5%;
+  height: 2vw;
+  font-size: 1.4vw;
+  outline: none;
+  border: 0;
+  background-color: rgb(109, 109, 196);
+  color: rgb(247, 247, 16);
+}
+
+.tns-controls > button:hover
+{
+  background-color: rgb(247, 247, 16);
+  color: rgb(109, 109, 196);
+}
+
+#Heading
+{
+  /* border: 1px solid; */
+  width: 80%;
+  margin: auto;
+  margin-bottom: .5vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Heading1
+{
+  /* border: 1px solid; */
+  width: 80%;
+  margin: auto;
+  margin-bottom: .5vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Heading2
+{
+  /* border: 1px solid; */
+  width: 80%;
+  margin: auto;
+  margin-bottom: .5vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Footercontainer
+{
+    border: 1px solid;
+    position: absolute;
+    padding: 1vw;
+    margin: auto;
+    margin-top: 180vw;
+    left: 0;
+    right: 0;
+    width: 96.6vw;
+    background-color: black;
+}
+#footer {
+    background-color: black;
+    height: 590px;
+    width: 100%;
+}
+.footer-1 {
+    display: inline-block;
+    width: 84%;
+    height: 75%;
+    margin-top: 70px;
+    margin-left: 105px;
+}
+.footr-text {
+    /* background-color: red; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.footer-logo {
+    width: 100%;
+    height: 50%;
+    margin-left: auto;
+}
+.img {
+    width: 5%;
+    height: 30%;
+    margin: 6px;
+    margin-top: 10%;
+}
+#footer-logo-1 {
+    width: 70%;
+    height: 50%;
+    display: flex;
+    margin-left: 25%;
+}
+.text {
+    text-align: center;
+    font-size: .75em;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 4%;
+}
+.image {
+    width: 100%;
+    height: 85%;
+    border-radius: 4px;
+}
+.text-area {
+    width: 23%;
+    height: 100%;
+    /* background-color: blue; */
+    margin: 4px;
+}
+.logo-2 {
+    width: 50%;
+    height: 30%;
+    /* background-color: #fff; */
+    margin: 10px;
+    display: flex;
+}
+.logo-1 {
+    width: 50%;
+    height: 70%;
+    /* background-color: rgb(238, 1, 1); */
+    margin: 6px;
+}
+.a-img {
+    width: 50%;
+    margin-left: 16px;
+}
+.ulist {
+    list-style-type: none;
+    color: #fff;
+}
+.link {
+    margin-top: 13px;
+    /* font-size: ; */
+    color: #fff;
+    display: inline-block;
+}
+.text-01 {
+    color: #fff;
+    margin-top: 0px;
+}
+.box1 {
+    border: 1px solid gray;
+    width: 100%;
+    height: 36px;
+    display: flex;
+}
+.image-1 {
+    height: 100%;
+    width: 100%;
+    margin-left: 6px;
+    margin-top: 5px;
+}
+.input {
+    background-color: black;
+    color: #fff;
+    margin-left: 12px;
+    margin-top: 5px;
+    width: 90%;
+    height: 60%;
+    border-width: 0px;
+    border: none;
+}
+.div {
+    height: 70%;
+    width: 14%;
+}
+#div1 {
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/* #Extra2
+{
+    border: 1px solid;
+    position: absolute;
+    padding: 1vw;
+    margin: auto;
+    margin-top: 180vw;
+    left: 0;
+    right: 0;
+    width: 96.6vw;
+
+
+} */

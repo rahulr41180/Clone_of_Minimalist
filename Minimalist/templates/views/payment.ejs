@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0410/9608/5665/files/Minimalist_Favicon-min_32x32.png?v=1646335623" type="image/png">
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+    <div class="container">
+        <div class="paycontainer">
+          <h1>Confirm Your Payment</h1>
+          <div class="first-row">
+            <div class="owner">
+              <h3>Your Name</h3>
+              <div class="input-field">
+                <input type="text" placeholder="enter name" />
+              </div>
+            </div>
+            <div class="cvv">
+              <h3>CVV</h3>
+              <div class="input-field">
+                <input type="password" placeholder="XXX" />
+              </div>
+            </div>
+          </div>
+          <div class="second-row">
+            <div class="card-number">
+              <h3>Card Number</h3>
+              <div class="input-field">
+                <input type="password" placeholder="XXXX - XXXX - XXXX - XXXX"/>
+              </div>
+            </div>
+          </div>
+          <div class="third-row">
+            <h3>Card Expiry Date</h3>
+            <div class="selection">
+              <div class="date">
+                <div class="input-field">
+                  <input type="text" id="months" placeholder="XX" />
+                </div>
+                <div class="input-field">
+                  <input type="text" id="years" placeholder="XXXX" />
+                </div>
+              </div>
+              <div class="cards">
+                <img src="https://github.com/NayanIngale1/Fw15-u2-Bigbasket-clone-project/blob/main/projectImages/mc.png?raw=true" alt="" />
+                <img src="https://github.com/NayanIngale1/Fw15-u2-Bigbasket-clone-project/blob/main/projectImages/vi.png?raw=true" alt="" />
+                <img src="https://github.com/NayanIngale1/Fw15-u2-Bigbasket-clone-project/blob/main/projectImages/pp.png?raw=true" alt="" />
+              </div>
+            </div>
+          </div>
+          <a href="/otp">Confirm</a>
+        </div>
+        <div id="userdetails">
+          <h2 id="username" style="border: 1 px solid"><b>Name : </b><%= ProfileDetails.fullName %></h2>
+          <p id="add"><b>Address : </b><%= ProfileDetails.HouseNo %>,<%= ProfileDetails.ApartName %>,<br><%= ProfileDetails.Street %>,<%= ProfileDetails.LandMark %>,<%= ProfileDetails.CityName %>,<br><%= ProfileDetails.Area %>,<%= ProfileDetails.PinCode %></p>
+          <p id="cno"><b>Phone : </b><%= ProfileDetails.MobileNumber %></p>
+          <div>
+            <p id="ttlitem"><b>Total : </b><%= Carts.length %> Items</p>
+            <p id="totalprc"><b>Amount : Rs.</b><%= Total %></p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+
+<script src="scripts/payment.js"></script>

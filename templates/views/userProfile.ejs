@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0410/9608/5665/files/Minimalist_Favicon-min_32x32.png?v=1646335623" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    
+body
+{
+    margin: 0;
+}
+.openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .openBtn:hover {
+    background: #bbb;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    background-color: rgb(236, 227, 227);
+    background-color: rgba(231, 220, 220, 0.9);
+  }
+  #InputCloseBox
+  {
+      border: 0px solid white;
+      width: 99.3%;
+      padding: 1.5vw 1vw 1.5vw 1.5vw;
+      display: flex;
+      grid-gap: 1vw;
+      justify-content: center;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  #SearchInput
+  {
+      border: 0px solid white;
+      height: 4vw;
+      width: 95%;
+      outline: none;
+      padding: .5vw 1vw .5vw 1vw;
+      font-size: 1.5vw;
+      border: 0;
+  }
+  #SearchInput:hover
+  {
+      background-color: #f1f1f1;
+  }
+  #SubmitSearchInput
+  {
+      border: 0px solid;
+      width: 5%;
+      height: 4vw;
+      padding: .5vw;
+      font-size: 1.8vw;
+      cursor: pointer;
+      background-color: rgb(190, 190, 212);
+  }
+  #SubmitSearchInput:hover
+  {
+      background-color: #bbb;
+  }
+  .overlay-content {
+      border: 1px solid white;
+    position: relative;
+    /* top: 46%; */
+    width: 90%;
+    text-align: center;
+    padding: .5vw;
+    display: flex;
+  }
+  
+  .overlay .closebtn {
+      border: 1px solid white;
+      width: fit-content;
+      cursor: pointer;
+      color: rgb(87, 72, 72);
+      font-size:3vw;
+      padding: 0vw .6vw 0vw .6vw;
+    /* position: absolute;
+    /* top: 20px;
+    right: 45px; */
+    /* font-size: 60px;
+    color: white; */
+  }
+  
+  .overlay .closebtn:hover {
+    color: #ccc;
+  }
+#NavbarContainer
+{
+    /* border: 1px solid; */
+    width: 95.86vw;
+    padding: 2vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    background-color: black;
+}
+#navbar
+{
+    /* border: 1px solid; */
+    width: 99.9%;
+    display: flex;
+}
+#LogoBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 3.5vw;
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+}
+#HomeIcon
+{
+    /* border: 1px solid; */
+    width: 23.5%;
+    height: 99.8%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+}
+#WebsiteNameBox
+{
+    /* border: 1px solid; */
+    width: 76%;
+    height: 99.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6vw;
+    color: white;
+    background-color: black;
+}
+#MiddleBox
+{
+    /* border: 1px solid; */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding: .2vw;
+    background-color: black;
+}
+.Middle
+{
+    /* border: 1px solid; */
+    width: 16%;
+    height: 94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+#LoginSignUpBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    display: flex;
+    padding: .2vw;
+    justify-content: center;
+    grid-gap: .1vw;
+    background-color: black;
+}
+.LoginSignUp
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+#SearchIcon
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+
+#LoginResult
+{
+    /* border: 1px solid; */
+    margin: auto;
+    margin-top: 7.9vw;
+    width: 95.8vw;
+    padding: 2vw;
+}
+
+#MyAccountLogOutContainer
+{
+    /* border: 1px solid; */
+    width: 80%;
+    margin: auto;
+    
+    padding: 1vw;
+}
+#MyAccountHeading
+{
+    /* border: 1px solid; */
+    margin: auto;
+    width: 60%;
+    font-size: 1.8vw;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    padding: .5vw;
+}
+#LogOutHeading
+{
+    /* border: 1px solid; */
+    margin: auto;
+    width: 40%;
+    
+    font-size: 1.2vw;
+    text-decoration: underline;
+    padding: .5vw;
+    margin-top: .5vw;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+#LogOutHeading:hover
+{
+    color: blue;
+}
+#ShoppingProfile
+{
+    /* border: 1px solid; */
+    width: 99%;
+    margin: auto;
+    margin-top: 1vw;
+    display: flex;
+    grid-gap: 1vw;
+    justify-content: center;
+    padding: 1vw;
+}
+#ShoppingDetails
+{
+    /* border: 1px solid; */
+    width: 40%;
+    padding: 1vw;
+}
+#OrderHistory
+{
+    /* border: 1px solid; */
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: .5vw;
+}
+#ProfileDetails
+{
+    /* border: 1px solid; */
+    width: 25%;
+    padding: 1vw;
+}
+#UserName
+{
+    /* border: 1px solid; */
+    width: 80%;
+    font-size: 1.4vw;
+    margin-top: .4vw;
+    padding: .4vw;
+}
+
+#Footercontainer
+{
+    border: 1px solid;
+    position: absolute;
+    padding: 1vw;
+    margin: auto;
+    margin-top: 18vw;
+    left: 0;
+    right: 0;
+    width: 96.6vw;
+    background-color: black;
+}
+#footer {
+    background-color: black;
+    height: 590px;
+    width: 100%;
+}
+.footer-1 {
+    display: inline-block;
+    width: 84%;
+    height: 75%;
+    margin-top: 70px;
+    margin-left: 105px;
+}
+.footr-text {
+    /* background-color: red; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.footer-logo {
+    width: 100%;
+    height: 50%;
+    margin-left: auto;
+}
+.img {
+    width: 5%;
+    height: 30%;
+    margin: 6px;
+    margin-top: 10%;
+}
+#footer-logo-1 {
+    width: 70%;
+    height: 50%;
+    display: flex;
+    margin-left: 25%;
+}
+.text {
+    text-align: center;
+    font-size: .75em;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 4%;
+}
+.image {
+    width: 100%;
+    height: 85%;
+    border-radius: 4px;
+}
+.text-area {
+    width: 23%;
+    height: 100%;
+    /* background-color: blue; */
+    margin: 4px;
+}
+.logo-2 {
+    width: 50%;
+    height: 30%;
+    /* background-color: #fff; */
+    margin: 10px;
+    display: flex;
+}
+.logo-1 {
+    width: 50%;
+    height: 70%;
+    /* background-color: rgb(238, 1, 1); */
+    margin: 6px;
+}
+.a-img {
+    width: 50%;
+    margin-left: 16px;
+}
+.ulist {
+    list-style-type: none;
+    color: #fff;
+}
+.link {
+    margin-top: 13px;
+    /* font-size: ; */
+    color: #fff;
+    display: inline-block;
+}
+.text-01 {
+    color: #fff;
+    margin-top: 0px;
+}
+.box1 {
+    border: 1px solid gray;
+    width: 100%;
+    height: 36px;
+    display: flex;
+}
+.image-1 {
+    height: 100%;
+    width: 100%;
+    margin-left: 6px;
+    margin-top: 5px;
+}
+.input {
+    background-color: black;
+    color: #fff;
+    margin-left: 12px;
+    margin-top: 5px;
+    width: 90%;
+    height: 60%;
+    border-width: 0px;
+    border: none;
+}
+.div {
+    height: 70%;
+    width: 14%;
+}
+#div1 {
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+</style>
+<body>
+    <div id="myOverlay" class="overlay">
+        <div id = "InputCloseBox">
+            <div class = "overlay-content">
+                <button id = "SubmitSearchInput"><i class="fa fa-search"></i></button>
+                <input id = "SearchInput" type="Search" placeholder="Search Our Store....">
+            </div>
+            <span class = "closebtn" onclick="closeSearch()" title = "Close Overlay">x</span>
+        </div>
+    </div>
+    <div id = "NavbarContainer">
+        <div id = "navbar">
+            <div id = "LogoBox">
+                <div onclick="GoToHomePage()" id = "HomeIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                    </svg>
+                </div>
+                <div id = "WebsiteNameBox">minimalist_</div>
+            </div>
+            <div id = "MiddleBox">
+                <div onclick="GoToHomePage()" class = "Middle">Home</div>
+                <div onclick="concernpage()" class = "Middle">Concern</div>
+                <div onclick="OurProductPage()" class = "Middle">Our Product</div>
+                <div onclick="knowleadgepage()" class = "Middle">Knowleadge</div>
+                <div onclick="TrackerOrder()" class = "Middle">Tracker Order</div>
+            </div>
+            <div id = "LoginSignUpBox">
+                <div onclick="LoginSignUpPage()" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    </svg>
+                </div>
+                <div id = "SearchIcon" onclick="openSearch()" class = "LoginSignUp"><i class="fa fa-search"></i></div>
+                <div onclick="MinimalistAddToCartPage()" id = "AddToCart" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "LoginResult">
+        <div id = "MyAccountLogOutContainer">
+            <div id = "MyAccountHeading">My Account</div>
+            <div onclick="logout()" id = "LogOutHeading">Log Out</div>
+        </div>
+        <div id = "ShoppingProfile">
+            <div id = "ShoppingDetails">
+                <div id = "OrderHistory">Order History</div>
+                <div id = ""></div>
+            </div>
+            <div id = "ProfileDetails">
+                <div id = "OrderHistory">Account details</div>
+                <div id = "UserName">Name : <%= User.name %></div>
+                <div id = "UserName">Number : <%= User.number %></div>
+                <div id = "UserName">Email : <%= User.email %></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id = "Footercontainer">
+        <div class="footer-1">
+            <div class="footr-text">
+                <div class="text-area">
+                    <div class="logo">
+                        <a href="#link">
+                            <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/files/minimalist-logo-white-new_x20@2x.png?v=1606032887" alt="" class="a-img">
+                        </a>
+                    </div>
+                    <div class="logo-2">
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://toppng.com/uploads/preview/facebook-logo-black-11549681824hmcxyqtxds.png" alt="" class="image">
+                            </a>
+                        </div>
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://i.pinimg.com/originals/c6/2c/05/c62c055ede6aadbb1f94a555071c98b9.jpg" alt="" class="image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">ABOUT</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Our values</a><br>
+                        <a href="#link" class="link">Privacy policy</a><br>
+                        <a href="#link" class="link">Terms & conditions</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">HELP</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Knowledge</a><br>
+                        <a href="#link" class="link">FAQs</a><br>
+                        <a href="#link" class="link">Return & refund policy</a><br>
+                        <a href="#link" class="link"> Contact us</a><br>
+                        <a href="#link" class="link">Track order</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">SIGN UP AND SAVE</p>
+                    </div>
+                    <div class="mid-tex">
+                        <p class="link">
+                            Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                        </p>
+                        <div class="box1">
+                            <div class="div">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmTSdwx7aEKX5HoBTvAlYubZ9bIOpysS0gA&usqp=CAU" alt="" class="image-1">
+                            </div>
+                            <div id="div1">
+                                <input type="text" placeholder="Enter your email" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <div id="footer-logo-1">
+                    <div class="img">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/30455c9384889.57ee562a4fba0.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://flyclipart.com/thumb2/american-express-amex-billing-credit-card-payment-shop-icon-500339.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://cdn.techjockey.com/web/assets/images/techjockey/products/11424_Freecharge-logo.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://assets.mspimages.in/wp-content/uploads/2021/07/GooglePay_Lockup.max-1200x1200-1.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://yt3.ggpht.com/ytc/AKedOLSvIBDFtbGRhKxpIQvtcLCrCa75ldfziwEVgJG5=s900-c-k-c0x00ffffff-no-rj" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.pngitem.com/pimgs/m/265-2655326_mobikwik-wallet-icon-hd-png-download.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://securecdn.pymnts.com/wp-content/uploads/2020/01/Score-Card-Company-Image-22.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://aniportalimages.s3.amazonaws.com/media/details/Paytm_apr28.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://skyllme.com/wp-content/uploads/2019/10/unnamed.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.sundayguardianlive.com/wp-content/uploads/2019/10/rupay.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpc6dS_7YcmRbnP5ztdomyriQje2m4rWdXSWds18YLMbboByoGOOglpiRTb2NqeKMBZv0&usqp=CAU" alt="Na" class="image">
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <P class="text"> © 2022 Minimalist</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    
+function openSearch()
+{
+    document.querySelector("#NavbarContainer").style.zIndex = "0";
+    document.querySelector("#myOverlay").style.display = "block";
+}
+function closeSearch()
+{
+    document.querySelector("#NavbarContainer").style.zIndex = "1";
+    document.querySelector("#myOverlay").style.display = "none";
+}
+function OurProductPage()
+{
+    window.location.href = "/ourproduct/main";
+}
+function GoToHomePage()
+{
+    window.location.href = "/index";
+}
+function MinimalistAddToCartPage()
+{
+    console.log(1);
+    window.location.href = "/cart";
+}
+function LoginSignUpPage()
+{
+    console.log(1);
+    window.location.href = "/login";
+}
+function concernpage()
+{
+    window.location.href = "/concern";
+}
+function knowleadgepage()
+{
+    window.location.href = "/knowledge";
+}
+function TrackerOrder()
+{
+    window.location.href = "/tracker";
+}
+
+
+
+// var Loginname = JSON.parse(localStorage.getItem("MinimalistLoginName"));
+// document.querySelector("#UserName").innerHTML = `Name : ${Loginname[Loginname.length-1]}`;
+// document.querySelector("#LogOutHeading").addEventListener("click",logout);
+// var LoginName = JSON.parse(localStorage.getItem("MinimalistLoginName"))
+// var LogOut = JSON.parse(localStorage.getItem("MinimalistLogOut"));
+// var show = JSON.parse(localStorage.getItem("MinimalistShow"))
+
+function logout()
+{
+    window.location.href = `/logout`
+    // if(LogOut[LogOut.length-1] == "LogOut")
+    // {
+    //     //console.log(1);
+    //     alert("You want to LogOut");
+    //     LogOut[1] = ("SignUp");
+    //     LoginName[1] = ("Login");
+    //     show[1] = ("show");
+    //     localStorage.setItem("MinimalistLogOut",JSON.stringify(LogOut));
+    //     localStorage.setItem("MinimalistLoginName",JSON.stringify(LoginName));
+    //     localStorage.setItem("MinimalistShow",JSON.stringify(show));
+    //     window.location.href = "login.html";
+    // }
+    // else
+    // {
+    //     console.log(1);
+        
+    //     //
+    //     //alert("signup");
+    //     window.location.href = "login.html";
+    // }
+}
+
+</script>

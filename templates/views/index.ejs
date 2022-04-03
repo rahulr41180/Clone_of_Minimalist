@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Home</title>
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0410/9608/5665/files/Minimalist_Favicon-min_32x32.png?v=1646335623" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="myOverlay" class="overlay">
+        <div id = "InputCloseBox">
+            <div class = "overlay-content">
+                <button id = "SubmitSearchInput"><i class="fa fa-search"></i></button>
+                <input id = "SearchInput" type="Search" placeholder="Search Our Store....">
+            </div>
+            <span class = "closebtn" onclick="closeSearch()" title = "Close Overlay">x</span>
+        </div>
+    </div>
+    <div id = "NavbarContainer">
+        <div id = "navbar">
+            <div onclick="GoToHomePage()" id = "LogoBox">
+                <div id = "HomeIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                    </svg>
+                </div>
+                <div id = "WebsiteNameBox">minimalist_</div>
+            </div>
+            <div id = "MiddleBox">
+                <div onclick="GoToHomePage()" class = "Middle">Home</div>
+                <div onclick="concernpage()" class = "Middle">Concern</div>
+                <div onclick="OurProductPage()" class = "Middle">Our Product</div>
+                <div onclick="knowleadgepage()" class = "Middle">Knowleadge</div>
+                <div onclick="TrackerOrder()" class = "Middle">Tracker Order</div>
+            </div>
+            <div id = "LoginSignUpBox">
+                <div onclick="LoginSignUpPage()" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    </svg>
+                </div>
+                <div id = "SearchIcon" onclick="openSearch()" class = "LoginSignUp"><i class="fa fa-search"></i></div>
+                <div onclick="MinimalistAddToCartPage()" id = "AddToCart" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "id01" class = "modal">
+        <div class = "modal-content animate">
+            <div class = "HeadingCutBox">
+                <div class = "HeadingBox">Some Product Details</div>
+                <div onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</div>
+            </div>
+            <div class = "ProductDetailsShow">
+                <div class = "Product">
+                    <div class = "GridBox">
+                        <div class = "SaleViewBox">
+                            <div class = "SaleIcon">Sale</div>
+                        </div>
+                        <div class = "PercentageOffBox"></div>
+                        <div class = "ImageBox1">
+                            <img class = "GridImage1" src="" alt="">
+                        </div>
+                        <div class = "TitleBox"></div>
+                        <div class = "CompositionUnit"></div>
+                        <div class = "StarsBox">
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star"></span>
+                            <div class = "reviews"></div>
+                        </div>
+                        <div class = "PriceStrickPriceBox">
+                            <div class = "PriceBox"></div>
+                            <div class = "StrickPriceBox"></div>
+                        </div>
+                        <div class = "AddToCartQunatityBox">
+                            <div class = "DecreaseBox" id = "DecreaseBox"></div>
+                            <div class = "ShowQuantityBox" id = "ShowQuantityBoxInDetails"></div>
+                            <div class = "IncreaseBox" id = "IncreaseBox"></div>
+                            <div class = "AddToCartButtonImage">
+                                <div class = "AddToCartIcon">
+                                    <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
+                                </div>
+                                <div class = "AddToCartButton">
+                                    <button class = "AddToCart">ADD TO CART</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "Details">
+                    <div id = "TitleDetails" class = "DetailsTitle"></div>
+                    <div id = "ChemicalCompositionDetails" class = "DetailsTitle"></div>
+                    <div id = "ChemicalUnitDetails" class = "DetailsTitle"></div>
+                    <div id = "IngredientsDetails" class = "DetailsTitle"></div>
+                    <div id = "WhatItIsHeadingDetails" class = "DetailsTitle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "LetsTalkScienceBox">
+        <div id = "LetsTalkScience">Let's talk science</div>
+        <div id = "AboveSlider">
+            <div class="carousel" data-flickity='{ "autoPlay": true }'>
+                <div class="carousel-cell item`">
+                    <img class = "AboveSlideImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-5294f357--Minimalist-Nia5-Model-1100pxmin.png?v=1617953281" alt="">
+                </div>
+                <div class="carousel-cell item`">
+                    <img class = "AboveSlideImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/ceramidedry-texturemin-1640289963730.png?v=1640289969" alt="">
+                </div>
+                <div class="carousel-cell item`">
+                    <img class = "AboveSlideImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/ceramideoily-texturemin-1640289722093.png?v=1640289728" alt="">
+                </div>
+                <div class="carousel-cell item`">
+                    <img class = "AboveSlideImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-93d2fadc--minimalistretinoidminmin.png?v=1606767671" alt="">
+                </div>
+                <div class="carousel-cell item`">
+                    <img class = "AboveSlideImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-5294f357--Minimalist-Nia5-Model-1100pxmin.png?v=1617953281" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "Extra"></div>
+    <div id = "SomeContentShow">
+        <div id = "SomeContentHeading">Looking for clean & effective skincare products?</div>
+        <div id = "SomeContent">We have all been there. You look for a product that addresses your particular skin concern. But there's an ocean of products out there with numerous promises & claims but hardly any clear information about ingredients used and their concentration. We are here to offer no-nonsense, hardworking, active based products that do what they are expected to do.</div>
+    </div>
+
+    <div id = "ProTipsContainer1">
+        <div id = "HeadingViewAllBox1">
+            <div id = "Heading1">Shop Our Bestsellers</div>
+            <div onclick="OurProductPage()" id = "ViewAll">View All</div>
+        </div>
+        <div id = "ProTipsProductContainer">
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/alpha-arbutin-2-1200--1min-1646543861869.png?v=1646543867" alt="">        
+                </div>
+                <div class="ProTipsContentBox1">Alpha Arbutin 2% + Hyaluronic Acid 1%</div>
+                <div class="ProTipsContentBox2">Reduces dark spots & evens skin tone</div>
+                <div class="ProTipsContentBox3">
+                    <div class="ProTipsContentBox31">₹ 549</div>
+                    <div class="ProTipsContentBox32">₹ 539</div>
+                </div>
+            </div>
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/niacinamide-10-1200--1min-1646396156713.png?v=1646396162" alt="">        
+                </div>
+                <div class="ProTipsContentBox1">Niacinamide 10% + Zinc</div>
+                <div class="ProTipsContentBox2">Controls excess oil</div>
+                <div class="ProTipsContentBox3">
+                    <div class="ProTipsContentBox31">₹ 599</div>
+                    <div class="ProTipsContentBox32">₹ 595</div>
+                </div>
+            </div>
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/vitamin-c-10-1200--1min-1646543861885.png?v=1646543875" alt="">        
+                </div>
+                <div class="ProTipsContentBox1">Vitamin C (Ethyl Ascorbic Acid) 10% + Acetyl Glucosamine 1%</div>
+                <div class="ProTipsContentBox2">For brighter & illuminating skin</div>
+                <div class="ProTipsContentBox3">
+                    <div class="ProTipsContentBox31">₹ 699</div>
+                    <div class="ProTipsContentBox32">₹ 695</div>
+                </div>
+            </div>
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/products/SalicylicAcid2_1200-1-min.png?v=1646458899" alt="">        
+                </div>
+                <div class="ProTipsContentBox1">Salicylic Acid 2%</div>
+                <div class="ProTipsContentBox2">Reduce blackheads & breakouts</div>
+                <div class="ProTipsContentBox3">
+                    <div class="ProTipsContentBox31">₹ 549</div>
+                    <div class="ProTipsContentBox32">₹ 545</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id = OurProductBox>
+        <div id = "HeadingViewAllBox">
+            <div id = "Heading">Shop Our Product</div>
+            <div onclick="OurProductPage()" id = "ViewAll">View All</div>
+        </div>
+        <div id = "OurProductShowContainer">
+            <div class="carousel main" data-flickity='{ "autoPlay": false }'>
+                <% Products.map(function(element,index) { %>
+                <div class="carousel-cell item1">
+                    <div class = "EachProductItemBox">
+                        <div class = "SaleViewBox">
+                            <div class="SaleIcon">Sale</div>
+                            <div onclick="ShowSomeProductDetails(`<%= JSON.stringify(element) %>`,`<%= index%>`,0)" class="ViewIcon">
+                                <img class = "ViewImage" src="https://cdn-icons-png.flaticon.com/512/709/709724.png" alt="">
+                            </div>
+                        </div>
+                        <div onclick = "ProductDetailsPage(`<%= element._id %>`)" class="ImageBox">
+                            <img class = "GridImage" src="<%= element.Image.Image1 %>" alt="">
+                        </div>
+                        <div class="TitleBox"><%= element.Title %></div>
+                        <div class="PriceStrickPriceBox">
+                            <div class="StrickPriceBox">₹ : <%= element.StrickPrice %></div>
+                            <div class="PriceBox">₹ : <%= element.Price%></div>
+                        </div>
+                        <div class="AddToCartQunatityBox">
+                            <div onclick="QuantityIncreaseDecrease(`<%= JSON.stringify(element) %>`, false)" class="DecreaseBox"></div>
+                            <div class="ShowQuantityBox" id = "ShowQuantityBoxInHome"></div>
+                            <div onclick="QuantityIncreaseDecrease(`<%= JSON.stringify(element) %>`, true)" class="IncreaseBox"></div>
+                            <div class="AddToCartButtonImage">
+                                <div onclick= "" class="AddToCartIcon">
+                                    <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
+                                </div>
+                                <div onclick="AddToCart(`<%= JSON.stringify(element) %>`)" class="AddToCartButton">
+                                    <button class="AddToCart">ADD TO CART</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+
+    <div id = "ExploreContainer">
+        <div id = "ImageExploreBox">
+            <div onclick="OurProductPage()" id = "ImageExplore">
+                <img id = "ExploreImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/files/skin-regimen-grey-min.png?v=1593944034" alt="">
+            </div>
+            <div id = "ExploreContent">
+                <div id = "ExploreContainer1">Looking for a particular skin solution?</div>
+                <div id = "ExploreContainer2">Know which ingredient is best suited for your particular skin concern. No more guesses.</div>
+                <div onclick="GoToHomePage()" id = "ExploreContainer3">Explore</div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "RealStoriesContainer">
+        <div id = "RealStoriesHeadingContainer">Real stories</div>
+        <div id = "RealStoriesContainer2">
+            <div class = "RealStoriesContent">
+                <div class = "RealStoriesContent1">"</div>
+                <div class = "RealStoriesContent2">I love this Vitamin C serum, I can see my skin becomes brighter after one to two days only which is remarkable.</div>
+                <div class = "RealStoriesContent3">- Susmitha Prabhakaran</div>
+            </div>
+            <div class = "RealStoriesContent">
+                <div class = "RealStoriesContent1">"</div>
+                <div class = "RealStoriesContent2">I have been struggling with oily, acne-prone skin. After applying the serum before bed, I wake up with fresh & even skin that hasn't gotten oily overnight!</div>
+                <div class = "RealStoriesContent3">- Shilpa Sharma</div>
+            </div>
+            <div class = "RealStoriesContent">
+                <div class = "RealStoriesContent1">"</div>
+                <div class = "RealStoriesContent2">Its really working. I was having mild wrinkles around my eyes but it has been reduced after 4-5 applications.</div>
+                <div class = "RealStoriesContent3">- Neha Saraswat</div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "ProTipsContainer">
+        <div id = "HeadingViewAllBox2">
+            <div id = "Heading">Pro Tips</div>
+            <div onclick="OurProductPage()" id = "ViewAll">View All</div>
+        </div>
+        <div id = "ProTipsProductContainer">
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/articles/cover_image_2_d4dbda77-2adc-4d4b-8c29-fd168cdbc2ae_540x.jpg?v=1616389018" alt="">        
+                </div>
+                <div class="ProTipsContentBox">Salicylic Acid is One Of The Most Commonly Used Topical Face Acids! Here’s How To Use It!</div>
+            </div>
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/articles/cover_image_2_5ed4fc56-3ddd-4a22-8c85-39e2be166515_540x.jpg?v=1616216743" alt="">        
+                </div>
+                <div class="ProTipsContentBox">10 Things you need to know about skin hydration</div>
+            </div>
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/articles/cover_image_2_9c219657-ed35-4fcb-8413-8804e32561c9_540x.jpg?v=1616129562" alt="">        
+                </div>
+                <div class="ProTipsContentBox">The Uses and Benefits of Oleic Acid for Skin</div>
+            </div>
+            <div class="ProTipsProductBox">
+                <div class="ProTipsImageBox">
+                    <img class = "ProTipsImage" src="https://cdn.shopify.com/s/files/1/0410/9608/5665/articles/cover_image_2_a998f2b3-ab10-4d02-8c47-2d8d554bea71_350x300_crop_center.jpg?v=1615437318" alt="">        
+                </div>
+                <div class="ProTipsContentBox">The No BS Guide to Using Peptides in Skincare</div>
+            </div>
+        </div>
+    </div>
+
+    <section id = "slider">
+        <div class="container">
+            <div class="subcontainer">
+                <div class="slider-wrapper">
+                    <div id = "Heading">Recentaly See Product</div>
+                    <div class="my-slider">
+    
+                        <!-- <div>
+                            <div class="slide">
+                                <div class="slide-img img-1">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii</h3>
+                                    <p>Maui</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-2">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii2</h3>
+                                    <p>Maui2</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-3">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii3</h3>
+                                    <p>Maui3</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-4">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii4</h3>
+                                    <p>Maui4</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-5">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii5</h3>
+                                    <p>Maui5</p>
+                                </div>
+                            </div>
+                        </div> -->
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id = "Footercontainer">
+        <div class="footer-1">
+            <div class="footr-text">
+                <div class="text-area">
+                    <div class="logo">
+                        <a href="#link">
+                            <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/files/minimalist-logo-white-new_x20@2x.png?v=1606032887" alt="" class="a-img">
+                        </a>
+                    </div>
+                    <div class="logo-2">
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://toppng.com/uploads/preview/facebook-logo-black-11549681824hmcxyqtxds.png" alt="" class="image">
+                            </a>
+                        </div>
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://i.pinimg.com/originals/c6/2c/05/c62c055ede6aadbb1f94a555071c98b9.jpg" alt="" class="image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">ABOUT</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Our values</a><br>
+                        <a href="#link" class="link">Privacy policy</a><br>
+                        <a href="#link" class="link">Terms & conditions</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">HELP</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Knowledge</a><br>
+                        <a href="#link" class="link">FAQs</a><br>
+                        <a href="#link" class="link">Return & refund policy</a><br>
+                        <a href="#link" class="link"> Contact us</a><br>
+                        <a href="#link" class="link">Track order</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">SIGN UP AND SAVE</p>
+                    </div>
+                    <div class="mid-tex">
+                        <p class="link">
+                            Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                        </p>
+                        <div class="box1">
+                            <div class="div">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmTSdwx7aEKX5HoBTvAlYubZ9bIOpysS0gA&usqp=CAU" alt="" class="image-1">
+                            </div>
+                            <div id="div1">
+                                <input type="text" placeholder="Enter your email" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <div id="footer-logo-1">
+                    <div class="img">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/30455c9384889.57ee562a4fba0.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://flyclipart.com/thumb2/american-express-amex-billing-credit-card-payment-shop-icon-500339.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://cdn.techjockey.com/web/assets/images/techjockey/products/11424_Freecharge-logo.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://assets.mspimages.in/wp-content/uploads/2021/07/GooglePay_Lockup.max-1200x1200-1.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://yt3.ggpht.com/ytc/AKedOLSvIBDFtbGRhKxpIQvtcLCrCa75ldfziwEVgJG5=s900-c-k-c0x00ffffff-no-rj" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.pngitem.com/pimgs/m/265-2655326_mobikwik-wallet-icon-hd-png-download.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://securecdn.pymnts.com/wp-content/uploads/2020/01/Score-Card-Company-Image-22.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://aniportalimages.s3.amazonaws.com/media/details/Paytm_apr28.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://skyllme.com/wp-content/uploads/2019/10/unnamed.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.sundayguardianlive.com/wp-content/uploads/2019/10/rupay.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpc6dS_7YcmRbnP5ztdomyriQje2m4rWdXSWds18YLMbboByoGOOglpiRTb2NqeKMBZv0&usqp=CAU" alt="Na" class="image">
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <P class="text"> © 2022 Minimalist</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id = "Extra2"></div>
+</body>
+</html>
+
+<script src="scripts/index.js"></script>
+<script src="scripts/cart.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

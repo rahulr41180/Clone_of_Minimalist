@@ -1,0 +1,1877 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0410/9608/5665/files/Minimalist_Favicon-min_32x32.png?v=1646335623" type="image/png">
+    <!-- <link rel="stylesheet" href="product.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title id="pageName"><%= Products.ChemicalUnit %> Details</title>
+    <!-- <link rel="stylesheet" href="css/productdetails.css"> -->
+    
+    <style>
+        #title{
+    width: 90%;
+    height: 800px;
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: 5%;
+    margin-top: 110px;
+}
+#image,#data{
+    width: 600px;
+    height: 102%;
+    /* border: 1px solid black; */
+    flex: 1;
+    padding:1.5% ;
+}
+#image>div{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+}
+#Image{
+    height: 90%;
+    /* border: 1px solid yellow; */
+}
+#Image img{
+    height: 100%;
+    width: 100%;
+}
+#image_details img{
+    width: 100%;
+    height: 100%;
+}
+#data>div{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+/* #data>div>div{
+    /* border: 1px solid green; 
+} */
+#Alert{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 70%;
+    background-color: rgb(218,218,218);
+}
+#Alert>p{
+    margin: 2% 0% -4% 2%;
+    font-size: 100%;
+}
+#ChemicalUnit{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 55%;
+}
+#ChemicalUnit>h3{
+    margin: 0% 0% -5% -0%;
+    font-size: 180%;
+}
+#ChemicalComposition{
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 38%;
+    margin-top: -20px;
+}
+#ChemicalComposition>p{
+    margin: 0% 0% -4% 0%;
+    font-size: 89%;
+    color: rgb(218,218,218);
+}
+#Reviews{
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 60%;
+    margin-top: -48px;
+}
+#Reviews>a>div{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 32%;
+    height: 100%;
+}
+#Reviews>a>div>div{
+    /* border: 1px solid blue; */
+    height: 70%;
+    /* margin-top: 0%; */
+    display: flex;
+}
+#Reviews>a>div>div:nth-child(1){
+    flex: 5.5;
+}
+#Reviews>a>div>div:nth-child(2){
+    flex: 4.5;
+}
+#Reviews>a>div>div:nth-child(2)>p{
+    margin:6% -10% 0% 0% ;
+    font-size: 96%;
+    text-decoration:none;
+    color: black;
+}
+#Reviews>a>div>div:nth-child(1)>div{
+    /* border: 1px solid greenyellow; */
+    flex: 1;
+}
+#Reviews img{
+    width: 90%;
+    height: 100%;
+}
+#Price{
+   /* border: 1px solid blue; */
+    width: 100%;
+    height: 60%;
+    margin-top: -68px; 
+    display: flex;
+}
+#Price>div:nth-child(1){
+    /* border: 1px solid red; */
+    width: 10%;
+    display: flex;
+}
+#Price>div:nth-child(2){
+    /* border: 1px solid red; */
+    width: 10%;
+    display: flex;
+}
+#Price>div:nth-child(1)>p{
+    /* border: 1px solid blue; */
+    margin:10% 0% 0% 0% ;
+    font-size: 118%;
+    font-weight: bold;
+    color: black;
+}
+#Price>div:nth-child(2)>p{
+    /* border: 1px solid blue; */
+    margin:10% 0% 0% 0% ;
+    font-size: 118%;
+    text-decoration: line-through;
+    color:rgb(218,218,218) ;
+}
+#Add{
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 100%;
+    margin-top: -80px; 
+    display: flex;
+}
+#Add>div:nth-child(1){
+    border: 1px solid black;
+    width: 25%;
+    display: flex;
+}
+#Add input{
+    border: transparent;
+}
+#Add>div:nth-child(1)>div{
+    /* border: 1px solid greenyellow; */
+    flex: 1;
+}
+.butten{
+    /* border: 1px solid violet; */
+    width: 30%;
+    height: 30%;
+    margin:40% 0% 0% 30%;
+}
+#Add input{
+    width: 88%;
+    height: 93%;
+    text-align: center;
+}
+#Add button{
+    /* border: 1px solid red; */
+    width: 57%;
+    height: 72%;
+    margin-top: 1%;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+#Add button:hover{
+    cursor: pointer;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+#Add>div button{
+    background-color: white;
+    border: transparent;
+    color: black;
+    font-size: 159%;
+    margin-left: -43%;
+    margin-top: -50%;
+}
+#UseFor{
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 36%;
+    margin-top: -74px;
+}
+#UseFor>p{
+    margin:0% 0% 0% 0% ;
+    font-size: 88%;
+    font-weight: bold;
+}
+#WhatItIs{
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 70%;
+    margin-top: -95px;
+}
+#WhatItIs>p{
+    margin:0% 0% 0% 0% ;
+    font-size: 88%;
+
+}
+#WhyitIsAwesome{
+    /* border: 1px solid blue; */
+    width: 100%;
+    margin-top: -112px;
+}
+#awesome{
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 40%;
+    margin-top: -95px;
+}
+#awesome>p{
+     margin:0% 0% 0% 0% ;
+    font-size: 88%;
+    font-weight: bold;
+}
+#WhyitIsAwesome>ul{
+    /* line-height: 1.5; */
+    margin-bottom: -7%;
+    font-size: 14px;
+    /* line-height: 1.3; */
+}
+#WhyitIsAwesome>ul>li{
+    line-height: 1.5;
+}
+#color{
+    background-color: rgb(139,139,139);
+    margin-top: 20px;
+    height: 21%;
+}
+#Keyhighlights{
+    width: 100%;
+    height: 36%;
+    margin:-3% 0% 0% 0% ;
+
+}
+#Keyhighlights>p{
+    margin:0% 0% 0% 0% ;
+    font-size: 86%;
+    font-weight: bold;
+}
+#Keyhighlights_data{
+    height: 100%;
+    margin-top: -7%;
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows: repeat(2,50%);
+}
+/* #Keyhighlights_data>div{
+    border: 1px solid red;
+} */
+#Keyhighlights_data>div{
+    display: flex;
+}
+#Keyhighlights_data>div>div:nth-child(1){
+    /* border: 1px solid blue; */
+    margin:22px -17px -8px 22px;
+}
+#Keyhighlights_data>div>div:nth-child(2){
+    /* border: 1px solid blue; */
+    margin: 7px -17px -8px 22px;
+}
+#Consumertestingresults{
+    background-color: rgb(233,232,221);
+    height: 54%;
+    margin: 11% 0% 0% 0%;
+    padding-top: 1%;
+    margin-bottom: -5%;
+    margin-top: 5%;
+}
+#Consumertestingresults>div{
+    height: 48%;
+}
+#Consumertestingresults>div p{
+    margin: 0% 0% 0% 4%;
+}
+#details{
+    width: 90%;
+    height: 500px;
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: 5%;
+}
+#data_details, #image_details{
+    width: 600px;
+    height: 570px;
+    /* border: 1px solid black; */
+    flex: 1;
+    /* padding:1.5% ; */
+    margin-top: -55px;
+}
+#image_details>div{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+}
+#data_details>div{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+/* #data_details>div>div{
+    /* border: 1px solid blue; 
+} */
+#Science_heading{
+    height: 15%;
+}
+#Science_heading>h3{
+    font-size:28px;
+    margin: 1% 0% -7% 1%;
+}
+#Science_data{
+    /* border: 1px solid blue; */
+    height: 140%;
+    margin-top: -35%;
+    display: grid;
+}
+#Science_data>div{
+    /* border: 1px solid black;   */
+    margin-bottom: -3%;
+    margin-top: -5%;
+}
+#Science_data>div>p{
+    margin: 0% 0% 0% 0%;
+    font-size: 14px;
+    line-height: 1.3;
+}
+#how{
+    width: 90%;
+    height: 200px;
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: 5%;
+}
+#howToUse, #howToUse_data{
+    width: 600px;
+    height: 270px;
+    /* border: 1px solid black; */
+    flex: 1;
+    padding:1.5% ;
+    margin-top: -55px;
+}
+#howToUse{
+    font-size: 120px;
+    line-height: .9em;
+}
+#howToUse>h3{
+    margin-top: 24px;
+    margin-left: 20px;
+}
+#howToUse_data li{
+    line-height: 1.3;
+}
+#ingredients{
+    width: 90%;
+    height: 60px;
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: 5%;
+    background-color:rgb(233,232,221) ;
+}
+#ingredients_data{
+    width: 600px;
+    height: 150px;
+    /* border: 1px solid black; */
+    flex: 1;
+    padding:1.5% ;
+    margin-top: -55px;
+    display: grid;
+}
+
+#ingredients_data>div:nth-child(1){
+    height: 50%;
+}
+#ingredients_data>div:nth-child(2){
+    margin-top: -2%;
+}
+#Ingredients_title{
+    font-size: 28px;
+    margin-top: -20px;
+}
+#Ingredients{
+    font-size: 14px;
+    line-height: 1.4;
+}
+#Ingredients{
+    margin-top: -10px;
+    word-spacing: 3px;
+}
+#faq{
+    width: 90%;
+    height: 550px;
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: 5%;
+}
+#faq>div{
+    width: 600px;
+    height: 620px;
+    /* border: 1px solid black; */
+    flex: 1;
+    padding:1.5% ;
+    margin-top: -55px;
+    display: grid;
+}
+/* #faq>div>div{
+    /* border: 1px solid green; 
+} */
+#FAQs{
+    height: 42%;
+    font-size: 28px;
+}
+#FAQs>h3{
+    margin-top: -5px;
+}
+#ans_q{
+    margin-top: -2%;
+    height: 100%;
+    display: grid;
+    grid-gap: -10px;
+}
+#one,#two,#three,#four{
+    margin-bottom: -10px;
+}
+#one>div:nth-child(1){
+    /* border: 1px solid blue; */
+    height: 10%;
+}
+#one>div:nth-child(2){
+    /* border: 1px solid blue; */
+    height: 70%;
+    
+}
+#two>div:nth-child(1){
+    /* border: 1px solid blue; */
+    height: 10%;
+    
+}
+#two>div:nth-child(2){
+    /* border: 1px solid blue; */
+    height: 70%;
+    
+}
+#three>div:nth-child(1){
+    /* border: 1px solid blue; */
+    height: 10%;
+    
+}
+#three>div:nth-child(2){
+    /* border: 1px solid blue; */
+    height: 70%;
+    
+}
+#four>div:nth-child(1){
+    /* border: 1px solid blue; */
+    height: 10%;
+    
+}
+#four>div:nth-child(2){
+    /* border: 1px solid blue; */
+    height: 70%;
+    
+}
+#five>div:nth-child(1){
+    /* border: 1px solid blue; */
+    height: 10%;
+    
+}
+#five>div:nth-child(2){
+    /* border: 1px solid blue; */
+    height: 70%;
+    
+}
+#Q1>p{
+    font-size:14px;
+    font-weight: bold;
+    margin-top: 0%;
+}
+#A1>p{
+    margin-top: 0.5%;
+    line-height: 1.2;
+}
+#Q2>p{
+    font-size:14px;
+    font-weight: bold;
+    margin-top: 0%;
+}
+#A2>p{
+    margin-top: 0.5%;
+    line-height: 1.2;
+}
+#Q3>p{
+    font-size:14px;
+    font-weight: bold;
+    margin-top: 0%;
+}
+#A3>p{
+    line-height: 1.2;
+    margin-top: 0.5%;
+}
+#Q4>p{
+    font-size:14px;
+    font-weight: bold;
+    margin-top: 0%;
+}
+#A4>p{
+    line-height: 1.2;
+    margin-top: 0.5%;
+}
+#Q5>p{
+    font-size:14px;
+    font-weight: bold;
+    margin-top: 0%;
+}
+#A5>p{
+    line-height: 1.2;
+    margin-top: 0%;
+}
+#product_details{
+    width: 90%;
+    height: 140px;
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: 5%;
+}
+#product_details>div{
+    width: 600px;
+    height: 210px;
+    /* border: 1px solid black; */
+    flex: 1;
+    padding:1.5% ;
+    margin-top: -55px;
+    display: grid;
+}
+/* #product_details>div>div{
+    /* border: 1px solid red; 
+}*/
+/* #product_title{
+    /* border: 1px solid violet;
+    height: 50px;
+} */
+#product_title>h3{
+    font-size: 28px;
+    margin-top:5px;
+}
+#product_data>div{
+    /* border: 1px solid green; */
+    display: flex;
+    height: 20px;
+}
+#product_data>div>div:nth-child(1){
+    /* border: 1px solid blue; */
+    flex: 1.8;
+}
+#product_data>div>div:nth-child(2){
+    flex: 9;
+    /* border: 1px solid red; */
+}
+#product_data>div>div:nth-child(1) p{
+    font-weight: bold;
+    /* margin-top: 0px; */
+    font-size: 14px;
+}
+/* Next butten
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 13px;
+  margin-top:70px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  border: 1px solid red;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+ On hover, add a black background color with a little bit see-through 
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+*/
+body {
+    margin: 0;
+}
+
+#footer {
+    background-color: black;
+    height: 590px;
+    width: 100%;
+}
+
+.footer-1 {
+    display: inline-block;
+    width: 84%;
+    height: 75%;
+    margin-top: 70px;
+    margin-left: 105px;
+}
+
+.footr-text {
+    /* background-color: red; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+.footer-logo {
+    width: 100%;
+    height: 50%;
+    margin-left: auto;
+}
+
+.img {
+    width: 5%;
+    height: 30%;
+    margin: 6px;
+    margin-top: 10%;
+}
+
+#footer-logo-1 {
+    width: 70%;
+    height: 50%;
+    display: flex;
+    margin-left: 25%;
+}
+
+.text {
+    text-align: center;
+    font-size: .75em;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 4%;
+}
+
+.image {
+    width: 100%;
+    height: 85%;
+    border-radius: 4px;
+}
+
+.text-area {
+    width: 23%;
+    height: 100%;
+    /* background-color: blue; */
+    margin: 4px;
+}
+
+.logo-2 {
+    width: 50%;
+    height: 30%;
+    /* background-color: #fff; */
+    margin: 10px;
+    display: flex;
+}
+
+.logo-1 {
+    width: 50%;
+    height: 70%;
+    /* background-color: rgb(238, 1, 1); */
+    margin: 6px;
+}
+
+.a-img {
+    width: 50%;
+    margin-left: 16px;
+}
+
+.ulist {
+    list-style-type: none;
+    color: #fff;
+}
+
+.link {
+    margin-top: 13px;
+    /* font-size: ; */
+    color: #fff;
+    display: inline-block;
+}
+
+.text-01 {
+    color: #fff;
+    margin-top: 0px;
+}
+
+.box1 {
+    border: 1px solid gray;
+    width: 100%;
+    height: 36px;
+    display: flex;
+}
+
+.image-1 {
+    height: 100%;
+    width: 100%;
+    margin-left: 6px;
+    margin-top: 5px;
+}
+
+.input {
+    background-color: black;
+    color: #fff;
+    margin-left: 12px;
+    margin-top: 5px;
+    width: 90%;
+    height: 60%;
+    border-width: 0px;
+    border: none;
+}
+
+.div {
+    height: 70%;
+    width: 14%;
+}
+
+#div1 {
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+}
+body
+{
+    margin: 0;
+}
+.openBtn {
+    background: #F1F1F1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .openBtn:hover {
+    background: #bbb;
+  }
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    background-color: rgb(236, 227, 227);
+    background-color: rgba(231, 220, 220, 0.9);
+  }
+  #InputCloseBox
+  {
+      border: 0px solid white;
+      width: 99.3%;
+      padding: 1.5vw 1vw 1.5vw 1.5vw;
+      display: flex;
+      grid-gap: 1vw;
+      justify-content: center;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  #SearchInput
+  {
+      border: 0px solid white;
+      height: 4vw;
+      width: 95%;
+      outline: none;
+      padding: .5vw 1vw .5vw 1vw;
+      font-size: 1.5vw;
+      border: 0;
+  }
+  #SearchInput:hover
+  {
+      background-color: #F1F1F1;
+  }
+  #SubmitSearchInput
+  {
+      border: 0px solid;
+      width: 5%;
+      height: 4vw;
+      padding: .5vw;
+      font-size: 1.8vw;
+      cursor: pointer;
+      background-color: rgb(190, 190, 212);
+  }
+  #SubmitSearchInput:hover
+  {
+      background-color: #bbb;
+  }
+  .overlay-content {
+      border: 1px solid white;
+    position: relative;
+    /* top: 46%; */
+    width: 90%;
+    text-align: center;
+    padding: .5vw;
+    display: flex;
+  }
+  .overlay .closebtn {
+      border: 1px solid white;
+      width: fit-content;
+      cursor: pointer;
+      color: rgb(87, 72, 72);
+      font-size:3vw;
+      padding: 0vw .6vw 0vw .6vw;
+    /* position: absolute;
+    /* top: 20px;
+    right: 45px; */
+    /* font-size: 60px;
+    color: white; */
+  }
+  .overlay .closebtn:hover {
+    color: #ccc;
+  }
+#NavbarContainer
+{
+    /* border: 1px solid; */
+    width: 95.86vw;
+    padding: 2vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    background-color: black;
+}
+#navbar
+{
+    /* border: 1px solid; */
+    width: 99.9%;
+    display: flex;
+}
+#LogoBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 3.5vw;
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+}
+#HomeIcon
+{
+    /* border: 1px solid; */
+    width: 23.5%;
+    height: 99.8%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+}
+#WebsiteNameBox
+{
+    /* border: 1px solid; */
+    width: 76%;
+    height: 99.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6vw;
+    color: white;
+    background-color: black;
+}
+#MiddleBox
+{
+    /* border: 1px solid; */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding: .2vw;
+    background-color: black;
+}
+.Middle
+{
+    /* border: 1px solid; */
+    width: 16%;
+    height: 94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+#LoginSignUpBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    display: flex;
+    padding: .2vw;
+    justify-content: center;
+    grid-gap: .1vw;
+    background-color: black;
+}
+.LoginSignUp
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+#SearchIcon
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <% Products %>
+    <div id="container">
+        <div id="navbar">
+            <div id="myOverlay" class="overlay">
+                <div id="InputCloseBox">
+                    <div class="overlay-content">
+                        <button id="SubmitSearchInput"><i class="fa fa-search"></i></button>
+                        <input id="SearchInput" type="Search" placeholder="Search Our Store....">
+                    </div>
+                    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+                </div>
+            </div>
+            <div id="NavbarContainer">
+                <div id="navbar">
+                    <div id="LogoBox">
+                        <div onclick="GoToHomePage()" id="HomeIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                            </svg>
+                        </div>
+                        <div onclick="GoToHomePage()" id="WebsiteNameBox">minimalist_</div>
+                    </div>
+                    <div id="MiddleBox">
+                        <div onclick="GoToHomePage()" class="Middle">Home</div>
+                        <div onclick="concernpage()" class="Middle">Concern</div>
+                        <div onclick="OurProductPage()" class="Middle">Our Product</div>
+                        <div onclick="knowleadgepage()" class="Middle">Knowleadge</div>
+                        <div onclick="TrackerOrder()" class="Middle">Tracker Order</div>
+                    </div>
+                    <div id="LoginSignUpBox">
+                        <div onclick="LoginSignUpPage()" class="LoginSignUp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            </svg>
+                        </div>
+                        <div id="SearchIcon" onclick="openSearch()" class="LoginSignUp"><i class="fa fa-search"></i></div>
+                        <div onclick="MinimalistAddToCartPage()" id="AddToCart" class="LoginSignUp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="title">
+            <div id="image">
+                <div>
+                    <div id="Image">
+                        <img src="<%= Products.Image.Image1 %>" alt="">
+                    </div> 
+                </div>
+            </div>
+            <div id="data">
+                <div>
+                    <div id="Alert">
+                        <p><%= Products.Alert %></p>
+                    </div>
+                    <div id="ChemicalUnit">
+                        <h3><%= Products.ChemicalUnit %></h3>
+                    </div>
+                    <div id="ChemicalComposition">
+                        <p><%= Products.ChemicalComposition %></p>
+                        <!-- <p>fragrance free • non-comedogenic • 30ml</p> -->
+                    </div>
+                    <div id="Reviews">
+                        <a href="#">
+                            <div>
+                                <div>
+                                    <div>
+                                        <img src="https://cdn.pixabay.com/photo/2015/01/17/11/45/star-602148__340.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="https://cdn.pixabay.com/photo/2015/01/17/11/45/star-602148__340.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="https://cdn.pixabay.com/photo/2015/01/17/11/45/star-602148__340.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="https://cdn.pixabay.com/photo/2015/01/17/11/45/star-602148__340.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="https://cdn.pixabay.com/photo/2021/10/11/00/58/star-6699070_960_720.png" >
+                                    </div>
+                                </div>
+                                <div id="review">
+                                    <p><%= Products.Reviews %></p>
+                                    <!-- <p>609 reviews</p> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="Price">
+                        <div id="selling_price">
+                            <p>₹</p>
+                            <p><%= Products.Price %></p>
+                            <!-- <p>₹ 689</p> -->
+                        </div>
+                        <div id="mrp">
+                            <p>₹</p>
+                            <p><%= Products.StrickPrice %></p>
+                            <!-- <p>₹ 699</p> -->
+                        </div>
+                    </div>
+                    <div id="Add">
+                        <div>
+                            <div>
+                                <div class="butten">
+                                    <button>-</button>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="number" value = 0>
+                            </div>
+                            
+                            <div>
+                                <div class="butten">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                            <button onclick="AddToCart(`<%= JSON.stringify(Products) %>`)" >Add to cart</button>
+                    </div>
+                    <div id="UseFor">
+                        <p>Weekend Exfoliating Facial</p>
+                    </div>
+                    <div id="WhatItIs">
+                        <p>
+                            <span style="font-weight: bold;">
+                                What it is:
+                            </span>
+                            A powerful peeling trio of 25% AHA, 5% PHA & 2% BHA that provides multi-level exfoliation, both on the surface & inside
+                            the pores, giving you a healthy, plump, and glowing skin.
+                        </p>
+                    </div>
+                    <div id="awesome">
+                        <p>Why it's awesome:</p>
+                    </div>
+                    <div id="WhyitIsAwesome">
+                        <ul>
+                            <li><%= Products.WhatItIs.WhyitIsAwesome1 %></li>
+                            <li><%= Products.WhatItIs.WhyitIsAwesome2 %></li>
+                            <li><%= Products.WhatItIs.WhyitIsAwesome3 %></li>
+                            <li><%= Products.WhatItIs.WhyitIsAwesome4 %></li>
+                        </ul>
+                            <!-- <ul>
+                                <li>A whopping 25% AHA, 5% PHA & 2% BHA blend formulated at a pH of 3.4 - 3.8 for maximum effectiveness. AHA & PHA
+                                exfoliates while BHA clears congestion of pore, delivering incredible brightening & elastic feel for the baby-soft
+                                complexion</li>
+                                <li>PHAs are next generation AHAs. Not just an exfoliator, PHAs are also humectants and moisturizers. Further,
+                                Gluconolactone (PHA used in this formula) provides up to 50% protection against UV radiation</li>
+                                <li>A soothing peeling solution formulated with Turmeric Extract and Aloe juice to calm skin irritation commonly associated
+                                with peeling</li>
+                                <li>All ingredients are sourced from leading global suppliers such as Fortune 500 Chemours Company, USA, and Jungbunzlauer
+                                Suisse, Canada</li>
+                            </ul> -->
+                    </div>
+                    
+                    <div id="color"></div>
+                    <div id="Keyhighlights">
+                        <!-- <p>Key highlights:</p> -->
+                        <p><%= Products.Keyhighlights.Heading %></p>
+                    </div>
+                    <div id="Keyhighlights_data">
+                        <div>
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-89416714--right.svg?v=1596645955" alt="">
+                            </div>
+                            <div id="Keyhighlights1">
+                                <p><%= Products.Keyhighlights.Keyhighlights1 %></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-89416714--right.svg?v=1596645955" alt="">
+                            </div>
+                            <div id="Keyhighlights2">
+                                <p><%= Products.Keyhighlights.Keyhighlights2 %></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-89416714--right.svg?v=1596645955" alt="">
+                            </div>
+                            <div id="Keyhighlights3">
+                                <p><%= Products.Keyhighlights.Keyhighlights3 %></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-89416714--right.svg?v=1596645955" alt="">
+                            </div>
+                            <div id="Keyhighlights4">
+                                <p><%= Products.Keyhighlights.Keyhighlights4 %></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-89416714--right.svg?v=1596645955" alt="">
+                            </div>
+                            <div id="Keyhighlights5">
+                                <p><%= Products.Keyhighlights.Keyhighlights5 %></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-89416714--right.svg?v=1596645955" alt="">
+                            </div>
+                            <div id="Keyhighlights6">
+                                <p><%= Products.Keyhighlights.Keyhighlights6 %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Consumertestingresults">
+                         <div>
+                            <p>Consumer testing results:</p>
+                        </div>
+                        <div id="Consumertestingresults_data">
+                            <!-- <p>Consumer studies are underway and will be posted here soon.</p> -->
+                            <p><%= Products.Consumertestingresults.Consumertestingresults1 %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="details">
+            <div id="data_details">
+                <div>
+                    <div id="Science_heading">
+                        <h3>Science behind this product:</h3>
+                    </div>
+                    <div id="Science_data">
+                        <div style="margin-bottom: .5vw;" id="Sciencebehindthisproduct1">
+                            <p><%= Products.Sciencebehindthisproduct.Sciencebehindthisproduct1 %></p>
+                            <!-- <p>Unlike physical exfoliators (scrubs, brushes, etc.) commonly used in facials, this gentle yet powerful 32% AHA/PHA/BHA
+                            chemical exfoliant trio promotes cell turnover and clear pores without causing micro-tears or damaging the skin’s
+                            natural barrier. 25% AHA (Glycolic Acid, Lactic Acid, Mandelic Acid) delivers superficial peeling by dissolving away the
+                            dead skin cells present in the upper skin layer, revealing a bright even skin tone.</p> -->
+                        </div>
+                        <div style="margin-bottom: .5vw;" id="Sciencebehindthisproduct2">
+                            <p><%= Products.Sciencebehindthisproduct.Sciencebehindthisproduct2 %></p>
+                            <!-- <p>5% PHA not just exfoliates but also doubles up as humectant and moisturiser. Because of its larger molecule size
+                            compared to Glycolic acid (molecular weight 178 vs. 76 for Glycolic acid), it penetrates the skin slowly, hence offering
+                            lesser irritation. Further, PHAs are proven to provide up to 50% protection against UV radiation, hence they provide
+                            conditioning effects to skin without increasing sensitivity to UV light.</p> -->
+                        </div>
+                        <div style="margin-bottom: .5vw;" id="Sciencebehindthisproduct3">
+                            <p><%= Products.Sciencebehindthisproduct.Sciencebehindthisproduct3 %></p>
+                            <!-- <p>Lastly, 2% BHA (Salicylic acid) unclog pores by breaking bonds formed by dead cells and flushing out skin debris & oils,
+                            giving you the much-desired matt look.</p> -->
+                        </div>
+                        <div style="margin-bottom: .5vw;" id="Sciencebehindthisproduct4">
+                            <p><%= Products.Sciencebehindthisproduct.Sciencebehindthisproduct4 %></p>
+                            <!-- <p>To further reduce generally associated irritation with exfoliation, it is made with pure aloe vera juice instead of
+                            water and Turmeric Extract that is clinically proven anti-inflammatory ingredient.</p> -->
+                        </div>
+                        <div style="margin-bottom: .5vw;" id="Sciencebehindthisproduct5">
+                            <p><%= Products.Sciencebehindthisproduct.Sciencebehindthisproduct5 %></p>
+                            <!-- <p>Note: It is not recommended for people with hypersensitive or compromised skin as it contains a very high concentration
+                            of direct acids.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="image_details">
+                <div>
+                    <img src="<%= Products.Image.Image3 %>" alt="">
+                </div>
+                <!-- <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/t/3/assets/pf-d94eb7ce--2min-Edited.jpg?v=1602044709" alt="">
+                </div> -->
+            </div>
+        </div>
+        <div id="how">
+            <div id="howToUse">
+                <h3>
+                    <span>
+                        How
+                        <br>
+                        to use
+                        <br>
+                    </span>
+                </h3>
+            </div>
+            <div id="howToUse_data">
+                <ul>
+                    <li><p><%= Products.Howtouse.Howtouse1 %></p></li>
+                    <li><p><%= Products.Howtouse.Howtouse2 %></p></li>
+                    <li><p><%= Products.Howtouse.Howtouse3 %></p></li>
+                    <li><p><%= Products.Howtouse.Howtouse4 %></p></li>
+                    <!-- <li id="one">Use it as a peel in the PM once per week. Increase to twice per week if your skin can tolerate it. Apply a thick layer
+                    to clean dry skin (avoid eye area) and leave for 10 minutes before rinsing off using warm water. Follow with your
+                    preferred moisturiser.</li>
+                    <li id="two">Follow it up with Minimalist ultra-hydrating 2% Hyaluronic acid to ensure newly revealed skin is well hydrated.</li>
+                    <li id="three">Always wear a broad-spectrum sunscreen SPF 30 and above while using direct acids as your skin becomes more susceptible
+                    to sunburn.</li>
+                    <li id="four">Unlike the harsh professional peeling process, the superficial peeling at home with direct acids takes time. To get the
+                    desired sustainable results, use it as a regular weekend product for at least 8-10 weeks.</li> -->
+                </ul>
+            </div>
+        </div>
+        <div id="ingredients">
+            <div id="ingredients_data">
+                <div id="Ingredients_title">
+                    <h3>Ingredients</h3>
+                </div>
+                <div id="Ingredients">
+                    <p><%= Products.Ingredients %></p>
+                    <!-- <p>Aloe Vera Juice, Glycolic Acid, Lactic Acid, Propylene Glycol, Gluconolactone, Mandelic Acid, Dimethyl Isosorbide,
+                    Sodium Hydroxide, Salicylic Acid, Propanediol, Ethoxydiglycol, Curcuma Longa (Turmeric) Root Extract, Sodium
+                    Hyaluronate, Phenoxyethanol, Pullulan, Ethylhexylglycerin, Hydroxyethylcellulose, Xanthan Gum, Sclerotium Gum, Trisodium
+                    Ethylenediamine Disuccinate, Lecithin</p> -->
+                </div>
+            </div>
+        </div>
+        <div id="faq">
+            <div>
+                <div id="FAQs">
+                    <h3>FAQs</h3>
+                </div>
+                    <div id="ans_q">
+                        <div id="one">
+                            <div id="Q1">
+                                <p><%= Products.FAQs.FAQs1 %></p>
+                                <!-- <p>1. What does peeling solutions do?</p> -->
+                            </div>
+                            <div id="A1">
+                                <p><%= Products.FAQs.FAQs11 %></p>
+                                <!-- <p>The peeling solution contains three active ingredients - 25% alpha hydroxy acid (a blend of Glycolic acid, Lactic acid &
+                                Mandelic acid), 5% poly hydroxy acid (Gluconolactone) and 2% beta hydroxy acid (Salicylic acid). They all act as
+                                excellent exfoliants. Glycolic acid works on the skin's surface and breaks through the multiple layers of the dead skin
+                                cells and helps in their effective shedding. It also fights the signs of sun damage and reduces fine lines and wrinkles.
+                                Salicylic acid penetrates deep into the pores and whisks out the skin debris and excess sebum trapped within them. Thus,
+                                it removes clogs. It also provides anti-microbial resistance to the skin and offers an overall treatment for mild acne.</p> -->
+                            </div>
+                        </div>
+                        <div id="two">
+                            <div id="Q2">
+                                <p><%= Products.FAQs.FAQs2 %></p>
+                                <!-- <p>2. Is the peeling solution safe for skin?</p> -->
+                            </div>
+                            <div id="A2">
+                                <p><%= Products.FAQs.FAQs22 %></p>
+                                <!-- <p>Chemical peels have a balanced pH and are readily available in the market (both OTC and prescription-grade medications).
+                                They are completely safe for topical applications, provided they match your needs and fit your skin type. It is usually
+                                not recommended for hypersensitive or compromised skin. Minimalist peeling solution (25% AHA + 5% PHA + 2% BHA) contains
+                                a high concentration of acids, but in combo with aloe juice and Turmeric extract that calms the irritation associated
+                                with exfoliation. Always perform a patch test over a small area of your skin. Observe it for the next 48 hours. If no
+                                irritation or burns (redness) occur, you are ready to go with the product. -->
+</p>
+                            </div>
+                        </div>
+                        <div id="three">
+                            <div id="Q3">
+                                <p><%= Products.FAQs.FAQs3 %></p>
+                                <!-- <p>3. Who can use an AHA/PHA/BHA peeling solution?</p> -->
+                            </div>
+                            <div id="A3">
+                                <p><%= Products.FAQs.FAQs33 %></p>
+                                <!-- <p>It is advised that the peeling solution should not be used on sensitive, abraded, broken, or compromised skin. The
+                                peeling solution is for unisex consumption. There is no specified starting age range for using chemical peels, however
+                                it's safe for people in their 20's to start using it. Teenagers should avoid using it or consult a dermatologist before
+                                doing so. The peeling solution should not be used during pregnancy because it contains salicylic acid, which may harm
+                                the applicant. In the case of breastfeeding women, it is better to have a word with your skincare specialist before
+                                proceeding with the product.
+</p> -->
+                            </div>
+                        </div>
+                        <div id="four">
+                            <div id="Q4">
+                                <p><%= Products.FAQs.FAQs4 %></p>
+                                <!-- <p>4. Does AHA PHA BHA peeling solution cause purging or breakouts?</p> -->
+                            </div>
+                            <div id="A4">
+                                <p><%= Products.FAQs.FAQs44 %></p>
+                                <!-- <p>Chemical peels accelerate the cell turn over, and some people might undergo a purging phase as soon as they start with
+                                the skincare acid routine. However, this shall subside in 2-3 weeks. If the purge lasts longer than 6 weeks, quit using
+                                the product, and consult a dermatologist. He/she may revise the frequency of application of the product or adjust the
+                                dosage. Or, suggest an alternative.
+</p> -->
+                            </div>
+                        </div>
+                        <div id="five">
+                            <div id="Q5">
+                                <p><%= Products.FAQs.FAQs5 %></p>
+                                <!-- <p>5. What products can or cannot be used with AHA PHA BHA peeling solution?</p> -->
+                            </div>
+                            <div id="A5">
+                                <p><%= Products.FAQs.FAQs55 %></p>
+                                <!-- <p>Hyaluronic acid is an excellent addition to your skincare routine. It hydrates the skin and helps it to retain moisture
+                                for a long time. It makes sure that the acids (used in the peel) are not too mean or harsh to your skin. Also,
+                                Niacinamide will raise the pH of the acids, if you use it right after the chemical peel, and make them less effective.
+                                But you can still include it in your daily routine and skip it on weekends when AHA/PHA/BHA is used. You can include
+                                vitamin C in our daily routine, alongside the AHA/PHA/BHA peeling solution. You can use them at alternate times, i.e.,
+                                if peeling was done at night, you could use Vitamin C serum in AM.
+</p> -->
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="result"></div>
+        <div id="other-product"></div>
+        <div id="rating"></div>
+        <div id="product_details">
+            <div>
+                <div>
+                    <div id="product_title">
+                        <h3>Product details:</h3>
+                    </div>
+                    <div id="product_data">
+                        <div>
+                            <div>
+                                <p>Product type:</p>
+                            </div>
+                            <div id="Producttype">
+                                <p><%= Products.Productdetails.Producttype %></p>
+                                <!-- <p>Face peel</p> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Net quantity:</p>
+                            </div>
+                            <div id="Netquantity">
+                                <p><%= Products.Productdetails.Netquantity %></p>
+                                <!-- <p>30ml</p> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Shelf life:</p>
+                            </div>
+                            <div id="Shelflife">
+                                <p><%= Products.Productdetails.Shelflife %></p>
+                                <!-- <p>18 months from the date of manufacturing</p> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Product dimensions (in cm):</p>
+                            </div>
+                            <div id="Productdimensions">
+                                <p><%= Products.Productdetails.Productdimensions %></p>
+                                <!-- <p>5 x 5 x 11</p> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Country of origin:</p>
+                            </div>
+                            <div id="Countryoforigin">
+                                <p><%= Products.Productdetails.Countryoforigin %></p>
+                                <!-- <p>India</p> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>SKU code:</p>
+                            </div>
+                            <div id="SKUcode">
+                                <p><%= Products.Productdetails.SKUcode %></p>
+                                <!-- <p>8906128100122</p> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Manufactured & marketed by:</p>
+                            </div>
+                            <div id="Manufacturedmarketedby">
+                                <p><%= Products.Productdetails.Manufacturedmarketedby %></p>
+                                <!-- <p>Uprising Science Pvt Ltd (21, Aarna 2 Tower, Kartarpura Industrial Area, Jaipur - 302006 (Rajasthan)</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer-1">
+                <div class="footr-text">
+                    <div class="text-area">
+                        <div class="logo">
+                            <a href="#link">
+                                <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/files/minimalist-logo-white-new_x20@2x.png?v=1606032887"
+                                    alt="" class="a-img">
+                            </a>
+                        </div>
+                        <div class="logo-2">
+                            <div class="logo-1">
+                                <a href="#link">
+                                    <img src="https://toppng.com/uploads/preview/facebook-logo-black-11549681824hmcxyqtxds.png"
+                                        alt="" class="image">
+                                </a>
+                            </div>
+                            <div class="logo-1">
+                                <a href="#link">
+                                    <img src="https://i.pinimg.com/originals/c6/2c/05/c62c055ede6aadbb1f94a555071c98b9.jpg" alt=""
+                                        class="image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-area">
+                        <div class="mid-tex">
+                            <p class="text-01">ABOUT</p>
+                        </div>
+                        <div class="mid-tex">
+                            <a href="#link" class="link">Our values</a><br>
+                            <a href="#link" class="link">Privacy policy</a><br>
+                            <a href="#link" class="link">Terms & conditions</a><br>
+                        </div>
+                    </div>
+                    <div class="text-area">
+                        <div class="mid-tex">
+                            <p class="text-01">HELP</p>
+                        </div>
+                        <div class="mid-tex">
+                            <a href="#link" class="link">Knowledge</a><br>
+                            <a href="#link" class="link">FAQs</a><br>
+                            <a href="#link" class="link">Return & refund policy</a><br>
+                            <a href="#link" class="link"> Contact us</a><br>
+                            <a href="#link" class="link">Track order</a><br>
+                        </div>
+                    </div>
+                    <div class="text-area">
+                        <div class="mid-tex">
+                            <p class="text-01">SIGN UP AND SAVE</p>
+                        </div>
+                        <div class="mid-tex">
+                            <p class="link">
+                                Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                            </p>
+                            <div class="box1">
+                                <div class="div">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmTSdwx7aEKX5HoBTvAlYubZ9bIOpysS0gA&usqp=CAU"
+                                        alt="" class="image-1">
+                                </div>
+                                <div id="div1">
+                                    <input type="text" placeholder="Enter your email" class="input">
+                                </div>
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-logo">
+            
+                    <div id="footer-logo-1">
+                        <div class="img">
+                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/30455c9384889.57ee562a4fba0.jpg" alt="Na"
+                                class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://flyclipart.com/thumb2/american-express-amex-billing-credit-card-payment-shop-icon-500339.png"
+                                alt="Na" class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://cdn.techjockey.com/web/assets/images/techjockey/products/11424_Freecharge-logo.jpg"
+                                alt="Na" class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://assets.mspimages.in/wp-content/uploads/2021/07/GooglePay_Lockup.max-1200x1200-1.png"
+                                alt="Na" class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://yt3.ggpht.com/ytc/AKedOLSvIBDFtbGRhKxpIQvtcLCrCa75ldfziwEVgJG5=s900-c-k-c0x00ffffff-no-rj"
+                                alt="Na" class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://www.pngitem.com/pimgs/m/265-2655326_mobikwik-wallet-icon-hd-png-download.png" alt="Na"
+                                class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://securecdn.pymnts.com/wp-content/uploads/2020/01/Score-Card-Company-Image-22.png"
+                                alt="Na" class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://aniportalimages.s3.amazonaws.com/media/details/Paytm_apr28.jpg" alt="Na"
+                                class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://skyllme.com/wp-content/uploads/2019/10/unnamed.jpg" alt="Na" class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://www.sundayguardianlive.com/wp-content/uploads/2019/10/rupay.jpg" alt="Na"
+                                class="image">
+                        </div>
+                        <div class="img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpc6dS_7YcmRbnP5ztdomyriQje2m4rWdXSWds18YLMbboByoGOOglpiRTb2NqeKMBZv0&usqp=CAU"
+                                alt="Na" class="image">
+                        </div>
+                    </div>
+                    <div class="footer-text">
+                        <P class="text"> © 2022 Minimalist</P>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+async function AddToCart(product) 
+{
+    var product = JSON.parse(product);
+    var productId = product._id;
+    fetch("/cart/allproduct")
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => 
+    {
+        var result = findproduct(res, productId);
+        if (!result) // --> false
+        {
+          post_product(productId);
+        }
+        else // --> true
+        {
+          patch_product(result);
+        }
+    });
+}
+
+function findproduct(Carts, id) 
+{
+    for (var i = 0; i < Carts.length; i++) 
+    {
+      if (Carts[i].productId == id) 
+      {
+        return [Carts[i]._id, Carts[i].quantity];
+      }
+    }
+    return false;
+}
+
+async function post_product(productId) 
+{
+    const result = await fetch("/cart", 
+    {
+      method: "POST",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productId,
+      }),
+    }).then((res) => res.json());
+    // alert("post method");
+    window.location.reload();
+}
+
+function patch_product(Cart) 
+{
+    var quantity = Cart[1] + 1;
+    fetch("/cart/" + Cart[0], 
+    {
+      method: "PATCH",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity,
+      }),
+    })
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => console.log(res));
+
+    window.location.reload();
+}
+
+
+    
+// let data=JSON.parse(localStorage.getItem("MinimalistProductData"));
+// let arr=[];
+// arr.push(data);
+// console.log(data);
+function image(data1){
+    data1.forEach(function(el){
+    let img=document.createElement("img");
+    img.src=el.Image.Image1;
+    document.getElementById("Image").append(img);
+
+    let alert=document.createElement("p");
+    alert.innerHTML=el.Alert;
+    document.getElementById("Alert").append(alert);
+
+    let heading=document.createElement("h3");
+    heading.innerHTML=el.ChemicalUnit;
+    document.getElementById("ChemicalUnit").append(heading);
+    
+    document.getElementById("pageName").append(el.ChemicalUnit);
+
+    let chemp=document.createElement("p");
+    chemp.innerHTML=el.ChemicalComposition;
+    document.getElementById("ChemicalComposition").append(chemp);
+
+    let review=document.createElement("p");
+    review.innerHTML=el.Reviews;
+    document.getElementById("review").append(review);
+
+    let sp=document.createElement("p");
+    sp.innerHTML=el.Price;
+    document.getElementById("selling_price").append(sp);
+
+    let mrp=document.createElement("p");
+    mrp.innerHTML=el.StrickPrice;
+    document.getElementById("mrp").append(mrp);
+
+    for(let i=1;i<el.WhatItIs.lenght;i++){
+        let ul=document.createElement("ul");
+        let list=document.createElement("li");
+        list.innerHTML=el.WhatItIs.WhyitIsAwesome1;
+        ul.append(list);
+        document.getElementById("WhyitIsAwesome").append(ul);
+    }
+    let key=document.createElement("p");
+    key.innerHTML=el.Keyhighlights.Heading;
+    document.getElementById("Keyhighlights").append(key);
+
+    let key_data1=document.createElement("p");
+    key_data1.innerHTML=el.Keyhighlights.Keyhighlights1;
+    document.getElementById("Keyhighlights1").append(key_data1);
+
+    let key_data2=document.createElement("p");
+    key_data2.innerHTML=el.Keyhighlights.Keyhighlights2;
+    document.getElementById("Keyhighlights2").append(key_data2);
+
+    let key_data3=document.createElement("p");
+    key_data3.innerHTML=el.Keyhighlights.Keyhighlights3;
+    document.getElementById("Keyhighlights3").append(key_data3);
+
+    let key_data4=document.createElement("p");
+    key_data4.innerHTML=el.Keyhighlights.Keyhighlights4;
+    document.getElementById("Keyhighlights4").append(key_data4);
+
+    let key_data5=document.createElement("p");
+    key_data5.innerHTML=el.Keyhighlights.Keyhighlights5;
+    document.getElementById("Keyhighlights5").append(key_data5);
+
+    let key_data6=document.createElement("p");
+    key_data6.innerHTML=el.Keyhighlights.Keyhighlights6;
+    document.getElementById("Keyhighlights6").append(key_data6);
+
+    let p=document.createElement("p");
+    p.innerHTML=el.Consumertestingresults.Consumertestingresults1;
+    document.getElementById("Consumertestingresults_data").append(p);
+
+    let science2=document.createElement("p");
+    science2.innerHTML=el.Sciencebehindthisproduct.Sciencebehindthisproduct2;
+    document.getElementById("Sciencebehindthisproduct2").append(science2);
+
+    let science1=document.createElement("p");
+    science1.innerHTML=el.Sciencebehindthisproduct.Sciencebehindthisproduct1;
+    document.getElementById("Sciencebehindthisproduct1").append(science1);
+
+    let science3=document.createElement("p");
+    science3.innerHTML=el.Sciencebehindthisproduct.Sciencebehindthisproduct3;
+    document.getElementById("Sciencebehindthisproduct3").append(science3);
+
+    let science4=document.createElement("p");
+    science4.innerHTML=el.Sciencebehindthisproduct.Sciencebehindthisproduct4;
+    document.getElementById("Sciencebehindthisproduct4").append(science4);
+
+    let science5=document.createElement("p");
+    science5.innerHTML=el.Sciencebehindthisproduct.Sciencebehindthisproduct5;
+    document.getElementById("Sciencebehindthisproduct5").append(science5);
+
+    let div_image=document.createElement("div");
+    let img3=document.createElement("img");
+    img3.src=el.Image.Image3;
+    div_image.append(img3);
+    document.getElementById("image_details").append(div_image);
+
+    let how_li1=document.createElement("li");
+    how_li1.innerHTML=el.Howtouse.Howtouse1;
+    let how_li2=document.createElement("li");
+    how_li2.innerHTML=el.Howtouse.Howtouse2;
+    let how_li3=document.createElement("li");
+    how_li3.innerHTML=el.Howtouse.Howtouse3;
+    let how_li4=document.createElement("li");
+    how_li4.innerHTML=el.Howtouse.Howtouse4;
+    document.getElementById("howToUse_data").append(how_li1,how_li2,how_li3,how_li4);
+
+    let ing=document.createElement("p");
+    ing.innerHTML=el.Ingredients;
+    document.getElementById("Ingredients").append(ing)
+
+    let faq1=document.createElement("p");
+    faq1.innerHTML=el.FAQs.FAQs1;
+    document.getElementById("Q1").append(faq1)
+
+    let faq2=document.createElement("p");
+    faq2.innerHTML=el.FAQs.FAQs2;
+    document.getElementById("Q2").append(faq2)
+
+    let faq3=document.createElement("p");
+    faq3.innerHTML=el.FAQs.FAQs3;
+    document.getElementById("Q3").append(faq3)
+
+    let faq4=document.createElement("p");
+    faq4.innerHTML=el.FAQs.FAQs4;
+    document.getElementById("Q4").append(faq4)
+
+    let faq5=document.createElement("p");
+    faq5.innerHTML=el.FAQs.FAQs5;
+    document.getElementById("Q5").append(faq5)
+
+    let a1=document.createElement("p");
+    a1.innerHTML=el.FAQs.FAQs11;
+    document.getElementById("A1").append(a1);
+
+    let a2=document.createElement("p");
+    a2.innerHTML=el.FAQs.FAQs22;
+    document.getElementById("A2").append(a2);
+
+    let a3=document.createElement("p");
+    a3.innerHTML=el.FAQs.FAQs33;
+    document.getElementById("A3").append(a3);
+
+    let a4=document.createElement("p");
+    a4.innerHTML=el.FAQs.FAQs44;
+    document.getElementById("A4").append(a4);
+
+    let a5=document.createElement("p");
+    a5.innerHTML=el.FAQs.FAQs55;
+    document.getElementById("A5").append(a5);
+
+    let product=document.createElement("p");
+    product.innerHTML=el.Productdetails.Producttype;
+    document.getElementById("Producttype").append(product);
+
+    let qty=document.createElement("p");
+    qty.innerHTML=el.Productdetails.Netquantity
+    document.getElementById("Netquantity").append(qty)
+
+    let life=document.createElement("p");
+    life.innerHTML=el.Productdetails.Shelflife;
+    document.getElementById("Shelflife").append(life)
+
+    let dim=document.createElement("p");
+    dim.innerHTML=el.Productdetails.Productdimensions;
+    document.getElementById("Productdimensions").append(dim);
+
+    let country=document.createElement("p");
+    country.innerHTML=el.Productdetails.Countryoforigin;
+    document.getElementById("Countryoforigin").append(country);
+
+    let sku=document.createElement("p");
+    sku.innerHTML=el.Productdetails.SKUcode
+    document.getElementById("SKUcode").append(sku);
+
+    let add=document.createElement("p");
+    add.innerHTML=el.Productdetails.Manufacturedmarketedby;
+    document.getElementById("Manufacturedmarketedby").append(add);
+});
+}   
+// image(arr);
+
+function openSearch()
+{
+    document.querySelector("#NavbarContainer").style.zIndex = "0";
+    document.querySelector("#myOverlay").style.display = "block";
+}
+function closeSearch()
+{
+    document.querySelector("#NavbarContainer").style.zIndex = "1";
+    document.querySelector("#myOverlay").style.display = "none";
+}
+function OurProductPage()
+{
+    window.location.href = "/ourproduct/mains";
+}
+function GoToHomePage()
+{
+    window.location.href = "/index";
+}
+function MinimalistAddToCartPage()
+{
+    console.log(1);
+    window.location.href = "/cart";
+}
+function LoginSignUpPage()
+{
+    console.log(1);
+    window.location.href = "/login";
+}
+function concernpage()
+{
+    window.location.href = "/concern";
+}
+function knowleadgepage()
+{
+    window.location.href = "/knowledge";
+}
+function TrackerOrder()
+{
+    window.location.href = "/tracker";
+}
+</script>
+<!-- <script src="scripts/productdetails.js"></script>                                                            -->

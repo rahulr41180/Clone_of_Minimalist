@@ -1,0 +1,2908 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0410/9608/5665/files/Minimalist_Favicon-min_32x32.png?v=1646335623" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">  
+    <title>Minimalist Our Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/ourproduct.css"> -->
+    <style>
+        
+body
+{
+    margin: 0;
+}
+.openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .openBtn:hover {
+    background: #bbb;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    background-color: rgb(236, 227, 227);
+    background-color: rgba(231, 220, 220, 0.9);
+  }
+  #InputCloseBox
+  {
+      border: 0px solid white;
+      width: 99.3%;
+      padding: 1.5vw 1vw 1.5vw 1.5vw;
+      display: flex;
+      grid-gap: 1vw;
+      justify-content: center;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  #SearchInput
+  {
+      border: 0px solid white;
+      height: 4vw;
+      width: 95%;
+      outline: none;
+      padding: .5vw 1vw .5vw 1vw;
+      font-size: 1.5vw;
+      border: 0;
+  }
+  #SearchInput:hover
+  {
+      background-color: #f1f1f1;
+  }
+  #SubmitSearchInput
+  {
+      border: 0px solid;
+      width: 5%;
+      height: 4vw;
+      padding: .5vw;
+      font-size: 1.8vw;
+      cursor: pointer;
+      background-color: rgb(190, 190, 212);
+  }
+  #SubmitSearchInput:hover
+  {
+      background-color: #bbb;
+  }
+  .overlay-content {
+      border: 1px solid white;
+    position: relative;
+    /* top: 46%; */
+    width: 90%;
+    text-align: center;
+    padding: .5vw;
+    display: flex;
+  }
+  
+  .overlay .closebtn {
+      border: 1px solid white;
+      width: fit-content;
+      cursor: pointer;
+      color: rgb(87, 72, 72);
+      font-size:3vw;
+      padding: 0vw .6vw 0vw .6vw;
+    /* position: absolute;
+    /* top: 20px;
+    right: 45px; */
+    /* font-size: 60px;
+    color: white; */
+  }
+  
+  .overlay .closebtn:hover {
+    color: #ccc;
+  }
+#NavbarContainer
+{
+    /* border: 1px solid; */
+    width: 95.86vw;
+    padding: 2vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    background-color: black;
+}
+#navbar
+{
+    /* border: 1px solid; */
+    width: 99.9%;
+    display: flex;
+}
+#LogoBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 3.5vw;
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+}
+#HomeIcon
+{
+    /* border: 1px solid; */
+    width: 23.5%;
+    height: 99.8%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+}
+#WebsiteNameBox
+{
+    /* border: 1px solid; */
+    width: 76%;
+    height: 99.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6vw;
+    color: white;
+    background-color: black;
+}
+#MiddleBox
+{
+    /* border: 1px solid; */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding: .2vw;
+    background-color: black;
+}
+.Middle
+{
+    /* border: 1px solid; */
+    width: 16%;
+    height: 94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+#LoginSignUpBox
+{
+    /* border: 1px solid; */
+    width: 20%;
+    display: flex;
+    padding: .2vw;
+    justify-content: center;
+    grid-gap: .1vw;
+    background-color: black;
+}
+.LoginSignUp
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+#SearchIcon
+{
+    /* border: 1px solid; */
+    width: 23.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+/* -------------------------------------------------------Navbar End----------------------------------------------------------------- */
+
+#ProductContainerBox
+{
+    /* border: 1px solid blue; */
+    margin-top: 7.2vw;
+    width: 94.6vw;
+    padding: 0vw 2vw 2vw 2vw;
+    background-color: rgb(239, 239, 245);
+}
+#ProductContainer
+{
+    /* border: 1px solid; */
+    width: 97.5%;
+    margin: auto;
+    padding: .8vw;
+    background-color: rgb(215, 215, 243);
+}
+#ProductHeading
+{
+    /* border: 1px solid; */
+
+    margin: 4vw 2vw 4vw 2vw;
+    padding: .2vw;
+    width: 95%;
+    font-size: 2.2vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#AboveSortingBox
+{
+    /* border: 1px solid; */
+    width: 99%;
+    margin: auto;
+}
+#AboveSorting
+{
+    /* border: 1px solid; */
+    width: 20%;
+    margin: 0vw 0vw 0vw 2.6vw;
+    display: flex;
+}
+#SelectSortProduct
+{
+    /* border: 1px solid; */
+    width: 90%;
+    padding: .4vw;
+    outline: none;
+
+    font-size: 1.2vw;
+}
+
+#ProductFilteringContainer
+{
+    /* border: 1px solid; */
+    width: 98%;
+    padding: .5vw;
+    margin: auto;
+    margin-top: 2vw;
+    display: flex;
+    background-color: rgb(188, 188, 197);
+}
+#FilteringContainer
+{
+    /* border: 1px solid; */
+    width: 23.5%;
+    padding: .5vw;
+    background-color: rgb(234, 234, 247);
+}
+
+#CollectionBox
+{
+    /* border: 1px solid; */
+    width: 95.2%;
+    margin: auto;
+    padding: .2vw;
+    display: flex;
+    grid-gap: .4vw;
+    background-color: rgb(196, 196, 248);
+}
+#UpDownArrowBox
+{
+    /* border: 1px solid; */
+    width: 12%;
+    height: 2.1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;    
+}
+.up 
+{
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+  .arrow 
+{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    /* display: inline-block; */
+    padding: 3px;
+}
+  .down 
+{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+#Collection
+{
+    /* border: 1px solid; */
+    width: 86%;
+    height: 1.65vw;
+    padding: .2vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+#CollectionFilterBox
+{
+    /* border: 1px solid; */
+    width: 92.5%;
+    margin: auto;
+    height: 19.5vw;
+    background-color: rgb(181, 181, 250);
+}
+
+#VendorBox
+{
+    /* border: 1px solid; */
+    width: 95.2%;
+    margin: auto;
+    padding: .2vw;
+    display: flex;
+    grid-gap: .4vw;
+    background-color: rgb(168, 168, 170);
+}
+#VendorFilterBox
+{
+    /* border: 1px solid; */
+    width: 92.5%;
+    margin: auto;
+    height: 19.5vw;
+    background-color: rgb(182, 182, 248);
+}
+#Vendor
+{
+    /* border: 1px solid; */
+    width: 86%;
+    height: 1.65vw;
+    padding: .2vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+#VendorUpDownArrowBox
+{
+    /* border: 1px solid; */
+    width: 12%;
+    height: 2.1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;    
+}
+#VendorFieldset
+{
+    /* border: 1px solid blue; */
+    height: 18vw;
+    overflow: auto;
+}
+.VendorInput
+{
+    /* border: 1px solid; */
+    /* width: 10%; */
+    /* height: 2vw; */
+    padding: .5vw;
+}
+.Vendorlabel
+{
+    border: 0px solid;
+    font-size: 1.1vw;
+}
+
+#TagsBox
+{
+    /* border: 1px solid; */
+    width: 95.2%;
+    margin: auto;
+    padding: .2vw;
+    display: flex;
+    grid-gap: .4vw;
+    background-color: rgb(125, 125, 252);
+}
+#TagsFilterBox
+{
+    /* border: 1px solid; */
+    width: 92.5%;
+    margin: auto;
+    height: 19.5vw;
+    background-color: rgb(182, 182, 248);
+}
+#Tags
+{
+    /* border: 1px solid; */
+    width: 86%;
+    height: 1.65vw;
+    padding: .2vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+#TagsUpDownArrowBox
+{
+    /* border: 1px solid; */
+    width: 12%;
+    height: 2.1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;    
+}
+#TagsFieldset
+{
+    /* border: 1px solid blue; */
+    height: 18vw;
+    overflow: auto;
+}
+.TagsInput
+{
+    /* border: 1px solid; */
+    /* width: 10%; */
+    /* height: 2vw; */
+    padding: .5vw;
+}
+.Tagslabel
+{
+    border: 0px solid;
+    font-size: 1.1vw;
+}
+
+#DiscountBox
+{
+    /* border: 1px solid; */
+    width: 95.2%;
+    margin: auto;
+    padding: .2vw;
+    display: flex;
+    grid-gap: .4vw;
+    background-color: rgb(146, 216, 216);
+}
+#DiscountFilterBox
+{
+    /* border: 1px solid; */
+    width: 92.5%;
+    margin: auto;
+    height: 10.5vw;
+    background-color: rgb(182, 182, 248);
+}
+#Discount
+{
+    /* border: 1px solid; */
+    width: 86%;
+    height: 1.65vw;
+    padding: .2vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+#DiscountUpDownArrowBox
+{
+    /* border: 1px solid; */
+    width: 12%;
+    height: 2.1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;    
+}
+#DiscountFieldset
+{
+    /* border: 1px solid blue; */
+    height: 9vw;
+    overflow: auto;
+}
+.DiscountInput
+{
+    /* border: 1px solid; */
+    /* width: 10%; */
+    /* height: 2vw; */
+    padding: .5vw;
+}
+.Discountlabel
+{
+    border: 0px solid;
+    font-size: 1.1vw;
+}
+
+#MinAndMaxBox
+{
+    /* border: 1px solid; */
+    width: 95%;
+    /* width: 99.5%; */
+    margin: auto;
+    display: flex;
+    grid-gap: .5vw;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+#Minimum
+{
+    /* border: 1px solid; */
+    width: 35%;
+    height: 1.8vw;
+    display: flex;
+    padding: .2vw .2vw .2vw .5vw;
+    font-size: 1vw;
+    outline: none;
+}
+#Maximum
+{
+    /* border: 1px solid; */
+    width: 35%;
+    height: 1.8vw;
+    display: flex;
+    padding: .2vw .2vw .2vw .5vw;
+    font-size: 1vw;
+    outline: none;
+}
+#PriceBox
+{
+    /* border: 1px solid; */
+    width: 95.2%;
+    margin: auto;
+    padding: .2vw;
+    display: flex;
+    grid-gap: .4vw;
+    background-color: rgb(245, 199, 245);
+}
+#PriceFilterBox
+{
+    /* border: 1px solid; */
+    width: 92.5%;
+    margin: auto;
+    height: 10.5vw;
+    background-color: rgb(182, 182, 248);
+}
+#Price
+{
+    /* border: 1px solid; */
+    width: 86%;
+    height: 1.65vw;
+    padding: .2vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+#PriceUpDownArrowBox
+{
+    /* border: 1px solid; */
+    width: 12%;
+    height: 2.1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;    
+}
+#PriceFieldset
+{
+    /* border: 1px solid blue; */
+    width: 90.5%;
+    height: 9vw;
+    margin: auto;
+}
+.PriceInput
+{
+    /* border: 1px solid; */
+    /* width: 10%; */
+    /* height: 2vw; */
+    padding: .5vw;
+}
+.Pricelabel
+{
+    border: 0px solid;
+    font-size: 1.1vw;
+}
+
+.rangecontainer
+{
+    border: 0px solid;
+    width: 99.8%;
+    height: 2vw;
+    margin-top: .4vw;
+    position: relative;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.slider-track{
+    border: 0px solid;
+    width: 99.9%;
+    height: 10px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: rgb(178, 178, 202);
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-moz-range-track{
+    -moz-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-ms-track{
+    appearance: none;
+    height: 5px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 1.5vw;
+    width: 9%;
+    background-color: #3264fe;
+    cursor: pointer;
+    margin-top: -9px;
+    pointer-events: auto;
+    border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb{
+    -webkit-appearance: none;
+    height: 2vw;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb{
+    appearance: none;
+    height: 2vw;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+
+input[type="range"]:active::-webkit-slider-thumb{
+    background-color: #ffffff;
+    border: 3px solid #3264fe;
+}
+
+.values{
+    background-color: #3264fe;
+    width: 32%;
+    position: relative;
+    margin: auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    color: #ffffff;
+}
+#MinAndMaxBox
+{
+    /* border: 1px solid; */
+    width: 95%;
+    /* width: 99.5%; */
+    margin: auto;
+    display: flex;
+    grid-gap: .5vw;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+#Minimum
+{
+    /* border: 1px solid; */
+    width: 35%;
+    height: 1.8vw;
+    display: flex;
+    padding: .2vw .2vw .2vw .5vw;
+    font-size: 1vw;
+    outline: none;
+}
+#Maximum
+{
+    /* border: 1px solid; */
+    width: 35%;
+    height: 1.8vw;
+    display: flex;
+    padding: .2vw .2vw .2vw .5vw;
+    font-size: 1vw;
+    outline: none;
+}
+
+#ProductShowContainer
+{
+    /* border: 1px solid; */
+    width: 74%;
+    padding: .5vw;
+    background-color: rgb(180, 180, 204);
+}
+#CollectionFieldset
+{
+    /* border: 1px solid blue; */
+    height: 18vw;
+    overflow: auto;
+}
+.CollectionInput
+{
+    /* border: 1px solid; */
+    /* width: 10%; */
+    /* height: 2vw; */
+    padding: .5vw;
+}
+.Collectionlabel
+{
+    border: 0px solid;
+    font-size: 1.1vw;
+}
+
+/*  */
+#SearchContainer
+{
+    /* border: 1px solid; */
+    width: 99%;
+    margin: auto;
+    display: flex;
+}
+#SearchIcon2
+{
+    /* border: 1px solid; */
+    width: 5%;
+    height: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+#SearchInputBox
+{
+    /* border: 1px solid; */
+    width: 95%;
+    display: flex;
+}
+#SearchInput2
+{
+    /* border: 1px solid; */
+    height: 2.5vw;
+    outline: none;
+    width: 100%;
+    font-size: 1.2vw;
+    padding-left: 1vw;
+}
+/*  */
+
+
+#TotalItemSortingContainer
+{
+    /* border: 1px solid; */
+    margin: auto;
+
+    margin-top: .5vw;
+    width: 99%;
+    display: flex;
+}
+#TotalItem
+{
+    /* border: 1px solid; */
+    width: 15%;
+    height: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+#ItemShow
+{
+    /* border: 1px solid; */
+    height: 2.5vw;
+    width: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+#ShowItems
+{
+    /* border: 1px solid; */
+    padding: .5vw;
+    font-size: .9vw;
+    margin-right: .5vw;
+    height: 2vw;
+    outline: none;
+}
+#SortingBox2
+{
+    /* border: 1px solid; */
+    width: 25%;
+    height: 2.5vw;
+    display: flex;
+}
+#SelectSortProduct2
+{
+    /* border: 1px solid; */
+    width: 100%;
+    padding: .4vw;
+    outline: none;
+    font-size: 1.2vw;
+    /* background-color: blue; */
+}
+
+#GridContainer
+{
+    /* border: 1px solid; */
+    width: 96%;
+    padding: 1vw;
+    margin: auto;
+    margin-top: .5vw;
+    display: grid;
+    grid-template-columns: repeat(3,32.77%);
+    grid-gap: .5vw;
+    background-color: rgb(163, 163, 233);
+    border-radius: .5vw;
+}
+.GridBox
+{
+    /* border: 1px solid; */
+    padding: 0vw .5vw .5vw .5vw;
+    
+    cursor: pointer;
+    border-radius: .5vw;
+    background-color: rgb(63, 247, 146);
+}
+.GridBox:hover
+{
+    transition: 850ms;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
+}
+.GridBox:hover .ViewIcon
+{
+    opacity: 1;
+}
+.SaleViewBox
+{
+    /* border: 1px solid; */
+    width: 97.5%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(232, 240, 130);
+}
+.SaleIcon
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+.ViewIcon
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 2.2vw;
+    margin-right: .5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: .8s ease;
+    cursor: pointer;
+}
+.ViewImage
+{
+    border: 1px solid;
+    width: 70%;
+    height: 85%;
+    border-radius: 50%;
+}
+.PercentageOffBox
+{
+    
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 1vw;
+    background-color: rgb(232, 240, 130);
+}
+
+.ImageBox
+{
+    /* border: 1px solid; */
+    width: 97.2%;
+    margin: auto;
+    display: flex;
+}
+
+.GridImage
+{
+    /* border: 1px solid; */
+    width: 99.6%;
+    height: 20vw;
+}
+.TitleBox
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    margin-top: .4vw;
+    background-color: rgb(232, 240, 130);
+}
+.CompositionUnit
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    font-weight: bold;
+    background-color: rgb(232, 240, 130);
+}
+.StarsBox
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    background-color: rgb(232, 240, 130);
+}
+.checked
+{
+    color: yellow;
+}
+.reviews
+{
+    /* border: 1px solid; */
+    width: 40%;
+    margin-left: .5vw;
+    font-size: 1.2vw;
+    display: flex;
+    background-color: rgb(232, 240, 130);
+}
+.PriceStrickPriceBox
+{
+    /* border: 1px solid; */
+    width: 95.4%;
+    padding: .2vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    background-color: rgb(232, 240, 130);
+}
+.PriceBox
+{
+    /* border: 1px solid; */
+    width: fit-content;
+    font-size: 1.2vw;
+    display: flex;
+    margin-left: .4vw;
+    align-items: center;
+    background-color: rgb(232, 240, 130);
+}
+.StrickPriceBox
+{
+    /* border: 1px solid; */
+    width: fit-content;
+    display: flex;
+    font-size: 1.2vw;
+    align-items: center;
+    text-decoration: line-through;
+}
+.AddToCartQunatityBox
+{
+    /* border: 1px solid; */
+    margin: auto;
+    width: 95.4%;
+    padding: .2vw;
+    display: flex;
+    align-items: center;
+    grid-gap: .5vw;
+}
+.DecreaseBox
+{
+    /* border: 1px solid; */
+    width: 10%;
+    height: 2.2vw;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+    font-weight: bold;
+}
+.DecreaseBox:hover
+{
+    background-color: white;
+    color: black;
+}
+.ShowQuantityBox
+{
+    border: 1px solid;
+    width: 12%;
+    height: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw
+}
+.IncreaseBox
+{
+    /* border: 1px solid; */
+    width: 10%;
+    height: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+    font-weight: bold;
+}
+.IncreaseBox:hover
+{
+    background-color: white;
+    color: black;
+}
+.AddToCartButtonImage
+{
+    /* border: 1px solid; */
+    width: 55%;
+    height: 2.2vw;
+    margin-left: .5vw;
+    display: flex;
+}
+.increment:hover
+{
+    background-color: black;
+    color: white;
+}
+.AddToCartIcon
+{
+    /* border: 1px solid; */
+    width: 20%;
+    height: 99.7%;
+    display: flex;
+
+    cursor: pointer;
+}
+.AddToImage
+{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 96%;
+}
+.AddToCartButton
+{
+    /* border: 1px solid; */
+    width: 80%;
+    height: 99.7%;
+    display: flex;
+    cursor: pointer;
+}
+.AddToCart
+{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+}
+
+.modal {
+    /* border: 1px solid blue; */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 20px;
+    
+    cursor: pointer;
+  }
+
+  .modal-content {
+    padding: 1vw;
+    background-color: #cbcdeb;
+    margin: .1vw auto 1vw auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+
+  .HeadingCutBox
+  {
+    /* border: 1px solid; */
+    width: 99%;
+    margin: auto;
+    padding: .2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(190, 190, 223);
+  }
+
+  .HeadingBox
+  {
+    /* border: 1px solid; */
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .close
+  {
+    /* border: 1px solid; */
+    font-size: 1.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .ProductDetailsShow
+  {
+      /* border: 1px solid; */
+      padding: .2vw;
+      width: 99%;
+      margin: auto;
+      margin-top: .5vw;
+      display: flex;
+      grid-gap: 1vw;
+      justify-content: center;
+  }
+  .Product
+  {
+    /* border: 1px solid; */
+    padding: 1vw;
+    width: 32%;
+  }
+  .Details
+  {
+      /* border: 1px solid; */
+      padding: 1vw;
+      width: 48%;
+  }
+
+  .DetailsTitle
+  {
+      border-bottom: 1px solid;
+      padding: .2vw;
+      width: 98.4%;
+      margin: auto;
+      margin-top: .5vw;
+      font-size: 1.35vw;
+      
+      text-align: justify;
+  }
+  
+  #pagination
+  {
+      /* border: 1px solid; */
+      width: 98.15%;
+      padding: .5vw;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+  }
+
+  .pagination p {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+
+    cursor: pointer;
+  }
+
+  /* .pagination p.active {
+    background-color: dodgerblue;
+    color: white;
+  } */
+
+.pagination p:hover:not(.active) {background-color: #ddd;}
+
+#slider
+{
+  /* border: 2px solid red; */
+  margin: auto;
+  width: 95.9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw 1vw;
+}
+
+.slide
+{
+  /* border: 2px solid green; */
+  padding: .5vw;
+  padding: .4vw;
+  width: 92%;
+  margin: auto;
+}
+
+
+.container
+{
+    /* border: 2px solid rgb(207, 206, 218); */
+    padding: .2vw;
+    width: 95%;
+    margin: auto;
+}
+
+.my-slider
+{
+  /* border: 1px solid rgb(12, 12, 12); */
+  padding: .2vw;
+  margin: auto;
+  /* position: sticky; */
+
+}
+.subcontainer
+{
+    
+    /* border: 2px solid yellow; */
+    padding: .4vw;
+    width: 98%;
+    margin: auto;
+}
+
+.tns-controls
+{
+  /* border: 1px solid rgb(197, 97, 15); */
+  width: 99.5%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: .5vw;
+  margin-bottom: .4vw;
+}
+.tns-controls > button
+{
+  width: 5%;
+  height: 2vw;
+  font-size: 1.4vw;
+  outline: none;
+  border: 0;
+  background-color: rgb(109, 109, 196);
+  color: rgb(247, 247, 16);
+}
+
+.tns-controls > button:hover
+{
+  background-color: rgb(247, 247, 16);
+  color: rgb(109, 109, 196);
+}
+
+#Heading
+{
+  /* border: 1px solid; */
+  width: 80%;
+  margin: auto;
+  margin-bottom: .5vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Footercontainer
+{
+    border: 1px solid;
+    position: absolute;
+    padding: 1vw;
+    margin: auto;
+    margin-top: 18vw;
+    left: 0;
+    right: 0;
+    width: 96.6vw;
+    background-color: black;
+}
+#footer {
+    background-color: black;
+    height: 590px;
+    width: 100%;
+}
+.footer-1 {
+    display: inline-block;
+    width: 84%;
+    height: 75%;
+    margin-top: 70px;
+    margin-left: 105px;
+}
+.footr-text {
+    /* background-color: red; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.footer-logo {
+    width: 100%;
+    height: 50%;
+    margin-left: auto;
+}
+.img {
+    width: 5%;
+    height: 30%;
+    margin: 6px;
+    margin-top: 10%;
+}
+#footer-logo-1 {
+    width: 70%;
+    height: 50%;
+    display: flex;
+    margin-left: 25%;
+}
+.text {
+    text-align: center;
+    font-size: .75em;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 4%;
+}
+.image {
+    width: 100%;
+    height: 85%;
+    border-radius: 4px;
+}
+.text-area {
+    width: 23%;
+    height: 100%;
+    /* background-color: blue; */
+    margin: 4px;
+}
+.logo-2 {
+    width: 50%;
+    height: 30%;
+    /* background-color: #fff; */
+    margin: 10px;
+    display: flex;
+}
+.logo-1 {
+    width: 50%;
+    height: 70%;
+    /* background-color: rgb(238, 1, 1); */
+    margin: 6px;
+}
+.a-img {
+    width: 50%;
+    margin-left: 16px;
+}
+.ulist {
+    list-style-type: none;
+    color: #fff;
+}
+.link {
+    margin-top: 13px;
+    /* font-size: ; */
+    color: #fff;
+    display: inline-block;
+}
+.text-01 {
+    color: #fff;
+    margin-top: 0px;
+}
+.box1 {
+    border: 1px solid gray;
+    width: 100%;
+    height: 36px;
+    display: flex;
+}
+.image-1 {
+    height: 100%;
+    width: 100%;
+    margin-left: 6px;
+    margin-top: 5px;
+}
+.input {
+    background-color: black;
+    color: #fff;
+    margin-left: 12px;
+    margin-top: 5px;
+    width: 90%;
+    height: 60%;
+    border-width: 0px;
+    border: none;
+}
+.div {
+    height: 70%;
+    width: 14%;
+}
+#div1 {
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+}
+    </style>
+</head>
+<body>
+
+    <!------------------------------------------- Navbar start --------------------------------------->
+    <div id="myOverlay" class="overlay">
+        <div id = "InputCloseBox">
+            <div class = "overlay-content">
+                <button id = "SubmitSearchInput"><i class="fa fa-search"></i></button>
+                <input id = "SearchInput" type="Search" placeholder="Search Our Store....">
+            </div>
+            <span class = "closebtn" onclick="closeSearch()" title = "Close Overlay">x</span>
+        </div>
+    </div>
+    <div id = "NavbarContainer">
+        <div id = "navbar">
+            <div id = "LogoBox">
+                <div onclick="GoToHomePage()" id = "HomeIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                    </svg>
+                </div>
+                <div onclick="GoToHomePage()" id = "WebsiteNameBox">minimalist_</div>
+            </div>
+            <div id = "MiddleBox">
+                <div onclick="GoToHomePage()" class = "Middle">Home</div>
+                <div onclick="concernpage()" class = "Middle">Concern</div>
+                <div onclick="OurProductPage()" class = "Middle">Our Product</div>
+                <div onclick="knowleadgepage()" class = "Middle">Knowleadge</div>
+                <div onclick="TrackerOrder()" class = "Middle">Tracker Order</div>
+            </div>
+            <div id = "LoginSignUpBox">
+                <div onclick="LoginSignUpPage()" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    </svg>
+                </div>
+                <div id = "SearchIcon" onclick="openSearch()" class = "LoginSignUp"><i class="fa fa-search"></i></div>
+                <div onclick="MinimalistAddToCartPage()" id = "AddToCart" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------ Navbar End -------------------------------------------------->
+    <div id = "id01" class = "modal">
+        <div class = "modal-content animate">
+            <div class = "HeadingCutBox">
+                <div class = "HeadingBox">Some Product Details</div>
+                <div onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</div>
+            </div>
+            <div class = "ProductDetailsShow">
+                <div class = "Product">
+                    <div class = "GridBox">
+                        <div class = "SaleViewBox">
+                            <div class = "SaleIcon">Sale</div>
+                        </div>
+                        <div class = "PercentageOffBox" id = "PercentageOffBox"></div>
+                        <div class = "ImageBox">
+                            <img class = "GridImage" id = "GridImage" src="" alt="">
+                        </div>
+                        <div class = "TitleBox" id = "TitleBox"></div>
+                        <div class = "CompositionUnit" id = "CompositionUnit"></div>
+                        <div class = "StarsBox">
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star checked"></span>
+                            <span class = "fa fa-star"></span>
+                            <div class = "reviews" id = "reviews"></div>
+                        </div>
+                        <div class = "PriceStrickPriceBox">
+                            <div class = "StrickPriceBox" id = "StrickPriceBox">1</div>
+                            <div class = "PriceBox" id = "PriceBox">1</div>
+                        </div>
+                        <div class = "AddToCartQunatityBox">
+                            <div class = "DecreaseBox" id = "DecreaseBox">-</div>
+                            <div class = "ShowQuantityBox" id = "ShowQuantityBoxInDetails"></div>
+                            <div class = "IncreaseBox" id = "IncreaseBox">+</div>
+                            <div class = "AddToCartButtonImage">
+                                <div class = "AddToCartIcon">
+                                    <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
+                                </div>
+                                <div class = "AddToCartButton">
+                                    <button class = "AddToCart" id = "AddToCartFromDetails">ADD TO CART</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "Details">
+                    <div id = "TitleDetails" class = "DetailsTitle"></div>
+                    <div id = "ChemicalCompositionDetails" class = "DetailsTitle"></div>
+                    <div id = "ChemicalUnitDetails" class = "DetailsTitle"></div>
+                    <div id = "IngredientsDetails" class = "DetailsTitle"></div>
+                    <div id = "WhatItIsHeadingDetails" class = "DetailsTitle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------ProductContainerBox ----------------------------------------->
+    <div id = "ProductContainerBox">
+        <div id = "ProductContainer">
+            <div id = "ProductHeading">Products</div>
+
+            <!---------------------------------------------AboveSorting Start -------------------------------------------->
+            <div id = "AboveSortingBox">
+                <div id = "AboveSorting">
+                    <select name="" id="SelectSortProduct" onchange="FirstSorting()">
+                        <option class = "AboveOption" value="SortProduct">Sort Product</option>
+                        <option class = "AboveOption" value="AlphabeticallyAZ">Alphabetically, A-Z</option>
+                        <option class = "AboveOption" value="AlphabeticallyZA">Alphabetically, Z-A</option>
+                        <option class = "AboveOption" value="Pricelowtohigh">Proce, low to high</option>
+                        <option class = "AboveOption" value="Pricehightolow">Price, high to low</option>
+                        <option class = "AboveOption" value="Datenewtoold">Date, new to old</option>
+                    </select>
+                </div>
+            </div>
+            <!------------------------------------------------AboveSorting Start ------------------------------------------->
+
+            <!------------------------------------------------ProductFilteringContainer ------------------------------------->
+            <div id = "ProductFilteringContainer">
+                
+                <div id = "FilteringContainer">
+                    <div id = "CollectionBox">
+                        <div id = "UpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Collection">COLLECTION</div>
+                    </div>
+                    <div id = "CollectionFilterBox">
+                        <fieldset id = "CollectionFieldset" onclick="CollectionFiltering()">
+                            <legend>Collection</legend>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Boostofbrightnessglow" value = "Boostofbrightnessglow">
+                                    <label class = "Collectionlabel" for="Boostofbrightnessglow">Boost of brightness & glow</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Byebyeacne" value = "Byebyeacne">
+                                    <label class = "Collectionlabel" for="Byebyeacne">Bye bye acne</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "DailydoseofSkinVitamins" value = "DailydoseofSkinVitamins">
+                                    <label class = "Collectionlabel" for="DailydoseofSkinVitamins">Daily dose of Skin Vitamins</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Dreamyoilfreeskin" value = "Dreamyoilfreeskin">
+                                    <label class = "Collectionlabel" for="Dreamyoilfreeskin">Dreamy oil-free skin</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "FaceacidsTrending" value = "FaceacidsTrending">
+                                    <label class = "Collectionlabel" for="FaceacidsTrending">Face acids - Trending</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Hydratedsupplebouncyskin" value = "Hydratedsupplebouncyskin">
+                                    <label class = "Collectionlabel" for="Hydratedsupplebouncyskin">Hydrated, supple, bouncy skin</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Porenomore" value = "Porenomore">
+                                    <label class = "Collectionlabel" for="Porenomore">Pore no more</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "SayhellotoBabysoftcomplexion" value = "SayhellotoBabysoftcomplexion">
+                                    <label class = "Collectionlabel" for="SayhellotoBabysoftcomplexion">Say hello to Baby soft-complexion</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Skincorrectiondepigmentation" value = "Skincorrectiondepigmentation">
+                                    <label class = "Collectionlabel" for="Skincorrectiondepigmentation">Skin correction & de-pigmentation</label>
+                                </div>
+                                <div>
+                                    <input class = "CollectionInput" type="checkbox" id = "Turnbackclockonaging" value = "Turnbackclockonaging">
+                                    <label class = "Collectionlabel" for="Turnbackclockonaging">Turn back clock on aging</label>
+                                </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "VendorBox">
+                        <div id = "VendorUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Vendor">Vendor</div>
+                    </div>
+                    <div id = "VendorFilterBox">
+                        <fieldset id = "VendorFieldset" onclick="VendorFiltering()">
+                            <legend>Vendor</legend>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Dryskin" value = "Dryskin">
+                                    <label class = "Vendorlabel" for="Dryskin">Barrier repair - Dry skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Oilyskin" value = "Oilyskin">
+                                    <label class = "Vendorlabel" for="Oilyskin">Barrier repair - Oily skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "BrightensReducesPhotoaging" value = "BrightensReducesPhotoaging">
+                                    <label class = "Vendorlabel" for="BrightensReducesPhotoaging">Brightens & Reduces Photoaging</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "BrightensSkinReverseUVDamage" value = "BrightensSkinReverseUVDamage">
+                                    <label class = "Vendorlabel" for="BrightensSkinReverseUVDamage">Brightens Skin & Reverse UV Damage</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "BroadSpectrumSPF50PA" value = "BroadSpectrumSPF50PA">
+                                    <label class = "Vendorlabel" for="BroadSpectrumSPF50PA">Broad Spectrum SPF 50, PA++++</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ControlsExcessOil" value = "ControlsExcessOil">
+                                    <label class = "Vendorlabel" for="ControlsExcessOil">Controls Excess Oil</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "DeepNourishmentHydration" value = "DeepNourishmentHydration">
+                                    <label class = "Vendorlabel" for="DeepNourishmentHydration">Deep Nourishment & Hydration</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "EvenSkinToneTexture" value = "EvenSkinToneTexture">
+                                    <label class = "Vendorlabel" for="EvenSkinToneTexture">Even Skin Tone & Texture</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ForBrighterIlluminatingSkin" value = "ForBrighterIlluminatingSkin">
+                                    <label class = "Vendorlabel" for="ForBrighterIlluminatingSkin">For Brighter & Illuminating Skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ForFineLinesWrinkles" value = "ForFineLinesWrinkles">
+                                    <label class = "Vendorlabel" for="ForFineLinesWrinkles">For Fine Lines & Wrinkles</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "ForPoreTighteningSkinRebalancing" value = "ForPoreTighteningSkinRebalancing">
+                                    <label class = "Vendorlabel" for="ForPoreTighteningSkinRebalancing">For Pore Tightening & Skin Rebalancing</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "MoisturizeRepairSkin" value = "MoisturizeRepairSkin">
+                                    <label class = "Vendorlabel" for="MoisturizeRepairSkin">Moisturize & Repair Skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "PreventAgeing" value = "PreventAgeing">
+                                    <label class = "Vendorlabel" for="PreventAgeing">Prevent Ageing</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reduceblackheadsbreakouts" value = "Reduceblackheadsbreakouts">
+                                    <label class = "Vendorlabel" for="Reduceblackheadsbreakouts">Reduce blackheads & breakouts</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reducefinelineswrinkles" value = "Reducefinelineswrinkles">
+                                    <label class = "Vendorlabel" for="Reducefinelineswrinkles">Reduce fine lines & wrinkles</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reducesacnehealsskin" value = "Reducesacnehealsskin">
+                                    <label class = "Vendorlabel" for="Reducesacnehealsskin">Reduces acne & heals skin</label>
+                                </div>
+                                <div>
+                                    <input class = "VendorInput" type="checkbox" id = "Reducesdarkspotsevensskintone" value = "Reducesdarkspotsevensskintone">
+                                    <label class = "Vendorlabel" for="Reducesdarkspotsevensskintone">Reduces dark spots & evens skin tone</label>
+                                </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "TagsBox">
+                        <div id = "TagsUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Tags">Tags</div>
+                    </div>
+                    <div id = "TagsFilterBox">
+                        <fieldset id = "TagsFieldset" onclick="TagsFiltering()">
+                            <legend>Tags</legend>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Acnemarks" value = "Acnemarks">
+                                <label class = "Tagslabel" for="Acnemarks">Acne - marks</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Alopecia" value = "Alopecia">
+                                <label class = "Tagslabel" for="Alopecia">Alopecia</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Antiacne" value = "Antiacne">
+                                <label class = "Tagslabel" for="Antiacne">Anti-acne</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Antiaging" value = "Antiaging">
+                                <label class = "Tagslabel" for="Antiaging">Anti-aging</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "AntiHairfall" value = "AntiHairfall">
+                                <label class = "Tagslabel" for="AntiHairfall">Anti-Hairfall</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Antiinflammatory" value = "Antiinflammatory">
+                                <label class = "Tagslabel" for="Antiinflammatory">Anti-inflammatory</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Barrier Repair" value = "BarrierRepair">
+                                <label class = "Tagslabel" for="Barrier Repair">Barrier Repair</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Brightening" value = "Brightening">
+                                <label class = "Tagslabel" for="Brightening">Brightening</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Cleanser" value = "Cleanser">
+                                <label class = "Tagslabel" for="Cleanser">Cleanser</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Dark spots" value = "Darkspots">
+                                <label class = "Tagslabel" for="Dark spots">Dark spots</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Even tone" value = "Eventone">
+                                <label class = "Tagslabel" for="Even tone">Even tone</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Exfoliation" value = "Exfoliation">
+                                <label class = "Tagslabel" for="Exfoliation">Exfoliation</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Fine lines" value = "Finelines">
+                                <label class = "Tagslabel" for="Fine lines">Fine lines</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Hair Growth" value = "HairGrowth">
+                                <label class = "Tagslabel" for="Hair Growth">Hair Growth</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Hydration" value = "Hydration">
+                                <label class = "Tagslabel" for="Hydration">Hydration</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Hyperpigmentation" value = "Hyperpigmentation">
+                                <label class = "Tagslabel" for="Hyperpigmentation">Hyperpigmentation</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Melasma" value = "Melasma">
+                                <label class = "Tagslabel" for="Melasma">Melasma</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Moisturization" value = "Moisturization">
+                                <label class = "Tagslabel" for="Moisturization">Moisturization</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Oil balance" value = "Oilbalance">
+                                <label class = "Tagslabel" for="Oil balance">Oil balance</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Pore cleaning" value = "Porecleaning">
+                                <label class = "Tagslabel" for="Pore cleaning">Pore cleaning</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Pore tightening" value = "Poretightening">
+                                <label class = "Tagslabel" for="Pore tightening">Pore tightening</label>
+                            </div>
+                            <div>
+                                <input class = "TagsInput" type="checkbox" id = "Remove blackheads" value = "Removeblackheads">
+                                <label class = "Tagslabel" for="Remove blackheads">Remove blackheads</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "DiscountBox">
+                        <div id = "DiscountUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Discount">Discount</div>
+                    </div>
+                    <div id = "DiscountFilterBox">
+                        <fieldset id = "DiscountFieldset" onclick="DiscountFiltering()">
+                            <legend>Discount</legend>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "5% - 10%" value = "5%10%">
+                                <label class = "Discountlabel" for="5% - 10%">1% - 5%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "10% - 15%" value = "10%15%">
+                                <label class = "Discountlabel" for="10% - 15%">5% - 10%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "15% - 20%" value = "15%20%">
+                                <label class = "Discountlabel" for="15% - 20%">11% - 15%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "20% - 25%" value = "20%25%">
+                                <label class = "Discountlabel" for="20% - 25%">16% - 20%</label>
+                            </div>
+                            <div>
+                                <input class = "DiscountInput" type="checkbox" id = "25% - 30%" value = "25%30%">
+                                <label class = "Discountlabel" for="25% - 30%">21% - 25%</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id = "PriceBox">
+                        <div id = "PriceUpDownArrowBox"><i class="arrow up"></i></div>
+                        <div id = "Price">PRICE</div>
+                    </div>
+                    <div id = "PriceFilterBox">
+                        <!-- PriceFieldset == wrapper -->
+                        <fieldset id = "PriceFieldset" onclick="PriceFiltering()">
+                            <legend>Price, ₹</legend>
+                            <!-- MinAndMaxBox == values -->
+                            <div id = "MinAndMaxBox">
+                                <input id = "Minimum" type="text" value = "250">
+                                -
+                                <input id = "Maximum" type="text" value = "600">
+                            </div>
+                            <div class = "rangecontainer">
+                                <div class = "slider-track"></div>
+                                <input type="range" min="250" max="800" value="250" id="slider-1" oninput="slideOne()">
+                                <input type="range" min="250" max="800" value="800" id="slider-2" oninput="slideTwo()">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                
+                <div id = "ProductShowContainer">
+
+                    <!--  -->
+                    <div id = "SearchContainer">
+                        <div id = "SearchIcon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </div>
+                        <div id = "SearchInputBox">
+                            <!-- <input onkeypress="SearchInput()" type="search" id = "SearchInput" placeholder="Search Product...."> -->
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <!--  -->
+                    <div id = "TotalItemSortingContainer">
+                        <div id = "TotalItem">Items : <%= OurProducts.length %></div>
+                        <div id = "ItemShow">
+                            <select name="" id="ShowItems" onchange="ShowSorting()">
+                                <option value="SHOW">SHOW</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="18">18</option>
+                                <option value="22">22</option>
+                            </select>
+                        </div>
+                        <div id = "SortingBox2">
+                            <select name="" id="SelectSortProduct2" onchange="SecondSorting()">
+                                <option value="SortProduct">Sort Product</option>
+                                <option value="AlphabeticallyAZ">Alphabetically, A-Z</option>
+                                <option value="AlphabeticallyZA">Alphabetically, Z-A</option>
+                                <option value="Pricehightolow">Price, high to low</option>
+                                <option value="Pricelowtohigh">Price, low to high</option>
+                                <option value="Datenewtoold">Date, new to old</option>
+                                <option value="Saleoff">% Sale off</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <div id = "GridContainer">
+                        <% OurProducts.map(function(element,index) { %>
+                            <div class = "GridBox">
+                                <div class = "SaleViewBox">
+                                    <div class = "SaleIcon">Sale</div>
+                                    <div onclick="ShowSomeProductDetails(`<%= JSON.stringify(element) %>`,`<%= index%>`,0)" class = "ViewIcon">
+                                        <img class = "ViewImage" src="https://cdn-icons-png.flaticon.com/512/709/709724.png" alt="">
+                                    </div>
+                                </div>
+                                <div class = "PercentageOffBox"><%= element.Saleoff %> % Off</div>
+                                <div onclick = "ProductDetailsPage(`<%= element._id %>`)" class = "ImageBox">
+                                    <img class = "GridImage" src="<%= element.Image.Image1 %>" alt="">
+                                </div>
+                                <div class = "TitleBox"><%= element.Title %></div>
+                                <div class = "CompositionUnit"><%= element.ChemicalUnit %></div>
+                                <div class = "StarsBox">
+                                    <span class = "fa fa-star checked"></span>
+                                    <span class = "fa fa-star checked"></span>
+                                    <span class = "fa fa-star checked"></span>
+                                    <span class = "fa fa-star checked"></span>
+                                    <span class = "fa fa-star"></span>
+                                    <div class = "reviews"><%= element.Reviews %></div>
+                                </div>
+                                <div class = "PriceStrickPriceBox">
+                                    <div class = "StrickPriceBox">₹ : <%= element.StrickPrice %></div>
+                                    <div class = "PriceBox"><%= element.Price %></div>
+                                </div>
+                                <div class = "AddToCartQunatityBox">
+                                    <div class = "DecreaseBox">-</div>
+                                    <div class = "ShowQuantityBox">0</div>
+                                    <div class = "IncreaseBox">+</div>
+                                    <div class = "AddToCartButtonImage">
+                                        <div class = "AddToCartIcon">
+                                            <img class = "AddToImage" src="https://cdn-icons-png.flaticon.com/512/6713/6713649.png" alt="">
+                                        </div>
+                                        <div onclick="AddToCart(`<%= JSON.stringify(element) %>`)" Class = "AddToCartButton">
+                                            <button class = "AddToCart">ADD TO CART</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-----------------------------------------------ProductFilteringContainer -------------------------------------->
+        </div>
+        <div id = "pagination">
+            <div class = "pagination">
+                <p>&laquo;</p>
+                <p onclick="active1()" class = "active1">1</p>
+                <p onclick="active2()" class = "active2">2</p>
+                <p>&raquo;</p>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------ProductContainerBox ------------------------------------------------>
+    
+    <section id = "slider">
+        <div class="container">
+            <div class="subcontainer">
+                <div class="slider-wrapper">
+                    <div id = "Heading">ABCD</div>
+                    <div class="my-slider">
+    
+                        <!-- <div>
+                            <div class="slide">
+                                <div class="slide-img img-1">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii</h3>
+                                    <p>Maui</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-2">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii2</h3>
+                                    <p>Maui2</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-3">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii3</h3>
+                                    <p>Maui3</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-4">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii4</h3>
+                                    <p>Maui4</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="slide">
+                                <div class="slide-img img-5">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <br>
+                                <div>
+                                    <h3>Hawaii5</h3>
+                                    <p>Maui5</p>
+                                </div>
+                            </div>
+                        </div> -->
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div style="height: 20vw; border: 1px solid;"></div> -->
+
+    <div id = "Footercontainer">
+        <div class="footer-1">
+            <div class="footr-text">
+                <div class="text-area">
+                    <div class="logo">
+                        <a href="#link">
+                            <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/files/minimalist-logo-white-new_x20@2x.png?v=1606032887" alt="" class="a-img">
+                        </a>
+                    </div>
+                    <div class="logo-2">
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://toppng.com/uploads/preview/facebook-logo-black-11549681824hmcxyqtxds.png" alt="" class="image">
+                            </a>
+                        </div>
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://i.pinimg.com/originals/c6/2c/05/c62c055ede6aadbb1f94a555071c98b9.jpg" alt="" class="image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">ABOUT</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Our values</a><br>
+                        <a href="#link" class="link">Privacy policy</a><br>
+                        <a href="#link" class="link">Terms & conditions</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">HELP</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Knowledge</a><br>
+                        <a href="#link" class="link">FAQs</a><br>
+                        <a href="#link" class="link">Return & refund policy</a><br>
+                        <a href="#link" class="link"> Contact us</a><br>
+                        <a href="#link" class="link">Track order</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">SIGN UP AND SAVE</p>
+                    </div>
+                    <div class="mid-tex">
+                        <p class="link">
+                            Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                        </p>
+                        <div class="box1">
+                            <div class="div">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmTSdwx7aEKX5HoBTvAlYubZ9bIOpysS0gA&usqp=CAU" alt="" class="image-1">
+                            </div>
+                            <div id="div1">
+                                <input type="text" placeholder="Enter your email" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <div id="footer-logo-1">
+                    <div class="img">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/30455c9384889.57ee562a4fba0.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://flyclipart.com/thumb2/american-express-amex-billing-credit-card-payment-shop-icon-500339.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://cdn.techjockey.com/web/assets/images/techjockey/products/11424_Freecharge-logo.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://assets.mspimages.in/wp-content/uploads/2021/07/GooglePay_Lockup.max-1200x1200-1.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://yt3.ggpht.com/ytc/AKedOLSvIBDFtbGRhKxpIQvtcLCrCa75ldfziwEVgJG5=s900-c-k-c0x00ffffff-no-rj" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.pngitem.com/pimgs/m/265-2655326_mobikwik-wallet-icon-hd-png-download.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://securecdn.pymnts.com/wp-content/uploads/2020/01/Score-Card-Company-Image-22.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://aniportalimages.s3.amazonaws.com/media/details/Paytm_apr28.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://skyllme.com/wp-content/uploads/2019/10/unnamed.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.sundayguardianlive.com/wp-content/uploads/2019/10/rupay.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpc6dS_7YcmRbnP5ztdomyriQje2m4rWdXSWds18YLMbboByoGOOglpiRTb2NqeKMBZv0&usqp=CAU" alt="Na" class="image">
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <P class="text"> © 2022 Minimalist</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- <script src="scripts/concern.js"></script> -->
+<!-- <script src="scripts/cart.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+<script>
+
+    
+function openSearch()
+{
+    document.querySelector("#NavbarContainer").style.zIndex = "0";
+    document.querySelector("#myOverlay").style.display = "block";
+}
+function closeSearch()
+{
+    document.querySelector("#NavbarContainer").style.zIndex = "1";
+    document.querySelector("#myOverlay").style.display = "none";
+}
+function OurProductPage()
+{
+    window.location.href = "/ourproduct/mains";
+}
+function GoToHomePage()
+{
+    window.location.href = "/index";
+}
+function MinimalistAddToCartPage()
+{
+    console.log(1);
+    window.location.href = "/cart";
+}
+function LoginSignUpPage()
+{
+    console.log(1);
+    window.location.href = "/login";
+}
+function concernpage()
+{
+    window.location.href = "/concern";
+}
+function knowleadgepage()
+{
+    window.location.href = "/knowledge";
+}
+function TrackerOrder()
+{
+    window.location.href = "/track";
+}
+
+function ShowSomeProductDetails(element,index,count)
+{
+    console.log("ShowSomeProductDetails");
+    console.log('element:', element)
+    element = JSON.parse(element);
+    console.log('element:', element)
+    console.log('index:', index)
+    console.log('count:', count)
+    let ChangeColor = ShowSomeDetails(element,index,count);
+    // Recentalyview(element);
+}
+function ShowSomeDetails(element,index,count)
+{
+    let ShowBoxContainer = document.querySelector("#id01");
+    ShowBoxContainer.style.display = "block";
+    console.log("element :",element);
+    console.log('element.Saleoff:', element.Saleoff)
+    document.querySelector("#PercentageOffBox").innerHTML = `${element.Saleoff} % Off`;
+    document.querySelector("#GridImage").src = element.Image.Image1;
+    document.querySelector("#GridImage").addEventListener("click",function()
+    {
+        ProductDetailsPage(element._id);
+    })
+    document.querySelector("#TitleBox").innerHTML = element.Title;
+    document.querySelector("#CompositionUnit").innerHTML = element.ChemicalUnit;
+    document.querySelector("#reviews").innerHTML = element.Reviews;
+    document.querySelector("#PriceBox").innerHTML = `₹ : ${element.Price}`;
+    document.querySelector("#StrickPriceBox").innerHTML = `₹ : ${element.StrickPrice}`;
+    document.querySelector("#ShowQuantityBoxInDetails").innerHTML = count;
+    document.querySelector("#DecreaseBox").addEventListener("click",function()
+    {
+        if(element.ItemQuantity == 0)
+        {
+            return;
+        }
+        let value2 = Item1(element);
+        document.querySelector("#ShowQuantityBoxInDetails").innerHTML = value2.ItemQuantity;
+        console.log("element :",element);
+    })
+    document.querySelector("#IncreaseBox").addEventListener("click",function()
+    {
+        let value4 = Item(element);
+        document.querySelector("#ShowQuantityBoxInDetails").innerHTML = value4.ItemQuantity;
+        console.log("element :",element);
+    })
+    document.querySelector("#AddToCartFromDetails").addEventListener("click",function()
+    {
+        console.log('element:', element)
+        AddToCartFromProductDetails(element);
+
+        // console.log("AddToCart :",element)
+        // // document.querySelector(".GridBox").style.backgroundColor = "rgb(207, 206, 218)"
+        // Recentalyview(element);
+        // AddToCartSave(element,index);
+        // console.log("color :","color");
+        // // color[0] = "rgb(207, 206, 218)";
+    })
+    document.querySelector("#TitleDetails").innerHTML = `<b>Title :</b> ${element.Title}`;
+    document.querySelector("#ChemicalCompositionDetails").innerHTML = `${element.ChemicalComposition}`;
+    document.querySelector("#ChemicalUnitDetails").innerHTML = element.ChemicalUnit;
+    document.querySelector("#IngredientsDetails").innerHTML = `<b>Ingrdients :</b> ${element.Ingredients}`;
+    document.querySelector("#WhatItIsHeadingDetails").innerHTML = `<b>What It Is :</b> ${element.WhatItIs.Heading}`;
+    console.log("element :",element);
+}
+async function AddToCart(product) 
+{
+
+    var product = JSON.parse(product);
+    var productId = product._id;
+    fetch("/cart/allproduct")
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => 
+    {
+        var result = findproduct(res, productId);
+        if (!result) // --> false
+        {
+          post_product(productId);
+        }
+        else // --> true
+        {
+          patch_product(result);
+        }
+    });
+}
+async function AddToCartFromProductDetails(product) 
+{
+
+    // var product = JSON.parse(product);
+    var productId = product._id;
+    fetch("/cart/allproduct")
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => 
+    {
+        var result = findproduct(res, productId);
+        if (!result) // --> false
+        {
+          post_product(productId);
+        }
+        else // --> true
+        {
+          patch_product(result);
+        }
+    });
+}
+function findproduct(Carts, id) 
+{
+    for (var i = 0; i < Carts.length; i++) 
+    {
+      if (Carts[i].productId == id) 
+      {
+        return [Carts[i]._id, Carts[i].quantity];
+      }
+    }
+    return false;
+}
+async function post_product(productId) 
+{
+    const result = await fetch("/cart", 
+    {
+      method: "POST",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productId,
+      }),
+    }).then((res) => res.json());
+    // alert("post method");
+    window.location.reload();
+}
+function patch_product(Cart) 
+{
+    var quantity = Cart[1] + 1;
+    fetch("/cart/" + Cart[0], 
+    {
+      method: "PATCH",
+      headers: 
+      {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity,
+      }),
+    })
+    .then((res) => 
+    {
+        return res.json();
+    })
+    .then((res) => console.log(res));
+
+    window.location.reload();
+}
+function ProductDetailsPage(product_id) 
+{
+    console.log('product_id:', product_id)
+    window.location.href = `/productdetails/${product_id}`;
+}
+
+function FirstSorting()
+{
+    var value = document.querySelector("#SelectSortProduct").value;
+    console.log('value4:', value)
+    if(value == "SortProduct")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=SortProduct`;
+    }
+    else if (value == "AlphabeticallyAZ")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyAZ`;
+    }
+    else if (value == "AlphabeticallyZA")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyZA`;
+    }
+    else if (value == "Pricelowtohigh")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=Pricelowtohigh`;
+    }
+    else if (value == "Pricehightolow")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=Pricehightolow`;
+    }
+    else if (value == "Datenewtoold")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=Datenewtoold`;
+    }
+}
+
+function SecondSorting()
+{
+    var value2 = document.querySelector("#SelectSortProduct2").value;
+    console.log('value2:', value2)
+    if(value2 == "SortProduct")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=SortProduct`;
+    }
+    else if (value2 == "AlphabeticallyAZ")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyAZ`;
+    }
+    else if (value2 == "AlphabeticallyZA")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=AlphabeticallyZA`;
+    }
+    else if (value2 == "Pricelowtohigh")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=Pricelowtohigh`;
+    }
+    else if (value2 == "Pricehightolow")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=Pricehightolow`;
+    }
+    else if (value2 == "Datenewtoold")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=Datenewtoold`;
+    }
+    else if (value2 == "Saleoff")
+    {
+        window.location.href = `/ourproduct/sort/?Sorting=Saleoff`;
+    }
+}
+function ShowSorting()
+{
+    
+    var ShowItem = document.querySelector("#ShowItems").value;
+    console.log('ShowItem:', ShowItem)
+    if(ShowItem == 6)
+    {
+        window.location.href = `/ourproduct/items/?item=6`;
+    }
+    else if(ShowItem == 12)
+    {
+        
+        window.location.href = `/ourproduct/items/?item=12`;
+    }
+    else if(ShowItem == 18)
+    {
+        
+        window.location.href = `/ourproduct/items/?item=18`;
+    }
+    else if(ShowItem == 22)
+    {
+        
+        window.location.href = `/ourproduct/items/?item=22`;
+    }
+}
+let arrow = false;
+ShowCollectionFiltering()
+document.querySelector("#UpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#UpDownArrowBox").innerHTML = "";
+    if(arrow == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#UpDownArrowBox").append(UpArrow);
+        arrow = false;
+        ShowCollectionFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#UpDownArrowBox").append(DownArrow);
+        arrow = true;
+        ShowCollectionFiltering()
+    }
+})
+function ShowCollectionFiltering()
+{
+    if(arrow == false)
+    {
+        document.querySelector("#CollectionFilterBox").style.padding = ".5vw"
+        document.querySelector("#CollectionFilterBox").style.opacity = 1;
+        // document.querySelector("#CollectionFilterBox").style.width = "97%";
+        document.querySelector("#CollectionFilterBox").style.height = "19.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#CollectionFilterBox").style.padding = "0vw";
+        // document.querySelector("#CollectionFilterBox").style.width = "97%";
+        
+        document.querySelector("#CollectionFilterBox").style.opacity = 0;
+        document.querySelector("#CollectionFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow);
+}
+let arrow1 = false;
+ShowVendorFiltering()
+document.querySelector("#VendorUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#VendorUpDownArrowBox").innerHTML = "";
+    if(arrow1 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#VendorUpDownArrowBox").append(UpArrow);
+        arrow1 = false;
+        ShowVendorFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#VendorUpDownArrowBox").append(DownArrow);
+        arrow1 = true;
+        ShowVendorFiltering()
+    }
+})
+function ShowVendorFiltering()
+{
+    if(arrow1 == false)
+    {
+        document.querySelector("#VendorFilterBox").style.padding = ".5vw"
+        document.querySelector("#VendorFilterBox").style.opacity = 1;
+        // document.querySelector("#VendorFilterBox").style.width = "97%";
+        document.querySelector("#VendorFilterBox").style.height = "19.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#VendorFilterBox").style.padding = "0vw";
+        // document.querySelector("#VendorFilterBox").style.width = "97%";
+        
+        document.querySelector("#VendorFilterBox").style.opacity = 0;
+        document.querySelector("#VendorFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow1);
+}
+
+let arrow2 = false;
+ShowTagsFiltering()
+document.querySelector("#TagsUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#TagsUpDownArrowBox").innerHTML = "";
+    if(arrow2 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#TagsUpDownArrowBox").append(UpArrow);
+        arrow2 = false;
+        ShowTagsFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#TagsUpDownArrowBox").append(DownArrow);
+        arrow2 = true;
+        ShowTagsFiltering()
+    }
+})
+function ShowTagsFiltering()
+{
+    if(arrow2 == false)
+    {
+        document.querySelector("#TagsFilterBox").style.padding = ".5vw"
+        document.querySelector("#TagsFilterBox").style.opacity = 1;
+        // document.querySelector("#TagsFilterBox").style.width = "97%";
+        document.querySelector("#TagsFilterBox").style.height = "19.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#TagsFilterBox").style.padding = "0vw";
+        // document.querySelector("#TagsFilterBox").style.width = "97%";
+        
+        document.querySelector("#TagsFilterBox").style.opacity = 0;
+        document.querySelector("#TagsFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow2);
+}
+let arrow3 = false;
+ShowDiscountFiltering()
+document.querySelector("#DiscountUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#DiscountUpDownArrowBox").innerHTML = "";
+    if(arrow3 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#DiscountUpDownArrowBox").append(UpArrow);
+        arrow3 = false;
+        ShowDiscountFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#DiscountUpDownArrowBox").append(DownArrow);
+        arrow3 = true;
+        ShowDiscountFiltering()
+    }
+})
+function ShowDiscountFiltering()
+{
+    if(arrow3 == false)
+    {
+        document.querySelector("#DiscountFilterBox").style.padding = ".5vw"
+        document.querySelector("#DiscountFilterBox").style.opacity = 1;
+        // document.querySelector("#DiscountFilterBox").style.width = "97%";
+        document.querySelector("#DiscountFilterBox").style.height = "10.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#DiscountFilterBox").style.padding = "0vw";
+        // document.querySelector("#DiscountFilterBox").style.width = "97%";
+        
+        document.querySelector("#DiscountFilterBox").style.opacity = 0;
+        document.querySelector("#DiscountFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow3);
+}
+
+let arrow4 = false;
+ShowPriceFiltering()
+document.querySelector("#PriceUpDownArrowBox").addEventListener("click",function()
+{
+    document.querySelector("#PriceUpDownArrowBox").innerHTML = "";
+    if(arrow4 == true)
+    {
+        let UpArrow = document.createElement("i");
+        UpArrow.setAttribute("class","arrow up");
+        document.querySelector("#PriceUpDownArrowBox").append(UpArrow);
+        arrow4 = false;
+        ShowPriceFiltering()
+    }
+    else
+    {
+        let DownArrow = document.createElement("i");
+        DownArrow.setAttribute("class","arrow down");
+        document.querySelector("#PriceUpDownArrowBox").append(DownArrow);
+        arrow4 = true;
+        ShowPriceFiltering()
+    }
+})
+function ShowPriceFiltering()
+{
+    if(arrow4 == false)
+    {
+        document.querySelector("#PriceFilterBox").style.padding = ".5vw"
+        document.querySelector("#PriceFilterBox").style.opacity = 1;
+        // document.querySelector("#PriceFilterBox").style.width = "97%";
+        document.querySelector("#PriceFilterBox").style.height = "10.5vw";
+
+    }
+    else
+    {
+        document.querySelector("#PriceFilterBox").style.padding = "0vw";
+        // document.querySelector("#PriceFilterBox").style.width = "97%";
+        
+        document.querySelector("#PriceFilterBox").style.opacity = 0;
+        document.querySelector("#PriceFilterBox").style.height = 0;
+
+    }
+    console.log("arrow :",arrow4);
+}
+
+function CollectionFiltering()
+{
+    let CollectionFilteringArray = "";
+    var parent = document.querySelector("#CollectionFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        CollectionFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', CollectionFilteringArray);
+
+    window.location.href = `/ourproduct/collectionfilter/?colletion=${CollectionFilteringArray}`;
+}
+
+function VendorFiltering()
+{
+    let VendorFilteringArray = "";
+    var parent = document.querySelector("#VendorFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        VendorFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', VendorFilteringArray);
+
+    window.location.href = `/ourproduct/Vendorfilter/?Vendor=${VendorFilteringArray}`;
+}
+
+function TagsFiltering()
+{
+    let TagsFilteringArray = "";
+    var parent = document.querySelector("#TagsFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        TagsFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', TagsFilteringArray);
+
+    window.location.href = `/ourproduct/Tagsfilter/?Tags=${TagsFilteringArray}`;
+}
+
+function DiscountFiltering()
+{
+    let DiscountFilteringArray = "";
+    var parent = document.querySelector("#DiscountFilterBox");
+    var item = parent.querySelectorAll('input[type ="checkbox"]');
+    var order = [];
+    OrderFood();
+    function OrderFood()
+    {
+        order = [];
+        item.forEach(function(element)
+        {
+            if(element.checked)
+            {
+                let Data = element.value;
+                order.push(Data);
+                console.log(order);
+            }
+        });
+        // GivePromise(order);
+        console.log("order1 :",order);
+        // for(var i = 0; i<order.length; i++)
+        // {
+        //     CollectionFilteringArray.push(order[i]);
+        // }
+        DiscountFilteringArray = order[0];
+    }
+    console.log('CollectionFilteringArray:', DiscountFilteringArray);
+
+    window.location.href = `/ourproduct/Discountfilter/?Discount=${DiscountFilteringArray}`;
+}
+
+
+    let count = 0;
+    window.onload = function(){
+    slideOne();
+    slideTwo();
+    }
+    let sliderOne = document.getElementById("slider-1");
+    let sliderTwo = document.getElementById("slider-2");
+    let displayValOne = document.getElementById("Minimum");
+    displayValOne.value = 5
+    let displayValTwo = document.getElementById("Maximum");
+    displayValTwo.value = 10;
+
+    let minGap = 0;
+    let sliderTrack = document.querySelector(".slider-track");
+    let sliderMaxValue = document.getElementById("slider-1").max;
+
+    function slideOne(){
+    if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+        sliderOne.value = parseInt(sliderTwo.value) - minGap;
+        console.log('sliderOne.value:', sliderOne.value)
+    }
+    displayValOne.value = sliderOne.value;
+    localStorage.setItem("Min",sliderOne.value);
+    console.log('sliderOne.value:', sliderOne.value)
+    //console.log('displayValOne.textContent:', displayValOne.textContent)
+    fillColor();
+    Minvalue();
+    }
+
+    function slideTwo(){
+    if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+        sliderTwo.value = parseInt(sliderOne.value) + minGap;
+    }
+    displayValTwo.value = sliderTwo.value;
+    localStorage.setItem("Max",sliderTwo.value);
+    console.log('sliderTwo.value:', sliderTwo.value)
+    //console.log('displayValTwo.textContent:', displayValTwo.textContent)
+    fillColor();
+    Maxvalue();
+    }
+
+    function fillColor(){
+    percent1 = (sliderOne.value / sliderMaxValue) * 100;
+    percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+    // sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+    }
+
+    // console.log('displayValOne1:', displayValOne.value);
+    // console.log('displayValTwo2:', displayValTwo.value);
+    // console.log("Min :",Min);
+    // console.log("Max :",Max);
+    function Minvalue()
+    {
+        let value1 = localStorage.getItem("Min");
+        console.log('value1:', value1)
+    }
+    function Maxvalue()
+    {
+        let value2 = localStorage.getItem("Max");
+        console.log('value2:', value2)
+    }
+
+function PriceFiltering()
+{
+    console.log("Hello");
+    var min = document.querySelector("#Minimum").value;
+    var max = document.querySelector("#Maximum").value;
+
+    setTimeout(function()
+    {
+        console.log(min,max);
+
+    },8000)
+}
+</script>

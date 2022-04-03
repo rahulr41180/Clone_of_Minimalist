@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="CSS/account.css">
+</head>
+<body>
+    <div id="myOverlay" class="overlay">
+        <div id = "InputCloseBox">
+            <div class = "overlay-content">
+                <button id = "SubmitSearchInput"><i class="fa fa-search"></i></button>
+                <input id = "SearchInput" type="Search" placeholder="Search Our Store....">
+            </div>
+            <span class = "closebtn" onclick="closeSearch()" title = "Close Overlay">x</span>
+        </div>
+    </div>
+    <div id = "NavbarContainer">
+        <div id = "navbar">
+            <div id = "LogoBox">
+                <div onclick="GoToHomePage()" id = "HomeIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                    </svg>
+                </div>
+                <div id = "WebsiteNameBox">minimalist_</div>
+            </div>
+            <div id = "MiddleBox">
+                <div onclick="GoToHomePage()" class = "Middle">Home</div>
+                <div onclick="concernpage()" class = "Middle">Concern</div>
+                <div onclick="OurProductPage()" class = "Middle">Our Product</div>
+                <div onclick="knowleadgepage()" class = "Middle">Knowleadge</div>
+                <div onclick="TrackerOrder()" class = "Middle">Tracker Order</div>
+            </div>
+            <div id = "LoginSignUpBox">
+                <div onclick="LoginSignUpPage()" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    </svg>
+                </div>
+                <div id = "SearchIcon" onclick="openSearch()" class = "LoginSignUp"><i class="fa fa-search"></i></div>
+                <div onclick="MinimalistAddToCartPage()" id = "AddToCart" class = "LoginSignUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "LoginResult">
+        <div id = "MyAccountLogOutContainer">
+            <div id = "MyAccountHeading">My Account</div>
+            <div id = "LogOutHeading">Log Out</div>
+        </div>
+        <div id = "ShoppingProfile">
+            <div id = "ShoppingDetails">
+                <div id = "OrderHistory">Order History</div>
+                <div id = ""></div>
+            </div>
+            <div id = "ProfileDetails">
+                <div id = "OrderHistory">Account details</div>
+                <div id = "UserName">ABCD</div>
+            </div>
+        </div>
+    </div>
+    
+    <div id = "Footercontainer">
+        <div class="footer-1">
+            <div class="footr-text">
+                <div class="text-area">
+                    <div class="logo">
+                        <a href="#link">
+                            <img src="https://cdn.shopify.com/s/files/1/0410/9608/5665/files/minimalist-logo-white-new_x20@2x.png?v=1606032887" alt="" class="a-img">
+                        </a>
+                    </div>
+                    <div class="logo-2">
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://toppng.com/uploads/preview/facebook-logo-black-11549681824hmcxyqtxds.png" alt="" class="image">
+                            </a>
+                        </div>
+                        <div class="logo-1">
+                            <a href="#link">
+                                <img src="https://i.pinimg.com/originals/c6/2c/05/c62c055ede6aadbb1f94a555071c98b9.jpg" alt="" class="image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">ABOUT</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Our values</a><br>
+                        <a href="#link" class="link">Privacy policy</a><br>
+                        <a href="#link" class="link">Terms & conditions</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">HELP</p>
+                    </div>
+                    <div class="mid-tex">
+                        <a href="#link" class="link">Knowledge</a><br>
+                        <a href="#link" class="link">FAQs</a><br>
+                        <a href="#link" class="link">Return & refund policy</a><br>
+                        <a href="#link" class="link"> Contact us</a><br>
+                        <a href="#link" class="link">Track order</a><br>
+                    </div>
+                </div>
+                <div class="text-area">
+                    <div class="mid-tex">
+                        <p class="text-01">SIGN UP AND SAVE</p>
+                    </div>
+                    <div class="mid-tex">
+                        <p class="link">
+                            Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                        </p>
+                        <div class="box1">
+                            <div class="div">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmTSdwx7aEKX5HoBTvAlYubZ9bIOpysS0gA&usqp=CAU" alt="" class="image-1">
+                            </div>
+                            <div id="div1">
+                                <input type="text" placeholder="Enter your email" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <div id="footer-logo-1">
+                    <div class="img">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/30455c9384889.57ee562a4fba0.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://flyclipart.com/thumb2/american-express-amex-billing-credit-card-payment-shop-icon-500339.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://cdn.techjockey.com/web/assets/images/techjockey/products/11424_Freecharge-logo.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://assets.mspimages.in/wp-content/uploads/2021/07/GooglePay_Lockup.max-1200x1200-1.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://yt3.ggpht.com/ytc/AKedOLSvIBDFtbGRhKxpIQvtcLCrCa75ldfziwEVgJG5=s900-c-k-c0x00ffffff-no-rj" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.pngitem.com/pimgs/m/265-2655326_mobikwik-wallet-icon-hd-png-download.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://securecdn.pymnts.com/wp-content/uploads/2020/01/Score-Card-Company-Image-22.png" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://aniportalimages.s3.amazonaws.com/media/details/Paytm_apr28.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://skyllme.com/wp-content/uploads/2019/10/unnamed.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://www.sundayguardianlive.com/wp-content/uploads/2019/10/rupay.jpg" alt="Na" class="image">
+                    </div>
+                    <div class="img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpc6dS_7YcmRbnP5ztdomyriQje2m4rWdXSWds18YLMbboByoGOOglpiRTb2NqeKMBZv0&usqp=CAU" alt="Na" class="image">
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <P class="text"> © 2022 Minimalist</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="JavaScripts/account.js"></script>

@@ -219,7 +219,7 @@ body
     width: 97.5%;
     margin: auto;
     padding: .8vw;
-    background-color: rgb(215, 215, 243);
+    background-color: rgb(230,234,235);
 }
 #ProductHeading
 {
@@ -233,6 +233,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(230,234,235);
 }
 
 #AboveSortingBox
@@ -733,7 +734,7 @@ input[type="range"]:active::-webkit-slider-thumb{
     /* border: 1px solid; */
     width: 74%;
     padding: .5vw;
-    background-color: rgb(180, 180, 204);
+    background-color: rgb(230,234,235);
 }
 #CollectionFieldset
 {
@@ -857,7 +858,7 @@ input[type="range"]:active::-webkit-slider-thumb{
     display: grid;
     grid-template-columns: repeat(3,32.77%);
     grid-gap: .5vw;
-    background-color: rgb(163, 163, 233);
+    /* background-color: white; */
     border-radius: .5vw;
 }
 .GridBox

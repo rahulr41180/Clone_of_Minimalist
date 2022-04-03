@@ -426,6 +426,8 @@ body
       height: 22.75vw;
       border-radius: .4vw;
       padding: .5vw;
+    background-color: rgb(230,234,235);
+
   }
 
   
@@ -625,6 +627,7 @@ body
     cursor: pointer;
     font-weight: bold;
 }
+
 .ShowQuantityBox
 {
     /* border: 1px solid; */
@@ -687,6 +690,9 @@ body
     height: 100%;
     outline: none;
     cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 9px;
 }
 
 
@@ -801,7 +807,7 @@ body
       position: absolute;
       left: 0;
       right: 0;
-      border: 1px solid red;
+      /* border: 1px solid red; */
       width: 93.4vw;
       padding: 2.6vw;
       margin: auto;
@@ -974,7 +980,7 @@ body
       width: 22.6%;
       padding: .5vw;
       cursor: pointer;
-      background-color: rgb(122, 247, 222);
+      background-color: rgb(230,234,235);
       border-radius: .5vw;
   }
   .ProTipsProductBox:hover
@@ -1004,7 +1010,7 @@ body
       /* margin-top: .5vw; */
       padding: .2vw;
       font-size: 1.4vw;
-      background-color: rgb(223, 223, 252);
+      background-color: rgb(230,234,235);
   }
 
   #ProTipsContainer1
@@ -1030,7 +1036,7 @@ body
       font-size: 1.5vw;
       font-weight: bold;
       /* background-color: blue; */
-      background-color: rgb(223, 223, 252);
+      background-color: rgb(230,234,235);
   }
   .ProTipsContentBox2
   {
@@ -1040,7 +1046,7 @@ body
       /* margin-top: .5vw; */
       padding: .2vw;
       font-size: .9vw;
-      background-color: rgb(223, 223, 252);
+      background-color: rgb(230,234,235);
   }
   .ProTipsContentBox3
   {
@@ -1051,7 +1057,7 @@ body
       padding: .2vw;
       display: flex;
       grid-gap: .5vw;
-      background-color: rgb(223, 223, 252);
+      background-color: rgb(230,234,235);
   }
   .ProTipsContentBox31
   {

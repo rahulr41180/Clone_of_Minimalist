@@ -1,19 +1,14 @@
-# Clone of Minimalist.com  &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;  &nbsp;   &nbsp;    &nbsp;   &nbsp;   &nbsp;   &nbsp;    <img src="//cdn.shopify.com/s/files/1/0410/9608/5665/files/Minimalist_Favicon-min_32x32.png?v=1646335623"/> 
+# Clone of Minimalist.co  &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;  &nbsp;   &nbsp;    &nbsp;   &nbsp;   &nbsp;   &nbsp;
 
-In this project we have tried to make a clone of <a href="https://www.theory.com" target="_blank">Theory Website</a>. With our efforts and the technology stack,we were able to clone the front end, integrated it with backend and added similar looks and features.
+In this project we have tried to make a clone of <a href="https://beminimalist.co/" target="_blank">Minimalist Website</a>. With our efforts and the technology stack,we were able to clone the front end, integrated it with backend and added similar looks and features.
 
 <div style='page-break-after: always'></div>
 
 ### <u>Deployed Link</u>
 
-<!-- Deployed with AWS 
-``` 
-http://ec2-13-127-17-86.ap-south-1.compute.amazonaws.com:5000/
- ``` -->
-
-Deployed with Herokuapp 
+Deployed using Netlify 
 ```
-https://backend-theory.herokuapp.com/
+
  ```
 
 ### <u>Run Locally</u>
@@ -21,7 +16,7 @@ https://backend-theory.herokuapp.com/
 Clone the project
 
 ```
-git clone https://github.com/shuklabhisekh/Backened_Of_Theory_Clone.git
+git clone ----- git link -----
 ```
 
 Install npm packages
@@ -39,7 +34,7 @@ npm run server
 View in Browser
 
 ```
-go to http://localhost:5000
+go to http://localhost:5200/index
 ```
 
 <div style='page-break-after: always'></div>
@@ -63,49 +58,51 @@ All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 - Login Confirmation
 - Search Functionality
 - Sorting
-- Payment Integration
-- Order Confirmation
+- Browser Cookies
 
 <div style='page-break-after: always'></div>
 
 ### <u>A short clip which will give Project Overview</u>
 
-https://user-images.githubusercontent.com/69167064/159704945-bf973452-6b14-444c-b4fb-513ed6a4a639.mp4
+google doc link
 
 <div style='page-break-after: always'></div>
 
 ### <u>Credits :</u>
 
-<b>Abhishek Shukla</b>
 
-> <a href="https://github.com/shuklabhisekh" target="_blank">Github</a>
+<b>Rahul Rathor</b>
 
-> <a href="https://www.linkedin.com/in/shuklabhisekh/" target="_blank">Linkedin</a>
+> <a href="" target="_blank">Github</a>
 
-<b>Ashiq Khan</b>
+> <a href="" target="_blank">Linkedin</a>
 
-> <a href="https://github.com/ashiq352" target="_blank">Github</a>
+> <a href="" target="_blank">Blog</a>
 
-> <a href="https://www.linkedin.com/in/ashiq-khan-412709222" target="_blank">Linkedin</a>
+<b>Devashish Kumar</b>
 
-<b>Sanket Thombre</b>
+> <a href="" target="_blank">Github</a>
 
-> <a href="https://github.com/sanket008" target="_blank">Github</a>
+> <a href="" target="_blank">Linkedin</a>
 
-> <a href="https://www.linkedin.com/in/sanket-thombre-13632b114" target="_blank">Linkedin</a>
+> <a href="" target="_blank">Blog</a>
 
-<b>Shilpa Shingnapure</b>
+<b>Pooja Waghchaure</b>
 
-> <a href="https://github.com/shilpashingnapure" target="_blank">Github</a>
+> <a href="" target="_blank">Github</a>
 
-> <a href="https://www.linkedin.com/in/shilpa-shingnapure-134b4320a/" target="_blank">Linkedin</a>
+> <a href="" target="_blank">Linkedin</a>
 
-<b>Vikram sharma</b>
+> <a href="" target="_blank">Blog</a>
 
-> <a href="https://github.com/vikram-sharma1" target="_blank">Github</a>
+<b>Chanchal Verma</b>
 
-> <a href="https://www.linkedin.com/in/vikram--sharma/" target="_blank">Linkedin</a>
+> <a href="" target="_blank">Github</a>
 
-### <u>You can read more about our project on our blog : <a href="https://shuklabhisekh.medium.com/clone-of-theory-com-including-frontend-backend-6db940b42d23" target="_blank">Clone of Theory.com</a> </u>
+> <a href="" target="_blank">Linkedin</a>
+
+> <a href="" target="_blank">Blog</a>
+
+### <u>You can read more about our project on our blog : <a href="https://chsverma7.medium.com/clone-of-beminimalist-co-including-frontend-backend-7cf352b5d652" target="_blank">Clone of beminimalist.co</a> </u>
 
 # Thank You :sparkling_heart:

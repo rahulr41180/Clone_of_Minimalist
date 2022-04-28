@@ -2,7 +2,13 @@
 
 In this project we have tried to make a clone of <a href="https://beminimalist.co/" target="_blank">Minimalist Website</a>. With our efforts and the technology stack,we were able to clone the front end, integrated it with backend and added similar looks and features.
 
-<img src="https://miro.medium.com/max/1400/1*2Voxui3UkcSpu61UVhCDmg.png" alt="" />
+<img src="https://miro.medium.com/max/1367/1*_JyWC1l3pJhtnqKr2m9GUA.png" alt="" />
+
+<img src="https://miro.medium.com/max/1366/1*7uvxfYiBgArBXJKfn3GsCQ.png" alt="" />
+
+<img src="https://miro.medium.com/max/1366/1*QZCeDhjgORgKlCAPSIGwsA.png" alt="" />
+
+<img src="https://miro.medium.com/max/1369/1*Hcgv6hy-pSa2k4oi_NwkTg.png" alt="" />
 
 <div style='page-break-after: always'></div>
 
